@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's Connect — Craig & Co. | Bespoke Experience House Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #253963;
+    --blue-accent: #0d6efd;
+    --gold: #D4AF37;
+    --gold-light: #fef9e7;
+    --orange: #ff5722;
+    --orange-light: #fff0eb;
+    --charcoal: #2C3E50;
+    --grey-light: #64748b;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --cream: #F9F9F7;
+    --terracotta: #C86D51;
+    --cream-2: #f2f0e9;
+    --line: rgba(27,42,74,0.12);
+    --line-light: rgba(249,249,247,0.15);
+    --shadow-sm: 0 4px 12px rgba(27,42,74,0.05);
+    --shadow-md: 0 12px 28px rgba(27,42,74,0.08);
+    --shadow-lg: 0 20px 48px rgba(27,42,74,0.14);
+  }
+  
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family: 'Kanit', sans-serif;
+    background: var(--bg-main);
+    color: var(--charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, .display {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1220px; margin:0 auto; padding:0 32px; }
+
+  /* Ripple motif */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.35);
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+
+  /* NAV */
+  header {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(249,249,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+  nav.wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 78px;
+  }
+  .logo {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600; font-size: 20px; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+    transition: transform 0.2s ease;
+  }
+  .logo:hover { transform: scale(1.02); }
+  .logo span { color: var(--terracotta); }
+  .navlinks { display:flex; gap:36px; font-size:14px; font-weight:600; letter-spacing:0.02em; text-transform:uppercase; }
+  .navlinks a { position:relative; padding:4px 0; color:var(--charcoal); transition:color .25s; }
+  .navlinks a:hover { color:var(--terracotta); }
+  .navlinks a.active { color:var(--terracotta); }
+  .navlinks a.active::after {
+    content:''; position:absolute; bottom:-2px; left:0; right:0; height:2px;
+    background:var(--terracotta); border-radius:2px;
+  }
+  .navcta {
+    background: var(--navy); color: var(--cream);
+    padding: 12px 24px; border-radius: 2px; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    transition: all .25s;
+    box-shadow: var(--shadow-sm);
+  }
+  .navcta:hover { background: var(--terracotta); color: var(--cream); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  @media(max-width:860px){ .navlinks{display:none;} }
+
+  /* SECTION 1: AGODA-STYLE CLEAN MODERN HEADER */
+  /* SECTION 1: PAGE HEADER (HERO) */
+  .page-header {
+    position: relative;
+    padding: 160px 0 100px;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .header-bg-typography {
+    position: absolute;
+    right: -2%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(100px, 18vw, 240px);
+    font-weight: 600;
+    color: rgba(27,42,74,0.035);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+  .header-rings {
+    position: absolute;
+    right: 15%;
+    top: -10%;
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+  }
+  .header-rings .ripple:nth-child(1) { width: 500px; height: 500px; top: 0; left: 0; opacity: 0.6; }
+  .header-rings .ripple:nth-child(2) { width: 360px; height: 360px; top: 70px; left: 70px; border-color: rgba(200,109,81,0.3); }
+  .header-rings .ripple:nth-child(3) { width: 220px; height: 220px; top: 140px; left: 140px; }
+  
+  .header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 24px;
+  }
+  .eyebrow::before {
+    content: ''; width: 28px; height: 1.5px; background: var(--terracotta);
+  }
+  .page-header h1 {
+    font-size: clamp(42px, 5.5vw, 64px);
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--navy);
+  }
+  .page-header h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+    font-weight: 400;
+  }
+  .page-header .subheadline {
+    font-size: clamp(17px, 2.2vw, 21px);
+    color: var(--charcoal);
+    opacity: 0.85;
+    line-height: 1.6;
+    max-width: 680px;
+    font-weight: 400;
+  }
+
+  /* SECTION 2: AGODA-STYLE SUPPORT & CONCIERGE CHANNELS */
+  .channels-section {
+    padding: 70px 0 30px;
+  }
+  .section-label {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--orange); margin-bottom: 8px; display: block;
+  }
+  .section-title { font-size: clamp(28px, 3.5vw, 40px); color: var(--navy); margin-bottom: 40px; line-height: 1.2; }
+  
+  .channels-grid {
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 30px;
+  }
+  @media(max-width: 900px) { .channels-grid { grid-template-columns: 1fr; } }
+
+  .channel-card {
+    background: #fff; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 36px;
+    box-shadow: 0 10px 30px rgba(14,34,68,0.05); display: flex; flex-direction: column; justify-content: space-between;
+    transition: all 0.35s ease; position: relative; overflow: hidden;
+  }
+  .channel-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: #cbd5e1; }
+  .channel-card.navy-card { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .channel-card.navy-card .card-title { color: #fff; }
+  .channel-card.navy-card .card-sub { color: rgba(255,255,255,0.8); }
+
+  .card-icon {
+    width: 60px; height: 60px; border-radius: 16px;
+    background: var(--orange-light); color: var(--orange);
+    display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 24px;
+  }
+  .navy-card .card-icon { background: rgba(255,183,3,0.15); color: #ffb703; }
+  
+  .card-title { font-size: 24px; font-weight: 600; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .card-sub { font-size: 15px; color: var(--charcoal); opacity: 0.85; margin-bottom: 28px; line-height: 1.6; }
+  
+  /* Email Display Box */
+  .email-display {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    background: #f1f5f9; padding: 18px 24px; border-radius: 12px;
+    border: 1.5px dashed #cbd5e1; font-size: 16px; font-weight: 600; color: var(--navy);
+    transition: all 0.25s;
+  }
+  .navy-card .email-display { background: rgba(255,255,255,0.08); border-color: rgba(255,183,3,0.4); color: #ffb703; }
+  .email-display:hover { background: #fff; border-color: var(--orange); transform: scale(1.02); }
+  .navy-card .email-display:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+  /* Coordinators List */
+  .coordinators-list { display: flex; flex-direction: column; gap: 16px; }
+  .coord-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 24px; background: #f8fafc; border-radius: 14px;
+    border: 1.5px solid #e2e8f0; transition: all 0.25s;
+  }
+  .coord-item:hover { background: #fff; border-color: var(--navy); box-shadow: var(--shadow-sm); transform: translateX(6px); }
+  .coord-name { font-weight: 600; font-size: 16px; color: var(--navy); display: flex; align-items: center; gap: 10px; }
+  .coord-name::before { content:'🛡️'; font-size: 18px; }
+  .coord-phone {
+    font-size: 15px; font-weight: 600; color: var(--orange);
+    padding: 6px 16px; background: var(--orange-light); border-radius: 30px;
+    transition: all 0.2s;
+  }
+  .coord-item:hover .coord-phone { background: var(--orange); color: #fff; }
+
+  /* SECTION 3: AGODA-STYLE CORPORATE RESERVATION ENGINE FORM */
+  .form-section { padding: 40px 0 120px; }
+  .form-container {
+    background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 56px;
+    box-shadow: 0 20px 50px rgba(14,34,68,0.08); position: relative; overflow: hidden;
+  }
+  .form-container::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:6px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--orange) 50%, #ffb703 100%);
+  }
+  @media(max-width: 768px) { .form-container { padding: 32px 20px; } }
+
+  .form-header { margin-bottom: 36px; max-width: 680px; }
+  .form-header h3 { font-size: 28px; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .form-header p { font-size: 15px; color: var(--grey-light); }
+
+  /* Agoda Step Indicator */
+  .step-bar {
+    display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap;
+  }
+  .step-pill {
+    background: #f1f5f9; color: var(--navy); font-size: 13px; font-weight: 600;
+    padding: 8px 16px; border-radius: 30px; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .step-pill.active { background: var(--navy); color: #fff; }
+
+  form { display: flex; flex-direction: column; gap: 24px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media(max-width: 700px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .form-field { display: flex; flex-direction: column; gap: 8px; }
+  .form-field label {
+    font-size: 14px; font-weight: 600; color: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .form-field label span { font-size: 12px; font-weight: 500; color: var(--orange); }
+  
+  .form-field input, .form-field select, .form-field textarea {
+    width: 100%; padding: 14px 18px;
+    border: 1.5px solid #cbd5e1; border-radius: 12px;
+    background: #f8fafc;
+    font-family: 'Kanit', sans-serif; font-size: 15px; color: var(--charcoal);
+    transition: all 0.25s;
+  }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+    outline: none; border-color: var(--blue-accent); background: #fff;
+    box-shadow: 0 0 0 4px rgba(13,110,253,0.1);
+  }
+  .form-field textarea { resize: vertical; min-height: 130px; }
+
+  /* Agoda Booking Submit Button */
+  .submit-btn {
+    align-self: flex-start;
+    background: var(--orange); color: #fff;
+    padding: 18px 44px; border-radius: 12px;
+    font-size: 16px; font-weight: 600; letter-spacing: 0.02em;
+    border: none; cursor: pointer; box-shadow: 0 10px 25px rgba(255,87,34,0.3);
+    transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
+  }
+  .submit-btn:hover {
+    background: #e64a19; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255,87,34,0.4);
+  }
+  .submit-btn::after { content: '➔'; font-size: 18px; transition: transform 0.25s; }
+  .submit-btn:hover::after { transform: translateX(6px); }
+
+  /* SUCCESS MODAL ON SUBMIT */
+  .success-modal {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(14,34,68,0.85); backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  }
+  .success-modal.open { opacity: 1; pointer-events: auto; }
+  .modal-box {
+    background: #fff; width: 100%; max-width: 520px;
+    border-radius: 20px; padding: 48px 40px; text-align: center;
+    box-shadow: var(--shadow-lg); border: 2px solid #ffb703;
+    transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .success-modal.open .modal-box { transform: scale(1); }
+  .modal-icon { width: 76px; height: 76px; border-radius: 50%; background: #fef9e7; color: #ffb703; font-size: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .modal-box h4 { font-size: 26px; color: var(--navy); margin-bottom: 12px; font-weight: 700; }
+  .modal-box p { font-size: 15px; color: var(--charcoal); opacity: 0.85; margin-bottom: 30px; line-height: 1.6; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy); color: rgba(249,249,247,0.6);
+    padding: 36px 0; font-size: 13px; border-top: 1px solid rgba(249,249,247,0.1);
+  }
+  footer .fname { font-family: 'Kanit', sans-serif; color: var(--cream); font-weight: 600; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER & NAVIGATION -->
+<header id="navbar">
+  <nav class="wrap">
+    <a href="index.html" class="logo">CRAIG <span>&</span> CO.</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a class="navcta" href="contact.html">Get a Proposal</a>
+  </nav>
+</header>
+
+<!-- SECTION 1: PAGE HEADER -->
+<section class="page-header">
+  <div class="header-bg-typography">CONNECT</div>
+  <div class="header-rings">
+    <div class="ripple"></div><div class="ripple"></div><div class="ripple"></div>
+  </div>
+  <div class="wrap header-content">
+    <div class="eyebrow">Instant Corporate Quotation</div>
+    <h1>Let's <em>Connect</em></h1>
+    <p class="subheadline">Partner with us to craft purpose-driven events, team-building sessions, and unforgettable corporate experiences tailored to your organization's exact requirements.</p>
+  </div>
+</section>
+
+<!-- SECTION 2: AGODA SUPPORT & CONCIERGE CHANNELS -->
+<section class="channels-section">
+  <div class="wrap">
+    <span class="section-label">24/7 Corporate Concierge</span>
+    <h2 class="section-title">Get in Touch with Our Team</h2>
+    
+    <div class="channels-grid">
+      <!-- Card 1: Official Email -->
+      <div class="channel-card navy-card">
+        <div>
+          <div class="card-icon">✉️</div>
+          <h3 class="card-title">Official Inquiry Desk</h3>
+          <p class="card-sub">For formal Request for Proposals (RFPs), corporate vendor registrations, and general partnership documentation.</p>
+        </div>
+        
+        <a href="mailto:contactcraigandco@gmail.com" class="email-display" title="Click to email us">
+          <span>contactcraigandco@gmail.com</span>
+          <span style="font-size:13px; font-weight:600; background:rgba(255,255,255,0.15); padding:6px 12px; border-radius:6px;">Send RFP ↗</span>
+        </a>
+      </div>
+
+      <!-- Card 2: Dedicated Coordinators -->
+      <div class="channel-card">
+        <div>
+          <div class="card-icon">🤝</div>
+          <h3 class="card-title">Dedicated Project Coordinators</h3>
+          <p class="card-sub">Need immediate consulting or urgent availability check? Speak directly with our lead event producers and coordinators.</p>
+        </div>
+        
+        <div class="coordinators-list">
+          <a href="tel:+66956562955" class="coord-item" title="Call Bank - Wanita">
+            <span class="coord-name">Bank — Wanita (Lead Coordinator)</span>
+            <span class="coord-phone">+66 95 656 2955</span>
+          </a>
+          <a href="tel:+66909743215" class="coord-item" title="Call Film - Nattinan">
+            <span class="coord-name">Film — Nattinan (Senior Producer)</span>
+            <span class="coord-phone">+66 90 974 3215</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 3: AGODA-STYLE CORPORATE RESERVATION ENGINE FORM -->
+<section class="form-section">
+  <div class="wrap">
+    <div class="form-container">
+      
+      <div class="form-header">
+        <span class="section-label" style="margin-bottom:6px;">Custom Booking Engine</span>
+        <h3>⚡ Check Availability &amp; Request Proposal</h3>
+        <p>Enter your project parameters below. Our team will verify venue &amp; team availability and provide a comprehensive proposal within 24 hours.</p>
+      </div>
+
+      <div class="step-bar">
+        <span class="step-pill active">🎯 Step 1: Client Profile</span>
+        <span class="step-pill active">📋 Step 2: Service Pillar Selection</span>
+        <span class="step-pill active">⚡ Step 3: Instant Check &amp; Submission</span>
+      </div>
+
+      <form id="inquiryForm" onsubmit="return false;">
+        
+        <!-- Row 1: Names -->
+        <div class="form-grid">
+          <div class="form-field">
+            <label>👤 Full Name <span>* Required</span></label>
+            <input type="text" placeholder="e.g. Khun Somchai Prasert" required>
+          </div>
+          <div class="form-field">
+            <label>🏢 Company / Organization Name <span>* Required</span></label>
+            <input type="text" placeholder="e.g. Leading Energy Corporation" required>
+          </div>
+        </div>
+
+        <!-- Row 2: Contacts -->
+        <div class="form-grid">
+          <div class="form-field">
+            <label>✉️ Corporate Email Address <span>* Required</span></label>
+            <input type="email" placeholder="e.g. somchai@company.co.th" required>
+          </div>
+          <div class="form-field">
+            <label>📞 Phone / Mobile Number <span>* Required</span></label>
+            <input type="tel" placeholder="e.g. +66 81 234 5678" required>
+          </div>
+        </div>
+
+        <!-- Row 3: Area of Interest -->
+        <div class="form-field">
+          <label>🎯 Primary Area of Interest (Service Pillar) <span>* Select Category</span></label>
+          <select required>
+            <option value="" disabled selected>— Please select primary service discipline —</option>
+            <option value="Training & Consulting">🌟 Training &amp; Consulting (Leadership, Mindset, Team Building, Communication)</option>
+            <option value="Operation & Management">⚙️ Operation &amp; Management (Project Mgmt, Vendor Coordination, Event Ops)</option>
+            <option value="Travel & Leisure">✈️ Travel &amp; Leisure (Corporate Retreats, Incentive Group Travel, Golf Outings)</option>
+            <option value="Entertainment Events & Sports">🎉 Entertainment Events &amp; Sports (Gala Nights, 5K Fun Runs, Concerts, Brand Activations)</option>
+            <option value="Multiple / End-to-End Bespoke Solution">🚀 Multiple Pillars / End-to-End Bespoke Solution</option>
+          </select>
+        </div>
+
+        <!-- Row 4: Participant Count & Date Range -->
+        <div class="form-grid">
+          <div class="form-field">
+            <label>👥 Estimated Participant Count <span>Optional</span></label>
+            <input type="text" placeholder="e.g. 50 - 100 Executives / 300 Staff">
+          </div>
+          <div class="form-field">
+            <label>📅 Target Event Date Range <span>Optional</span></label>
+            <input type="text" placeholder="e.g. Q4 2026 / November 15-18">
+          </div>
+        </div>
+
+        <!-- Row 5: Message -->
+        <div class="form-field">
+          <label>💬 Brief Project Requirements &amp; Objectives <span>* How can we help?</span></label>
+          <textarea placeholder="Share any specific goals, desired destinations (e.g., Khaoyai, Phuket, Bangkok rooftop), theme preferences, or special requirements..." required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn" id="submitBtn">Check Availability &amp; Request Proposal</button>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; width:100%;">
+    <div class="fname">Craig &amp; Co.</div>
+    <div>© 2026 Craig &amp; Co. — Bespoke Experience House Agency</div>
+  </div>
+</footer>
+
+<!-- SUCCESS MODAL FOR DEMONSTRATION -->
+<div class="success-modal" id="successModal">
+  <div class="modal-box">
+    <div class="modal-icon">✨</div>
+    <h4>Reservation Request Received!</h4>
+    <p>Thank you for connecting with <strong>Craig &amp; Co.</strong><br>Your project parameters have been verified and forwarded directly to our coordinators, <strong>Bank &amp; Film</strong>. We will review your brief and contact you within 24 hours.</p>
+    <button class="submit-btn" style="margin: 0 auto; padding: 14px 32px; background: var(--navy); box-shadow:none;" id="closeModalBtn">Return to Website</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Form submission animation & success modal
+    const form = document.getElementById('inquiryForm');
+    const modal = document.getElementById('successModal');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      form.reset();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Sticky Navbar shadow on scroll
+    const header = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.style.boxShadow = '0 10px 30px rgba(14,34,68,0.1)';
+      } else {
+        header.style.boxShadow = '0 4px 20px rgba(14,34,68,0.05)';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

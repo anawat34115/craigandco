@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Core Services — Craig & Co. | Bespoke Experience House Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #253963;
+    --gold: #D4AF37;
+    --gold-light: #f5eacf;
+    --charcoal: #2C3E50;
+    --cream: #F9F9F7;
+    --terracotta: #C86D51;
+    --terracotta-light: #f7e6e0;
+    --cream-2: #f2f0e9;
+    --line: rgba(27,42,74,0.12);
+    --line-light: rgba(249,249,247,0.15);
+    --shadow-sm: 0 4px 12px rgba(27,42,74,0.05);
+    --shadow-md: 0 12px 28px rgba(27,42,74,0.08);
+    --shadow-lg: 0 24px 48px rgba(27,42,74,0.12);
+  }
+  
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family: 'Kanit', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, .display {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 32px; }
+
+  /* Ripple motif - signature element */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.35);
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+
+  /* NAV */
+  header {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(249,249,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+  nav.wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 78px;
+  }
+  .logo {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600; font-size: 20px; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+    transition: transform 0.2s ease;
+  }
+  .logo:hover { transform: scale(1.02); }
+  .logo span { color: var(--terracotta); }
+  .navlinks { display:flex; gap:36px; font-size:14px; font-weight:600; letter-spacing:0.02em; text-transform:uppercase; }
+  .navlinks a { position:relative; padding:4px 0; color:var(--charcoal); transition:color .25s; }
+  .navlinks a:hover { color:var(--terracotta); }
+  .navlinks a.active { color:var(--terracotta); }
+  .navlinks a.active::after {
+    content:''; position:absolute; bottom:-2px; left:0; right:0; height:2px;
+    background:var(--terracotta); border-radius:2px;
+  }
+  .navcta {
+    background: var(--navy); color: var(--cream);
+    padding: 12px 24px; border-radius: 2px; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    transition: all .25s;
+    box-shadow: var(--shadow-sm);
+  }
+  .navcta:hover { background: var(--terracotta); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  @media(max-width:860px){ .navlinks{display:none;} }
+
+  /* SECTION 1: PAGE HEADER (HERO WITH NAVY BLUE ACCENT) */
+  .page-header {
+    position: relative;
+    padding: 160px 0 100px;
+    background: linear-gradient(135deg, var(--navy) 0%, #111b30 100%);
+    color: var(--cream);
+    overflow: hidden;
+    border-bottom: 1px solid rgba(212,175,55,0.25);
+  }
+  .header-bg-typography {
+    position: absolute;
+    right: -2%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(100px, 18vw, 240px);
+    font-weight: 600;
+    color: rgba(249,249,247,0.04);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+  .header-rings {
+    position: absolute;
+    right: 10%;
+    top: -15%;
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+  }
+  .header-rings .ripple:nth-child(1) { width: 600px; height: 600px; top: 0; left: 0; border-color: rgba(212,175,55,0.25); }
+  .header-rings .ripple:nth-child(2) { width: 440px; height: 440px; top: 80px; left: 80px; border-color: rgba(200,109,81,0.3); }
+  .header-rings .ripple:nth-child(3) { width: 280px; height: 280px; top: 160px; left: 160px; border-color: rgba(249,249,247,0.2); }
+  
+  .header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+  .page-header h1 {
+    font-size: clamp(44px, 5.5vw, 66px);
+    line-height: 1.08;
+    margin-bottom: 24px;
+    color: var(--cream);
+  }
+  .page-header h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .page-header .subheadline {
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: rgba(249,249,247,0.88);
+    line-height: 1.6;
+    max-width: 680px;
+    font-weight: 400;
+  }
+
+  /* QUICK JUMP PILLAR BAR */
+  .quick-nav {
+    position: sticky;
+    top: 78px;
+    z-index: 90;
+    background: rgba(249,249,247,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .quick-nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 4px 0;
+    scrollbar-width: none;
+  }
+  .quick-nav-list::-webkit-scrollbar { display: none; }
+  .quick-tab {
+    padding: 8px 18px;
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    border-radius: 30px;
+    color: var(--charcoal);
+    border: 1px solid transparent;
+    transition: all 0.25s;
+    white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .quick-tab span {
+    font-family: 'Kanit', sans-serif; font-style: italic; color: var(--terracotta); font-size: 15px;
+  }
+  .quick-tab:hover, .quick-tab.active {
+    background: var(--navy); color: var(--cream); border-color: var(--navy);
+  }
+  .quick-tab:hover span, .quick-tab.active span { color: var(--gold); }
+
+  /* COMMON PILLAR SECTION STYLES */
+  section.service-pillar {
+    padding: 120px 0;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  section.service-pillar:nth-child(even) {
+    background: var(--cream);
+  }
+  section.service-pillar:nth-child(odd) {
+    background: var(--cream-2);
+  }
+  
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px;
+    align-items: center;
+  }
+  /* Alternating Layout Support */
+  .pillar-grid.reverse {
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+  .pillar-grid.reverse .pillar-text {
+    order: 2;
+  }
+  .pillar-grid.reverse .pillar-visual {
+    order: 1;
+  }
+
+  .pillar-header {
+    margin-bottom: 36px;
+  }
+  .pillar-num {
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-size: 52px;
+    color: var(--terracotta);
+    opacity: 0.35;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .pillar-title {
+    font-size: clamp(34px, 4vw, 46px);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .pillar-desc {
+    font-size: 17px;
+    color: var(--charcoal);
+    opacity: 0.85;
+    line-height: 1.7;
+  }
+
+  /* INTERACTIVE SERVICE ITEM ACCORDIONS / CARDS */
+  .service-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .service-item-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px 24px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-item-card:hover, .service-item-card.active {
+    background: #fff;
+    border-color: var(--terracotta);
+    box-shadow: var(--shadow-md);
+    transform: translateX(6px);
+  }
+  .service-item-card::left {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: var(--terracotta);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
+  .service-item-card:hover::left, .service-item-card.active::left {
+    transform: scaleY(1);
+  }
+  
+  .item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .item-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    color: var(--navy);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .item-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--cream-2);
+    color: var(--terracotta);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+    transition: all 0.25s;
+  }
+  .service-item-card:hover .item-icon {
+    background: var(--terracotta); color: var(--cream);
+  }
+  .item-toggle {
+    font-size: 18px; color: var(--navy); opacity: 0.5; transition: transform 0.3s ease;
+  }
+  .service-item-card.active .item-toggle {
+    transform: rotate(45deg); color: var(--terracotta); opacity: 1;
+  }
+  
+  .item-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding-top 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    font-size: 15px;
+    color: var(--charcoal);
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+  .service-item-card.active .item-content {
+    max-height: 200px;
+    padding-top: 14px;
+    opacity: 1;
+  }
+  .item-cta {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--terracotta);
+    border-bottom: 1px solid var(--terracotta);
+    padding-bottom: 2px;
+  }
+
+  /* PURE CSS UI MOCKUP VISUALS (THE 4 PILLAR ARCHITECTURAL DASHBOARDS) */
+  .pillar-visual {
+    position: relative;
+    aspect-ratio: 4/4.5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(212,175,55,0.35);
+    background: radial-gradient(circle at 80% 20%, rgba(212,175,55,0.25) 0%, transparent 60%),
+                linear-gradient(145deg, #182645 0%, #1f3156 60%, #111b30 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px;
+  }
+  /* Pillar 2 & 4 visual styling variations */
+  .pillar-visual.theme-ops {
+    background: radial-gradient(circle at 20% 80%, rgba(200,109,81,0.25) 0%, transparent 60%),
+                linear-gradient(145deg, #131f38 0%, #203358 60%, #111b30 100%);
+  }
+  .pillar-visual.theme-travel {
+    background: radial-gradient(circle at 50% 50%, rgba(212,175,55,0.3) 0%, transparent 70%),
+                linear-gradient(160deg, #1f3156 0%, #17243f 100%);
+  }
+  .pillar-visual.theme-events {
+    background: radial-gradient(circle at 80% 80%, rgba(200,109,81,0.3) 0%, transparent 60%),
+                linear-gradient(145deg, #1b2a4a 0%, #294070 100%);
+  }
+
+  .mockup-rings {
+    position: absolute; inset: 0; pointer-events: none;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .mockup-rings .ripple:nth-child(1) { width: 92%; height: 92%; border-color: rgba(212,175,55,0.2); }
+  .mockup-rings .ripple:nth-child(2) { width: 68%; height: 68%; border-color: rgba(200,109,81,0.25); }
+  .mockup-rings .ripple:nth-child(3) { width: 44%; height: 44%; border-color: rgba(249,249,247,0.15); }
+
+  .mockup-card {
+    position: relative; z-index: 2;
+    background: rgba(249, 249, 247, 0.07);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(212,175,55,0.45);
+    border-radius: 6px;
+    padding: 30px 26px;
+    width: 100%;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.35);
+    display: flex; flex-direction: column; gap: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .pillar-visual:hover .mockup-card {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 32px 64px rgba(0,0,0,0.45);
+  }
+  
+  .mockup-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(249,249,247,0.15); padding-bottom: 12px;
+  }
+  .mockup-dots { display: flex; gap: 6px; }
+  .mockup-dots span { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .mockup-dots span:nth-child(1) { background: #ff5f56; }
+  .mockup-dots span:nth-child(2) { background: #ffbd2e; }
+  .mockup-dots span:nth-child(3) { background: #27c93f; }
+  .mockup-tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+  }
+  
+  .mockup-body h3 {
+    font-size: 24px; color: var(--cream); line-height: 1.25; margin-bottom: 8px; font-style: italic;
+  }
+  .mockup-body p {
+    font-size: 14px; color: rgba(249,249,247,0.8); line-height: 1.5; margin-bottom: 18px;
+  }
+
+  /* Specific Mockup UI Elements */
+  .mockup-list {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .mockup-row {
+    background: rgba(27,42,74,0.65);
+    border: 1px solid rgba(249,249,247,0.12);
+    padding: 12px 16px;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; color: var(--cream); font-weight: 600;
+  }
+  .mockup-row span.badge {
+    background: rgba(212,175,55,0.2); color: var(--gold); padding: 4px 10px; border-radius: 20px; font-size: 11px;
+  }
+  .mockup-row span.badge-terra {
+    background: rgba(200,109,81,0.25); color: #ffab91; padding: 4px 10px; border-radius: 20px; font-size: 11px;
+  }
+
+  .mockup-grid-2 {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .mockup-stat-box {
+    background: rgba(249,249,247,0.08);
+    border: 1px solid rgba(212,175,55,0.3);
+    padding: 16px; border-radius: 4px; text-align: center;
+  }
+  .mockup-stat-box strong {
+    display: block; font-family: 'Kanit', sans-serif; font-size: 26px; color: var(--gold); line-height: 1; margin-bottom: 4px;
+  }
+  .mockup-stat-box span {
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(249,249,247,0.8);
+  }
+
+  .visual-badge {
+    position: absolute; bottom: 20px; left: 20px; right: 20px;
+    background: rgba(27,42,74,0.92);
+    backdrop-filter: blur(10px);
+    padding: 16px 20px;
+    border: 1px solid rgba(212,175,55,0.4);
+    border-radius: 4px;
+    z-index: 3;
+    color: var(--cream);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .visual-badge-text h5 { font-size: 15px; color: var(--cream); margin-bottom: 2px; }
+  .visual-badge-text span { font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+
+  @media(max-width:960px){
+    .pillar-grid, .pillar-grid.reverse { grid-template-columns: 1fr; gap: 50px; }
+    .pillar-grid.reverse .pillar-text { order: 1; }
+    .pillar-grid.reverse .pillar-visual { order: 2; }
+  }
+
+  /* PACKAGE BUILDER / PROPOSAL BANNER */
+  .package-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, #111b30 100%);
+    color: var(--cream);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(212,175,55,0.3);
+  }
+  .package-banner h2 { color: var(--cream); font-size: clamp(34px, 4.5vw, 52px); margin-bottom: 20px; max-width: 760px; margin-left: auto; margin-right: auto; }
+  .package-banner p { font-size: 18px; opacity: 0.85; max-width: 620px; margin: 0 auto 36px; }
+  .btn {
+    padding: 18px 36px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px; transition: all .25s; display: inline-block; cursor: pointer; border: none;
+  }
+  .btn-primary { background: var(--terracotta); color: var(--cream); box-shadow: var(--shadow-md); }
+  .btn-primary:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+  .btn-outline { border: 1px solid var(--cream); color: var(--cream); background: transparent; }
+  .btn-outline:hover { background: var(--cream); color: var(--navy); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy); color: rgba(249,249,247,0.6);
+    padding: 36px 0; font-size: 13px;
+    border-top: 1px solid rgba(249,249,247,0.1);
+  }
+  footer .fname { font-family: 'Kanit', sans-serif; color: var(--cream); font-weight: 600; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER & NAVIGATION -->
+<header id="navbar">
+  <nav class="wrap">
+    <a href="index.html" class="logo">CRAIG <span>&</span> CO.</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="navcta" href="contact.html">Get a Proposal</a>
+  </nav>
+</header>
+
+<!-- SECTION 1: PAGE HEADER -->
+<section class="page-header">
+  <div class="header-bg-typography">SERVICES</div>
+  <div class="header-rings">
+    <div class="ripple"></div><div class="ripple"></div><div class="ripple"></div>
+  </div>
+  <div class="wrap header-content">
+    <div class="eyebrow">Experiential &amp; Corporate Solutions</div>
+    <h1>Our Core <em>Services</em></h1>
+    <p class="subheadline">End-to-end bespoke solutions designed to connect people, strengthen teams, and elevate brands.</p>
+  </div>
+</section>
+
+<!-- QUICK JUMP PILLAR NAVIGATION -->
+<div class="quick-nav">
+  <div class="wrap">
+    <div class="quick-nav-list">
+      <a href="#pillar-training" class="quick-tab active"><span>01.</span> Training &amp; Consulting</a>
+      <a href="#pillar-operations" class="quick-tab"><span>02.</span> Operation &amp; Management</a>
+      <a href="#pillar-travel" class="quick-tab"><span>03.</span> Travel &amp; Leisure</a>
+      <a href="#pillar-events" class="quick-tab"><span>04.</span> Entertainment &amp; Sports</a>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: SERVICE PILLAR 1 - TRAINING & CONSULTING (TEXT LEFT / MOCKUP RIGHT) -->
+<section class="service-pillar" id="pillar-training">
+  <div class="wrap">
+    <div class="pillar-grid">
+      <div class="pillar-text">
+        <div class="pillar-header">
+          <div class="pillar-num">01</div>
+          <h2 class="pillar-title">Training &amp; Consulting</h2>
+          <p class="pillar-desc">Customized learning frameworks, immersive retreats, and interactive workshops designed to unlock human potential, foster executive leadership, and elevate team performance.</p>
+        </div>
+
+        <div class="service-items-list">
+          
+          <div class="service-item-card active">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">L&amp;M</span> Leadership &amp; Management</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Building strong managerial capabilities and strategic direction. We equip leaders with actionable problem-solving frameworks, executive presence, and modern decision-making methodologies.
+              <div><a href="contact.html" class="item-cta">Inquire About Leadership Training &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">M&amp;G</span> Mindset &amp; Personal Growth</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Fostering resilience, self-reflection, and personal development. Guided experiential sessions that cultivate emotional agility, purpose alignment, and sustainable personal high-performance.
+              <div><a href="contact.html" class="item-cta">Inquire About Mindset Programs &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">TB</span> Team Building &amp; Collaboration</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Enhancing unity, trust, and cooperative dynamics within teams. High-energy gamified challenges and structured cross-departmental exercises that transform siloed groups into synergistic teams.
+              <div><a href="contact.html" class="item-cta">Inquire About Team Building &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">C&amp;I</span> Communication &amp; Influence</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Developing effective dialogue and persuasive leadership through art and interaction. Innovative workshops using artistic mediums to enhance active listening, clarity, and empathetic influence.
+              <div><a href="contact.html" class="item-cta">Inquire About Communication Modules &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">CX</span> Customer Experience &amp; Business Strategy</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Aligning internal performance with external brand value. We train front-line teams and executives on customer journey mapping, service excellence, and commercial brand representation.
+              <div><a href="contact.html" class="item-cta">Inquire About CX Strategy &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">W&amp;P</span> Wellness &amp; Performance</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Integrating stress reduction, emotional release, and soundbath sessions. Holistic workplace programs addressing energy management, mental clarity, and somatic burnout prevention.
+              <div><a href="contact.html" class="item-cta">Inquire About Corporate Wellness &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">NET</span> Corporate Networking (Golf / Activities)</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Curating executive networking opportunities and relationship-building events. Purposeful recreational formats designed to strengthen C-suite relationships and client partnerships.
+              <div><a href="contact.html" class="item-cta">Inquire About Executive Networking &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mockup Right -->
+      <div class="pillar-visual">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Academy Module // TC-01</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Executive Training Matrix</h3>
+            <p>Interactive workshop and team training environments curated for leadership excellence and emotional resilience.</p>
+            <div class="mockup-list">
+              <div class="mockup-row"><span>Leadership &amp; Mindset Synergy</span> <span class="badge">98% Impact</span></div>
+              <div class="mockup-row"><span>Soundbath &amp; Somatic Wellness</span> <span class="badge">Holistic</span></div>
+              <div class="mockup-row"><span>Cross-Functional Collaboration</span> <span class="badge-terra">Synergy</span></div>
+            </div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>Workshop &amp; Training Environments</h5><span>Human-Centered Development</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: SERVICE PILLAR 2 - OPERATION & MANAGEMENT (ALTERNATING: MOCKUP LEFT / TEXT RIGHT) -->
+<section class="service-pillar" id="pillar-operations">
+  <div class="wrap">
+    <div class="pillar-grid reverse">
+      
+      <!-- Mockup Left -->
+      <div class="pillar-visual theme-ops">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Operations Hub // OM-02</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Flawless Execution Roadmap</h3>
+            <p>Showcasing professional execution, vendor coordination, and procurement mastery for complex corporate initiatives.</p>
+            <div class="mockup-grid-2">
+              <div class="mockup-stat-box"><strong>100%</strong><span>Process Optimization</span></div>
+              <div class="mockup-stat-box"><strong>Vetted</strong><span>Partner Network</span></div>
+            </div>
+            <div class="mockup-row" style="margin-top:10px;"><span>Procurement &amp; Strategic Alliances</span> <span class="badge">End-to-End</span></div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>Professional Execution &amp; Strategy</h5><span>Operational Excellence</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#ffab91;box-shadow:0 0 10px #ffab91;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Right -->
+      <div class="pillar-text">
+        <div class="pillar-header">
+          <div class="pillar-num">02</div>
+          <h2 class="pillar-title">Operation &amp; Management</h2>
+          <p class="pillar-desc">Rigorous project governance, streamlined process workflows, and dependable vendor coordination that ensure seamless end-to-end execution for any corporate requirement.</p>
+        </div>
+
+        <div class="service-items-list">
+          
+          <div class="service-item-card active">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">PM</span> Project Management</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Overseeing corporate initiatives from concept to delivery. Dedicated project directors manage timelines, resource allocation, budget compliance, and milestone verification.
+              <div><a href="contact.html" class="item-cta">Inquire About Project Management &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">OPT</span> Process Optimization</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Streamlining workflows for maximum efficiency and productivity. We audit existing corporate event and procurement processes to eliminate friction and reduce operational overhead.
+              <div><a href="contact.html" class="item-cta">Inquire About Process Optimization &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">VPM</span> Vendor &amp; Partner Management</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Coordinating reliable third-party suppliers and stakeholders. We leverage our extensive curated network of premium venues, technical teams, and hospitality partners across Thailand.
+              <div><a href="contact.html" class="item-cta">Inquire About Vendor Management &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">OPS</span> Event &amp; Experience Operations</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Flawless on-site execution for all scales of corporate gatherings. Our experienced on-site managers handle logistics, stage direction, guest flow, and contingency management.
+              <div><a href="contact.html" class="item-cta">Inquire About Event Operations &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">SP</span> Strategic Partnerships</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Building alliances that add long-term value to business goals. We facilitate high-level co-branding opportunities, institutional collaborations, and cross-sector corporate synergies.
+              <div><a href="contact.html" class="item-cta">Inquire About Strategic Alliances &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">PROC</span> Corporate Procurement Services</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Sourcing high-quality materials and essentials for corporate needs. From customized executive gifting and branded collateral to specialized technical equipment and event installations.
+              <div><a href="contact.html" class="item-cta">Inquire About Procurement Services &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: SERVICE PILLAR 3 - TRAVEL & LEISURE (TEXT LEFT / MOCKUP RIGHT) -->
+<section class="service-pillar" id="pillar-travel">
+  <div class="wrap">
+    <div class="pillar-grid">
+      <div class="pillar-text">
+        <div class="pillar-header">
+          <div class="pillar-num">03</div>
+          <h2 class="pillar-title">Travel &amp; Leisure</h2>
+          <p class="pillar-desc">Bespoke group itineraries, executive retreats, and luxury destination management across Thailand and key international locations, delivered with high-touch VIP hospitality.</p>
+        </div>
+
+        <div class="service-items-list">
+          
+          <div class="service-item-card active">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">BTP</span> Bespoke Travel Planning</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Customized group itineraries tailored to corporate objectives. We design end-to-end travel schedules balancing productive corporate sessions with cultural exploration and relaxation.
+              <div><a href="contact.html" class="item-cta">Inquire About Travel Planning &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">LUX</span> Luxury Travel Experiences</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Premium hospitality and exclusive destination management. Access to private resorts, chartered yacht excursions, fine dining buyouts, and VIP cultural immersions.
+              <div><a href="contact.html" class="item-cta">Inquire About Luxury Travel &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">RET</span> Corporate Retreats</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Immersive getaways designed for team bonding and strategic alignment. Purposeful multi-day retreats in serene destinations that rejuvenate staff and align company vision.
+              <div><a href="contact.html" class="item-cta">Inquire About Corporate Retreats &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">GOLF</span> Golf Travel Experiences</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Specialized itineraries for corporate golf enthusiasts and executives. Seamless booking at championship courses, luxury clubhouse hospitality, and private tournament coordination.
+              <div><a href="contact.html" class="item-cta">Inquire About Golf Travel &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">LEIS</span> Leisure Activities</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Engaging group excursions and recreational programs. From private island catamaran trips and eco-adventures to farm village days and wellness spa integrations.
+              <div><a href="contact.html" class="item-cta">Inquire About Leisure Activities &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">VIP</span> VIP Travel Services</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              High-touch concierge and elite support for senior executives. Airport fast-track transfers, private security coordination, luxury chauffeur fleets, and 24/7 dedicated handler support.
+              <div><a href="contact.html" class="item-cta">Inquire About VIP Concierge &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">VISA</span> Visa &amp; Work Permit</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Administrative support and hassle-free documentation management. We handle corporate group visa processing, work permit facilitation, and immigration liaison for smooth international travel.
+              <div><a href="contact.html" class="item-cta">Inquire About Visa Support &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mockup Right -->
+      <div class="pillar-visual theme-travel">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Bespoke Travel // TL-03</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Luxury Retreat Concierge</h3>
+            <p>Highlighting luxury travel, exclusive resort management, and executive getaways across Thailand &amp; global hubs.</p>
+            <div class="mockup-list">
+              <div class="mockup-row"><span>Phuket &amp; Samui Executive Retreats</span> <span class="badge">VIP Access</span></div>
+              <div class="mockup-row"><span>Championship Golf Itineraries</span> <span class="badge">Curated</span></div>
+              <div class="mockup-row"><span>Visa &amp; Fast-Track Concierge</span> <span class="badge-terra">Seamless</span></div>
+            </div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>Luxury Travel &amp; Corporate Retreats</h5><span>Destination Management</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: SERVICE PILLAR 4 - ENTERTAINMENT EVENTS & SPORTS (ALTERNATING: MOCKUP LEFT / TEXT RIGHT) -->
+<section class="service-pillar" id="pillar-events">
+  <div class="wrap">
+    <div class="pillar-grid reverse">
+      
+      <!-- Mockup Left -->
+      <div class="pillar-visual theme-events">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Entertainment Stage // EE-04</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Gala &amp; Sports Activation</h3>
+            <p>Featuring dynamic party settings, top-tier artist booking, and high-energy sports &amp; brand activations.</p>
+            <div class="mockup-grid-2">
+              <div class="mockup-stat-box"><strong>VIP</strong><span>Absolute Discretion</span></div>
+              <div class="mockup-stat-box"><strong>A-List</strong><span>Artist Booking</span></div>
+            </div>
+            <div class="mockup-row" style="margin-top:10px;"><span>Golf Tournaments &amp; Brand Activations</span> <span class="badge">High-Impact</span></div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>Dynamic Celebrations &amp; Sports</h5><span>Creative Direction &amp; Events</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#ffab91;box-shadow:0 0 10px #ffab91;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Right -->
+      <div class="pillar-text">
+        <div class="pillar-header">
+          <div class="pillar-num">04</div>
+          <h2 class="pillar-title">Entertainment Events &amp; Sports</h2>
+          <p class="pillar-desc">Creative event design, high-energy celebrations, elite artist procurement, and sports activations that create unforgettable brand touchpoints and team cohesion.</p>
+        </div>
+
+        <div class="service-items-list">
+          
+          <div class="service-item-card active">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">ECD</span> Event Concept &amp; Design</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Creative direction tailored to brand identity. We craft immersive storytelling, scenic stage architecture, lighting design, and thematic environments that captivate attendees from entry to exit.
+              <div><a href="contact.html" class="item-cta">Inquire About Event Concept &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">CORP</span> Corporate Events</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Company outings, staff parties, and annual celebrations. Comprehensive production for gala dinners, milestone anniversaries, awards nights, and company-wide festivals.
+              <div><a href="contact.html" class="item-cta">Inquire About Corporate Events &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">PVT</span> Private &amp; VIP Events</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Exclusive gatherings managed with absolute discretion. High-end private celebrations, executive dinners, and VIP receptions executed with uncompromising privacy and security.
+              <div><a href="contact.html" class="item-cta">Inquire About VIP Events &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">ENT</span> Entertainment Booking</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Sourcing top-tier performers, artists, and speakers. We manage contracts, technical riders, and stage hospitality for celebrity musicians, keynote speakers, DJs, and live performers.
+              <div><a href="contact.html" class="item-cta">Inquire About Entertainment Booking &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">ACT</span> Brand Activation</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Immersive experiences that drive customer and employee engagement. Interactive pop-up installations, product launches, sponsorship activations, and experiential marketing campaigns.
+              <div><a href="contact.html" class="item-cta">Inquire About Brand Activation &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">SPRT</span> Golf Business &amp; Golf Leisure</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Managing corporate tournaments and golf-centric lifestyle events. Complete tournament management including scoring systems, branded tee gifts, VIP hospitality, and sponsor integrations.
+              <div><a href="contact.html" class="item-cta">Inquire About Golf Events &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGE BUILDER / PROPOSAL BANNER -->
+<section class="package-banner">
+  <div class="wrap">
+    <h2>Ready to combine our service pillars?</h2>
+    <p>Most corporate clients integrate 2 or more disciplines—such as Training with Travel, or Operations with Entertainment—to deliver seamless multi-day experiences.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">Request a Custom Proposal</a>
+      <a href="about.html" class="btn btn-outline">Explore Our About Page</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; width:100%;">
+    <div class="fname">Craig &amp; Co.</div>
+    <div>© 2026 Craig &amp; Co. — Bespoke Experience House Agency</div>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT FOR INTERACTIVE ACCORDIONS & TAB HIGHLIGHTING -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Accordion interaction
+    const itemCards = document.querySelectorAll('.service-item-card');
+    itemCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // If they click the direct link inside, don't toggle
+        if (e.target.tagName.toLowerCase() === 'a') return;
+        
+        // Optional: close other cards in same pillar
+        const parentList = card.closest('.service-items-list');
+        parentList.querySelectorAll('.service-item-card').forEach(c => {
+          if (c !== card) c.classList.remove('active');
+        });
+
+        card.classList.toggle('active');
+      });
+    });
+
+    // Sticky Navbar shadow on scroll
+    const header = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.style.boxShadow = '0 10px 30px rgba(27,42,74,0.08)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+
+    // Quick-jump tab active state on scroll
+    const sections = document.querySelectorAll('section.service-pillar');
+    const navTabs = document.querySelectorAll('.quick-tab');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        const sectionTop = sec.offsetTop;
+        const sectionHeight = sec.clientHeight;
+        if (pageYOffset >= sectionTop - 180) {
+          current = sec.getAttribute('id');
+        }
+      });
+
+      navTabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('href') === '#' + current) {
+          tab.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

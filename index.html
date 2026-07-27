@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craig & Co. — Bespoke Experience House Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A;
+    --gold:#D4AF37;
+    --charcoal:#2C3E50;
+    --cream:#F9F9F7;
+    --terracotta:#C86D51;
+    --cream-2:#f2f0e9;
+    --line: rgba(27,42,74,0.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Kanit', sans-serif;
+    background:var(--cream);
+    color:var(--charcoal);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Kanit', sans-serif;
+    font-weight:600;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  img{display:block; width:100%; height:100%; object-fit:cover;}
+
+  /* Ripple motif - signature element */
+  .ripple{
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.35);
+    pointer-events:none;
+  }
+
+  /* NAV */
+  header {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(249,249,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+  nav.wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 78px;
+  }
+  .logo {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600; font-size: 20px; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+    transition: transform 0.2s ease;
+  }
+  .logo:hover { transform: scale(1.02); }
+  .logo span { color: var(--terracotta); }
+  .navlinks { display:flex; gap:36px; font-size:14px; font-weight:600; letter-spacing:0.02em; text-transform:uppercase; }
+  .navlinks a { position:relative; padding:4px 0; color:var(--charcoal); transition:color .25s; }
+  .navlinks a:hover { color:var(--terracotta); }
+  .navlinks a.active { color:var(--terracotta); }
+  .navlinks a.active::after {
+    content:''; position:absolute; bottom:-2px; left:0; right:0; height:2px;
+    background:var(--terracotta); border-radius:2px;
+  }
+  .navcta {
+    background: var(--navy); color: var(--cream);
+    padding: 12px 24px; border-radius: 2px; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    transition: all .25s;
+    box-shadow: var(--shadow-sm);
+  }
+  .navcta:hover { background: var(--terracotta); color: var(--cream); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  @media(max-width:860px){ .navlinks{display:none;} }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:center;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+    overflow:hidden;
+    padding-top:78px;
+  }
+  .hero-rings{
+    position:absolute; right:-120px; top:50%; transform:translateY(-50%);
+    width:640px; height:640px;
+  }
+  .hero-rings .ripple:nth-child(1){width:640px;height:640px;top:0;left:0;}
+  .hero-rings .ripple:nth-child(2){width:500px;height:500px;top:70px;left:70px;}
+  .hero-rings .ripple:nth-child(3){width:360px;height:360px;top:140px;left:140px;}
+  .hero-rings .ripple:nth-child(4){width:220px;height:220px;top:210px;left:210px; border-color:rgba(200,109,81,0.4);}
+  .hero-content{position:relative; z-index:2; max-width:680px;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--terracotta); margin-bottom:22px;
+  }
+  .eyebrow::before{content:''; width:28px; height:1px; background:var(--terracotta);}
+  .hero h1{
+    font-size:clamp(42px, 6vw, 68px);
+    line-height:1.05;
+    margin-bottom:26px;
+  }
+  .hero h1 em{font-style:italic; color:var(--terracotta);}
+  .hero p.sub{
+    font-size:18px; color:var(--charcoal); opacity:0.85; max-width:520px; margin-bottom:36px;
+  }
+  .btn-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    padding:16px 30px; font-size:14px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+    border-radius:2px; transition:all .25s; display:inline-block;
+  }
+  .btn-primary{background:var(--navy); color:var(--cream);}
+  .btn-primary:hover{background:var(--terracotta);}
+  .btn-outline{border:1px solid var(--navy); color:var(--navy);}
+  .btn-outline:hover{background:var(--navy); color:var(--cream);}
+  .hero-pillars{
+    position:absolute; right:60px; bottom:56px; z-index:2;
+    display:flex; gap:24px; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy);
+  }
+  .hero-pillars span{padding-left:14px; border-left:2px solid var(--terracotta);}
+  @media(max-width:860px){ .hero-rings{display:none;} .hero-pillars{position:static; margin-top:60px; flex-wrap:wrap;} }
+
+  section{padding:120px 0; position:relative;}
+  .section-label{
+    font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--terracotta);
+    margin-bottom:18px; display:block;
+  }
+  .section-title{font-size:clamp(32px,4vw,46px); margin-bottom:20px; max-width:640px;}
+  .section-desc{font-size:17px; opacity:0.8; max-width:560px;}
+
+  /* ABOUT */
+  .about{background:var(--navy); color:var(--cream);}
+  .about .section-title{color:var(--cream);}
+  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:70px; align-items:center; margin-top:50px;}
+  .about p{color:rgba(249,249,247,0.82); font-size:16.5px; margin-bottom:20px;}
+  .about-visual{
+    aspect-ratio:4/5; position:relative; border:1px solid rgba(212,175,55,0.3);
+  }
+  .about-visual-inner{
+    position:absolute; inset:18px;
+    background: radial-gradient(circle at 30% 30%, rgba(212,175,55,0.22), transparent 60%),
+                linear-gradient(160deg, #24365c, #131f38);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .about-visual-inner .ripple{border-color:rgba(212,175,55,0.5);}
+  .about-visual-inner .ripple:nth-child(1){width:70%;height:70%;}
+  .about-visual-inner .ripple:nth-child(2){width:48%;height:48%;}
+  .about-visual-inner .ripple:nth-child(3){width:26%;height:26%; background:var(--gold); opacity:0.9;}
+  @media(max-width:860px){ .about-grid{grid-template-columns:1fr;} }
+
+  /* SERVICES */
+  .services{background:var(--cream);}
+  .service-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; border:1px solid var(--line);}
+  .service-card{
+    background:var(--cream); padding:44px 40px; border:1px solid var(--line);
+    transition: background .3s;
+  }
+  .service-card:hover{background:var(--cream-2);}
+  .service-icon{
+    width:44px;height:44px; border-radius:50%; border:1px solid var(--terracotta);
+    display:flex; align-items:center; justify-content:center; margin-bottom:24px;
+    color:var(--terracotta); font-family:'Kanit', sans-serif; font-style:italic; font-size:18px;
+  }
+  .service-card h3{font-size:22px; margin-bottom:14px;}
+  .service-card ul{list-style:none; font-size:14.5px; opacity:0.78; column-count:1;}
+  .service-card li{padding:5px 0; border-top:1px solid var(--line);}
+  .service-card li:first-child{border-top:none;}
+  @media(max-width:860px){ .service-grid{grid-template-columns:1fr;} }
+
+  /* TOPIC IDEAS */
+  .topics{background:var(--cream-2);}
+  .topic-cloud{display:flex; flex-wrap:wrap; gap:12px; margin-top:44px;}
+  .topic-pill{
+    padding:11px 20px; border:1px solid var(--navy); border-radius:30px;
+    font-size:14px; font-weight:600; color:var(--navy); background:transparent;
+    transition:all .25s;
+  }
+  .topic-pill:hover{background:var(--navy); color:var(--cream);}
+
+  /* PORTFOLIO */
+  .portfolio{background:var(--cream);}
+  .gallery-tabs{display:flex; gap:10px; flex-wrap:wrap; margin:40px 0 36px;}
+  .tab{
+    font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    padding:10px 18px; border:1px solid var(--line); cursor:default; color:var(--charcoal); opacity:0.7;
+  }
+  .tab.active{background:var(--navy); color:var(--cream); border-color:var(--navy); opacity:1;}
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:170px; gap:10px;
+  }
+  .gallery-grid div{
+    background:linear-gradient(145deg,#dfe3ea,#c9ccd6);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Kanit', sans-serif; font-style:italic; color:var(--navy); opacity:0.45; font-size:14px;
+    text-align:center; padding:10px;
+  }
+  .gallery-grid div:nth-child(3n+1){background:linear-gradient(145deg,#e7ded0,#cdbfa3);}
+  .gallery-grid div:nth-child(4n+2){background:linear-gradient(145deg,#e3d8d2,#c8a691);}
+  .gallery-grid div.big{grid-column:span 2; grid-row:span 2;}
+  @media(max-width:860px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} .gallery-grid div.big{grid-column:span 2; grid-row:span 1;} }
+
+  .testimonial{margin-top:70px; border-top:1px solid var(--line); padding-top:50px; max-width:760px;}
+  .testimonial p{font-family:'Kanit', sans-serif; font-size:26px; font-style:italic; color:var(--navy); line-height:1.5; margin-bottom:20px;}
+  .testimonial cite{font-style:normal; font-size:13px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; opacity:0.6;}
+
+  /* CLIENTS */
+  /* CLIENTS & PARTNERS INFINITE CIRCULAR MARQUEE */
+  .clients{background:var(--navy); padding:100px 0; overflow:hidden; position:relative;}
+  .clients .section-label{color:var(--gold);}
+  .clients h2{color:var(--cream);}
+  
+  .marquee-wrapper {
+    position: relative; width: 100%; overflow: hidden; margin-top: 56px;
+    display: flex; flex-direction: column; gap: 32px; padding: 20px 0;
+  }
+  .marquee-wrapper::before, .marquee-wrapper::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 150px; z-index: 5; pointer-events: none;
+  }
+  .marquee-wrapper::before { left: 0; background: linear-gradient(90deg, var(--navy) 0%, rgba(27,42,74,0) 100%); }
+  .marquee-wrapper::after { right: 0; background: linear-gradient(270deg, var(--navy) 0%, rgba(27,42,74,0) 100%); }
+  
+  .marquee-track { display: flex; align-items: center; gap: 65px; width: max-content; }
+  .track-left { animation: scrollLeft 45s linear infinite; }
+  .track-right { animation: scrollRight 40s linear infinite; }
+  .track-left-2 { animation: scrollLeft 50s linear infinite; }
+  .marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
+  
+  @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+  .brand-logo-item {
+    display: flex; align-items: center; gap: 10px; padding: 8px 16px; font-size: 21px;
+    color: rgba(249, 249, 247, 0.45); white-space: nowrap; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default; flex-shrink: 0; user-select: none;
+  }
+  .brand-logo-item:hover { color: var(--gold); transform: scale(1.12); opacity: 1; z-index: 10; }
+  .logo-style-sans { font-family: 'Kanit', sans-serif; font-weight: 800; letter-spacing: -0.04em; text-transform: uppercase; }
+  .logo-style-serif { font-family: 'Kanit', sans-serif; font-weight: 600; font-style: italic; }
+  .logo-style-bold { font-family: 'Kanit', sans-serif; font-weight: 900; letter-spacing: 0.1em; font-size: 18px; }
+  .logo-style-classic { font-family: 'Kanit', sans-serif; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; font-size: 19px; }
+  .logo-symbol { font-size: 25px; opacity: 0.9; }
+
+  /* CONTACT */
+  .contact{background:var(--cream-2);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; margin-top:50px;}
+  .contact-info .item{margin-bottom:30px;}
+  .contact-info .label{font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--terracotta); margin-bottom:6px;}
+  .contact-info .value{font-size:18px; color:var(--navy); font-weight:600;}
+  form{display:flex; flex-direction:column; gap:18px;}
+  .field label{font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; opacity:0.6; display:block; margin-bottom:8px;}
+  .field input, .field select, .field textarea{
+    width:100%; padding:14px 0; border:none; border-bottom:1px solid var(--navy);
+    background:transparent; font-family:'Kanit',sans-serif; font-size:15px; color:var(--charcoal);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-bottom-color:var(--terracotta);}
+  .field textarea{resize:vertical; min-height:70px;}
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .submit-btn{
+    margin-top:10px; align-self:flex-start;
+    background:var(--navy); color:var(--cream); padding:16px 34px; font-size:14px; font-weight:700;
+    letter-spacing:0.03em; text-transform:uppercase; border:none; cursor:pointer; transition:background .25s;
+  }
+  .submit-btn:hover{background:var(--terracotta);}
+  @media(max-width:860px){ .contact-grid{grid-template-columns:1fr;} .row2{grid-template-columns:1fr;} }
+
+  footer{
+    background:var(--navy); color:rgba(249,249,247,0.6);
+    padding:36px 0; font-size:13px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+  footer .fname{font-family:'Kanit', sans-serif; color:var(--cream); font-weight:600;}
+</style>
+</head>
+<body>
+
+<header id="navbar">
+  <nav class="wrap">
+    <a href="index.html" class="logo">CRAIG <span>&</span> CO.</a>
+    <div class="navlinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="navcta" href="contact.html">Get a Proposal</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-rings">
+    <div class="ripple"></div><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div>
+  </div>
+  <div class="wrap hero-content">
+    <div class="eyebrow">Bespoke Experience House Agency</div>
+    <h1>Crafting purpose‑driven events &amp; <em>immersive</em> experiences.</h1>
+    <p class="sub">End‑to‑end event management and experiential services for corporate clients and premium brands — from concept and planning through on‑site execution, across Thailand and key destinations.</p>
+    <div class="btn-row">
+      <a href="services.html" class="btn btn-primary">Explore Our Services</a>
+      <a href="contact.html" class="btn btn-outline">Get a Proposal</a>
+    </div>
+  </div>
+  <div class="hero-pillars">
+    <span>Experience</span><span>Excellence</span><span>Results</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="section-label">About Craig &amp; Co.</span>
+    <h2 class="section-title">We connect organizations, teams, and brands.</h2>
+    <div class="about-grid">
+      <div>
+        <p>We specialize in corporate event management and experiential services for team building, company outings, staff parties, corporate activations, training programs, and corporate leisure travel.</p>
+        <p>Serving corporate and premium brand clients, we deliver end‑to‑end solutions from concept and planning to on‑site execution — with strong expertise in corporate group travel and experience design.</p>
+        <p>We ensure seamless coordination, high‑quality delivery, and events that strengthen engagement, culture, and brand alignment.</p>
+        <a href="about.html" class="btn btn-outline" style="margin-top: 14px; border-color: rgba(249,249,247,0.4); color: var(--cream);">Discover Our Philosophy &amp; Workshops &rarr;</a>
+      </div>
+      <div class="about-visual">
+        <div class="about-visual-inner">
+          <div class="ripple"></div><div class="ripple"></div><div class="ripple"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-title">Our Core Services</h2>
+    <p class="section-desc">Experience design and event delivery across four disciplines built for corporate clients.</p>
+    <a href="services.html" class="btn btn-outline" style="margin-top:14px; margin-bottom: 24px; border-color:var(--navy); color:var(--navy);">View Comprehensive Services &rarr;</a>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">Tr</div>
+        <h3>Training &amp; Consulting</h3>
+        <ul>
+          <li>Leadership &amp; Management</li>
+          <li>Mindset &amp; Personal Growth</li>
+          <li>Team Building &amp; Collaboration</li>
+          <li>Communication &amp; Influence</li>
+          <li>Wellness &amp; Performance</li>
+          <li>Corporate Networking (Golf / Activities)</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">Op</div>
+        <h3>Operation &amp; Management</h3>
+        <ul>
+          <li>Project Management</li>
+          <li>Process Optimization</li>
+          <li>Vendor &amp; Partner Management</li>
+          <li>Event &amp; Experience Operations</li>
+          <li>Strategic Partnerships</li>
+          <li>Corporate Procurement Services</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">Tv</div>
+        <h3>Travel &amp; Leisure</h3>
+        <ul>
+          <li>Bespoke Travel Planning</li>
+          <li>Luxury Travel Experiences</li>
+          <li>Corporate Retreats</li>
+          <li>Golf Travel Experiences</li>
+          <li>VIP Travel Services</li>
+          <li>Visa &amp; Work Permit</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">Ev</div>
+        <h3>Entertainment, Events &amp; Sports</h3>
+        <ul>
+          <li>Event Concept &amp; Design</li>
+          <li>Corporate Events</li>
+          <li>Private &amp; VIP Events</li>
+          <li>Entertainment Booking</li>
+          <li>Brand Activation</li>
+          <li>Golf Business &amp; Leisure</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPIC IDEAS -->
+<section class="topics">
+  <div class="wrap">
+    <span class="section-label">Customization</span>
+    <h2 class="section-title">Topic Ideas &amp; Workshops</h2>
+    <p class="section-desc">A growing library of formats we tailor to your team and culture.</p>
+    <div class="topic-cloud">
+      <span class="topic-pill">Design Thinking</span>
+      <span class="topic-pill">Project Management</span>
+      <span class="topic-pill">Emotional Release &amp; Stress Reduction</span>
+      <span class="topic-pill">Corporate AI</span>
+      <span class="topic-pill">Career Path</span>
+      <span class="topic-pill">Self‑Reflection &amp; Expression</span>
+      <span class="topic-pill">Art Therapy</span>
+      <span class="topic-pill">Team Building Games</span>
+      <span class="topic-pill">Communication Through Art</span>
+      <span class="topic-pill">Life Balance Awareness</span>
+      <span class="topic-pill">Sales Training</span>
+      <span class="topic-pill">Personal Branding</span>
+      <span class="topic-pill">Public Speaking</span>
+      <span class="topic-pill">Financial Training</span>
+      <span class="topic-pill">And much more…</span>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <span class="section-label">Client Portraits</span>
+    <h2 class="section-title">A look at recent experiences</h2>
+    <a href="portfolio.html" class="btn btn-outline" style="margin-top:10px; margin-bottom: 24px; border-color:var(--navy); color:var(--navy);">Explore All 12+ Interactive Client Portraits &rarr;</a>
+    <div class="gallery-tabs">
+      <div class="tab active">Team Building &amp; Soundbath</div>
+      <div class="tab">Farm &amp; Outdoor Activities</div>
+      <div class="tab">Fun Run &amp; Sports</div>
+      <div class="tab">Company Party &amp; Gala</div>
+    </div>
+    <div class="gallery-grid">
+      <div class="big">Team Building &amp; Soundbath</div>
+      <div>Company Outing</div>
+      <div>Fun Run</div>
+      <div>Gala Night</div>
+      <div>Wellness Session</div>
+      <div>Farm Village Day</div>
+      <div>Sports Activation</div>
+      <div>Company Party</div>
+    </div>
+    <div class="testimonial">
+      <p>"Craig & Co. brought our company retreat to life — from concept to execution, every detail reflected our culture."</p>
+      <cite>— Corporate Client, Energy Sector</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" id="clients">
+  <div class="wrap">
+    <span class="section-label">Trusted By</span>
+    <h2>Clients &amp; Partners</h2>
+  </div>
+  <div class="marquee-wrapper">
+    <!-- Row 1: Scrolling Left -->
+    <div class="marquee-track track-left">
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">⚡</span> PTT GROUP</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🏦</span> SCB Banking</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛢️</span> CHEVRON</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🌐</span> HSBC</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">📱</span> HUAWEI</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛡️</span> UNDER ARMOUR</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🎓</span> Kasetsart Univ.</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🏛️</span> CHULALONGKORN</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🌱</span> ECOLAB</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">⚙️</span> EMERSON</div>
+      <!-- Duplicated for seamless loop -->
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">⚡</span> PTT GROUP</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🏦</span> SCB Banking</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛢️</span> CHEVRON</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🌐</span> HSBC</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">📱</span> HUAWEI</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛡️</span> UNDER ARMOUR</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🎓</span> Kasetsart Univ.</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🏛️</span> CHULALONGKORN</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🌱</span> ECOLAB</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">⚙️</span> EMERSON</div>
+    </div>
+    
+    <!-- Row 2: Scrolling Right -->
+    <div class="marquee-track track-right">
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">👑</span> PRADA MILANO</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🚢</span> BORR DRILLING</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">⚡</span> VANTRIS ENERGY</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">📈</span> SET Thailand</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🍽️</span> GRIFFITH FOODS</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🏫</span> NIST SCHOOL</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛡️</span> THAI LIFE</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">💼</span> Eastspring</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🌟</span> AXA GLOBAL</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🚜</span> CNH INDUSTRIAL</div>
+      <!-- Duplicated for seamless loop -->
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">👑</span> PRADA MILANO</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🚢</span> BORR DRILLING</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">⚡</span> VANTRIS ENERGY</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">📈</span> SET Thailand</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🍽️</span> GRIFFITH FOODS</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🏫</span> NIST SCHOOL</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛡️</span> THAI LIFE</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">💼</span> Eastspring</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🌟</span> AXA GLOBAL</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🚜</span> CNH INDUSTRIAL</div>
+    </div>
+
+    <!-- Row 3: Scrolling Left -->
+    <div class="marquee-track track-left-2">
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">📊</span> SAS ANALYTICS</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🛞</span> YOKOHAMA</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">⚓</span> Sapura Marine</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">💨</span> LINDE GASES</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">📈</span> ALPHA CAPITAL</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🐘</span> Amazing Thailand</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🏦</span> KRUNGSRI AUTO</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🎓</span> SRIPATUM UNIV.</div>
+      <!-- Duplicated for seamless loop -->
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">📊</span> SAS ANALYTICS</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🛞</span> YOKOHAMA</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">⚓</span> Sapura Marine</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">💨</span> LINDE GASES</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">📈</span> ALPHA CAPITAL</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🐘</span> Amazing Thailand</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🏦</span> KRUNGSRI AUTO</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🎓</span> SRIPATUM UNIV.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="section-label">Let's Connect</span>
+    <h2 class="section-title">Let's create something memorable together.</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="item">
+          <div class="label">Email</div>
+          <div class="value">contactcraigandco@gmail.com</div>
+        </div>
+        <div class="item">
+          <div class="label">Bank — Wanita</div>
+          <div class="value">+66 95 656 2955</div>
+        </div>
+        <div class="item">
+          <div class="label">Film — Nattinan</div>
+          <div class="value">+66 90 974 3215</div>
+        </div>
+      </div>
+      <form onsubmit="return false;">
+        <div class="row2">
+          <div class="field"><label>Company Name</label><input type="text" placeholder="Your company"></div>
+          <div class="field"><label>Contact Name</label><input type="text" placeholder="Your name"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+          <div class="field"><label>Phone</label><input type="tel" placeholder="+66"></div>
+        </div>
+        <div class="field">
+          <label>Service Interested In</label>
+          <select>
+            <option>Training &amp; Consulting</option>
+            <option>Operation &amp; Management</option>
+            <option>Travel &amp; Leisure</option>
+            <option>Entertainment Events &amp; Sports</option>
+          </select>
+        </div>
+        <div class="field"><label>Message</label><textarea placeholder="Tell us about your event..."></textarea></div>
+        <button class="submit-btn" type="submit">Submit Proposal Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; width:100%;">
+    <div class="fname">Craig &amp; Co.</div>
+    <div>© 2026 Craig &amp; Co. — Bespoke Experience House Agency</div>
+  </div>
+</footer>
+
+</body>
+</html>

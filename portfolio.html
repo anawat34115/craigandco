@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Portraits & Gallery — Craig & Co. | Bespoke Experience House Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #253963;
+    --blue-accent: #0d6efd;
+    --gold: #D4AF37;
+    --gold-light: #fef9e7;
+    --orange: #ff5722;
+    --orange-light: #fff0eb;
+    --charcoal: #2C3E50;
+    --grey-light: #64748b;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --cream: #F9F9F7;
+    --terracotta: #C86D51;
+    --cream-2: #f2f0e9;
+    --line: rgba(27,42,74,0.12);
+    --line-light: rgba(249,249,247,0.15);
+    --shadow-sm: 0 4px 12px rgba(27,42,74,0.05);
+    --shadow-md: 0 12px 28px rgba(27,42,74,0.08);
+    --shadow-lg: 0 20px 48px rgba(27,42,74,0.14);
+  }
+  
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family: 'Kanit', sans-serif;
+    background: var(--bg-main);
+    color: var(--charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, .display {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1220px; margin:0 auto; padding:0 32px; }
+
+  /* Ripple motif */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.35);
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+
+  /* NAV */
+  header {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(249,249,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+  nav.wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 78px;
+  }
+  .logo {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600; font-size: 20px; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+    transition: transform 0.2s ease;
+  }
+  .logo:hover { transform: scale(1.02); }
+  .logo span { color: var(--terracotta); }
+  .navlinks { display:flex; gap:36px; font-size:14px; font-weight:600; letter-spacing:0.02em; text-transform:uppercase; }
+  .navlinks a { position:relative; padding:4px 0; color:var(--charcoal); transition:color .25s; }
+  .navlinks a:hover { color:var(--terracotta); }
+  .navlinks a.active { color:var(--terracotta); }
+  .navlinks a.active::after {
+    content:''; position:absolute; bottom:-2px; left:0; right:0; height:2px;
+    background:var(--terracotta); border-radius:2px;
+  }
+  .navcta {
+    background: var(--navy); color: var(--cream);
+    padding: 12px 24px; border-radius: 2px; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    transition: all .25s;
+    box-shadow: var(--shadow-sm);
+  }
+  .navcta:hover { background: var(--terracotta); color: var(--cream); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  @media(max-width:860px){ .navlinks{display:none;} }
+
+  /* SECTION 1: PAGE HEADER (HERO) */
+  .page-header {
+    position: relative;
+    padding: 160px 0 100px;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .header-bg-typography {
+    position: absolute;
+    right: -2%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(100px, 18vw, 240px);
+    font-weight: 600;
+    color: rgba(27,42,74,0.035);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+  .header-rings {
+    position: absolute;
+    right: 15%;
+    top: -10%;
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+  }
+  .header-rings .ripple:nth-child(1) { width: 500px; height: 500px; top: 0; left: 0; opacity: 0.6; }
+  .header-rings .ripple:nth-child(2) { width: 360px; height: 360px; top: 70px; left: 70px; border-color: rgba(200,109,81,0.3); }
+  .header-rings .ripple:nth-child(3) { width: 220px; height: 220px; top: 140px; left: 140px; }
+  
+  .header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 24px;
+  }
+  .eyebrow::before {
+    content: ''; width: 28px; height: 1.5px; background: var(--terracotta);
+  }
+  .page-header h1 {
+    font-size: clamp(42px, 5.5vw, 64px);
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--navy);
+  }
+  .page-header h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+    font-weight: 400;
+  }
+  .page-header .subheadline {
+    font-size: clamp(17px, 2.2vw, 21px);
+    color: var(--charcoal);
+    opacity: 0.85;
+    line-height: 1.6;
+    max-width: 680px;
+    font-weight: 400;
+  }
+
+  /* SECTION 2: AGODA-STYLE FLOATING FILTER & SEARCH TOOLBAR */
+  .toolbar-section {
+    position: relative;
+    z-index: 20;
+    margin-top: -36px;
+    margin-bottom: 40px;
+  }
+  .filter-toolbar {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 32px;
+    box-shadow: 0 16px 40px rgba(14,34,68,0.1);
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .toolbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .toolbar-title { font-size: 18px; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 8px; }
+  .toolbar-stats { font-size: 14px; color: var(--grey-light); font-weight: 500; display: flex; align-items: center; gap: 6px; }
+  .toolbar-stats strong { color: var(--navy); font-weight: 600; }
+
+  .gallery-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .filter-btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px; font-weight: 500;
+    font-family: 'Kanit', sans-serif;
+    background: #f1f5f9;
+    border: 1.5px solid transparent;
+    color: var(--charcoal);
+    cursor: pointer;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .filter-btn:hover {
+    background: #e2e8f0; color: var(--navy); transform: translateY(-1px);
+  }
+  .filter-btn.active {
+    background: var(--navy); color: #fff; border-color: var(--navy);
+    box-shadow: 0 4px 14px rgba(14,34,68,0.25); font-weight: 600;
+  }
+
+  /* SECTION 3: AGODA-STYLE EXPERIENCES MARKETPLACE GRID (3 COLUMNS) */
+  .gallery-section {
+    padding: 20px 0 100px;
+  }
+  .agoda-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  @media(max-width: 1000px) { .agoda-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+  @media(max-width: 650px) { .agoda-grid { grid-template-columns: 1fr; gap: 20px; } }
+
+  /* AGODA EXPERIENCE CARD */
+  .agoda-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(14,34,68,0.05);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+  }
+  .agoda-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(14,34,68,0.12);
+    border-color: #cbd5e1;
+  }
+
+  /* Image Header with Badges */
+  .card-img-wrap {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    background: #1e293b;
+  }
+  .card-img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .agoda-card:hover .card-img { transform: scale(1.08); }
+
+  /* Top Left Badge */
+  .badge-category {
+    position: absolute; top: 16px; left: 16px; z-index: 5;
+    background: rgba(14, 34, 68, 0.88); backdrop-filter: blur(6px); color: #fff;
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  /* Top Right Badge (Agoda Style Rating/Award) */
+  .badge-rating {
+    position: absolute; top: 16px; right: 16px; z-index: 5;
+    background: #ffb703; color: #000; font-weight: 700;
+    padding: 4px 10px; border-radius: 8px; font-size: 13px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex; align-items: center; gap: 4px;
+  }
+
+  /* Card Body */
+  .card-body {
+    padding: 24px;
+    flex: 1;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .card-location {
+    font-size: 13px; color: var(--grey-light); font-weight: 500;
+    display: flex; align-items: center; gap: 6px; margin-bottom: 6px;
+  }
+  .card-title {
+    font-size: 20px; font-weight: 600; color: var(--navy); line-height: 1.35; margin-bottom: 12px;
+    transition: color 0.25s;
+  }
+  .agoda-card:hover .card-title { color: var(--blue-accent); }
+  
+  .card-desc {
+    font-size: 14px; color: var(--charcoal); opacity: 0.8; line-height: 1.6; margin-bottom: 18px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* Agoda Feature Tags / Amenities */
+  .card-tags {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;
+  }
+  .tag-pill {
+    font-size: 12px; font-weight: 500; color: var(--navy); background: #f1f5f9;
+    padding: 4px 10px; border-radius: 6px;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+
+  /* Card Footer (Agoda Booking Bar style) */
+  .card-footer {
+    padding: 16px 24px;
+    background: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-stat {
+    font-size: 13px; font-weight: 600; color: #15803d;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .agoda-btn {
+    background: var(--navy); color: #fff;
+    padding: 8px 18px; border-radius: 8px;
+    font-size: 13px; font-weight: 600;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .agoda-card:hover .agoda-btn {
+    background: var(--orange); transform: translateX(3px);
+  }
+
+  /* SECTION 4: CLIENT NETWORK (MINIMALIST MONOCHROME TYPOGRAPHIC MARQUEE) */
+  .clients-section {
+    background: var(--navy);
+    color: #fff;
+    padding: 100px 0;
+    border-top: 4px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  .clients-section .section-label { color: #ffb703; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 8px; }
+  .clients-section .section-title { color: #fff; font-size: clamp(28px, 3.5vw, 40px); max-width: 700px; margin-bottom: 12px; }
+  
+  .marquee-wrapper {
+    position: relative; width: 100%; overflow: hidden; margin-top: 56px;
+    display: flex; flex-direction: column; gap: 32px; padding: 10px 0;
+  }
+  .marquee-wrapper::before, .marquee-wrapper::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 150px; z-index: 5; pointer-events: none;
+  }
+  .marquee-wrapper::before { left: 0; background: linear-gradient(90deg, var(--navy) 0%, rgba(14,34,68,0) 100%); }
+  .marquee-wrapper::after { right: 0; background: linear-gradient(270deg, var(--navy) 0%, rgba(14,34,68,0) 100%); }
+  
+  .marquee-track { display: flex; align-items: center; gap: 70px; width: max-content; }
+  .track-left { animation: scrollLeft 45s linear infinite; }
+  .track-right { animation: scrollRight 40s linear infinite; }
+  .track-left-2 { animation: scrollLeft 50s linear infinite; }
+  .marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
+  
+  @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+  .brand-logo-item {
+    display: flex; align-items: center; gap: 10px; padding: 8px 16px; font-size: 22px;
+    color: rgba(255, 255, 255, 0.45); white-space: nowrap; transition: all 0.3s ease;
+    cursor: default; flex-shrink: 0; user-select: none; font-weight: 600;
+  }
+  .brand-logo-item:hover { color: #ffb703; transform: scale(1.12); opacity: 1; z-index: 10; }
+  .logo-style-sans { font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; }
+  .logo-style-serif { font-weight: 500; font-style: italic; }
+  .logo-style-bold { font-weight: 800; letter-spacing: 0.08em; font-size: 19px; }
+  .logo-style-classic { font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; font-size: 20px; }
+  .logo-symbol { font-size: 26px; opacity: 0.9; }
+
+  /* AGODA-STYLE MODERN LIGHTBOX MODAL */
+  .lightbox-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(14,34,68,0.85); backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .lightbox-overlay.open { opacity: 1; pointer-events: auto; }
+  .lightbox-box {
+    background: #fff; width: 100%; max-width: 900px;
+    border-radius: 20px; box-shadow: var(--shadow-lg);
+    overflow: hidden; position: relative;
+    transform: scale(0.95); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    max-height: 90vh; display: flex; flex-direction: column;
+  }
+  .lightbox-overlay.open .lightbox-box { transform: scale(1); }
+  
+  .lightbox-header {
+    height: 340px; position: relative; overflow: hidden; background: #1e293b;
+  }
+  .lightbox-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 20px; z-index: 10;
+    background: rgba(0,0,0,0.6); border: none;
+    font-size: 24px; color: #fff; cursor: pointer; width: 42px; height: 42px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .lightbox-close:hover { background: var(--orange); transform: scale(1.05); }
+  
+  .lightbox-body { padding: 36px 40px; overflow-y: auto; display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px; }
+  @media(max-width: 768px) { .lightbox-body { grid-template-columns: 1fr; padding: 24px; } }
+  
+  .lb-left .lb-cat { font-size: 13px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .lb-left .lb-title { font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.25; }
+  .lb-left .lb-client { font-size: 16px; font-weight: 500; color: var(--grey-light); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .lb-left .lb-desc { font-size: 15px; color: var(--charcoal); line-height: 1.7; margin-bottom: 24px; }
+  
+  /* Agoda Booking Widget Sidebar */
+  .lb-sidebar {
+    background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px;
+    display: flex; flex-direction: column; justify-content: space-between; height: fit-content;
+  }
+  .sidebar-price { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
+  .sidebar-badge { background: #dcfce7; color: #166534; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+  .sidebar-meta { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; padding: 16px 0; border-top: 1px dashed #cbd5e1; border-bottom: 1px dashed #cbd5e1; font-size: 14px; }
+  .meta-row { display: flex; justify-content: space-between; color: var(--charcoal); }
+  .meta-row span { font-weight: 600; color: var(--navy); }
+  
+  .btn-book {
+    background: var(--navy); color: #fff; padding: 14px; border-radius: 10px;
+    font-size: 15px; font-weight: 600; text-align: center; display: block; width: 100%;
+    transition: all 0.25s; box-shadow: 0 4px 12px rgba(14,34,68,0.2);
+  }
+  .btn-book:hover { background: var(--orange); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,87,34,0.3); }
+
+  /* CALL TO ACTION BANNER */
+  .cta-banner {
+    background: linear-gradient(135deg, #0e2244 0%, #1a3a6e 100%);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+  }
+  .cta-banner h2 { color: #fff; font-size: clamp(30px, 4vw, 44px); margin-bottom: 16px; }
+  .cta-banner p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; font-weight: 300; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy); color: rgba(249,249,247,0.6);
+    padding: 36px 0; font-size: 13px;
+    border-top: 1px solid rgba(249,249,247,0.1);
+  }
+  footer .fname { font-family: 'Kanit', sans-serif; color: var(--cream); font-weight: 600; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER & NAVIGATION -->
+<header id="navbar">
+  <nav class="wrap">
+    <a href="index.html" class="logo">CRAIG <span>&</span> CO.</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="navcta" href="contact.html">Get a Proposal</a>
+  </nav>
+</header>
+
+<!-- SECTION 1: PAGE HEADER -->
+<section class="page-header">
+  <div class="header-bg-typography">PORTFOLIO</div>
+  <div class="header-rings">
+    <div class="ripple"></div><div class="ripple"></div><div class="ripple"></div>
+  </div>
+  <div class="wrap header-content">
+    <div class="eyebrow">Corporate Experiences Showcase</div>
+    <h1>Client Portraits &amp; <em>Showcase</em></h1>
+    <p class="subheadline">Explore our curated gallery of purpose-driven events, executive soundbath retreats, outdoor farm outings, and unforgettable corporate celebrations across Thailand.</p>
+  </div>
+</section>
+
+<!-- SECTION 2: FLOATING AGODA SEARCH & FILTER TOOLBAR -->
+<section class="toolbar-section">
+  <div class="wrap">
+    <div class="filter-toolbar">
+      <div class="toolbar-header">
+        <div class="toolbar-title">
+          <span>🔍 Filter Corporate Programs</span>
+        </div>
+        <div class="toolbar-stats">
+          <span>⚡ Showing <strong>12+ Active Formats</strong> • Verified 99% Satisfaction Rate</span>
+        </div>
+      </div>
+      <div class="gallery-controls" id="filterControls">
+        <button class="filter-btn active" data-filter="all">🌟 All Programs (12+)</button>
+        <button class="filter-btn" data-filter="soundbath">🧘 Team Building &amp; Soundbath</button>
+        <button class="filter-btn" data-filter="farm">🌲 Farm &amp; Outdoor Activities</button>
+        <button class="filter-btn" data-filter="sports">🏃 Fun Run &amp; Sports Events</button>
+        <button class="filter-btn" data-filter="party">🥂 Company Party &amp; Gala</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: AGODA-STYLE EXPERIENCES MARKETPLACE GRID -->
+<section class="gallery-section">
+  <div class="wrap">
+    <div class="agoda-grid" id="galleryGrid">
+
+      <!-- Card 1: Soundbath -->
+      <div class="agoda-card" data-category="soundbath" data-title="Executive Soundbath & Somatic Healing" data-client="Leading Energy Sector Corporation" data-desc="A tranquil indoor soundbath and mindfulness retreat curated for 120 executives. Guided meditation, Tibetan singing bowls, and collaborative mandala art sessions designed to alleviate workplace stress and restore emotional balance." data-attendees="120 Executives" data-format="Full-Day Retreat" data-outcome="99% Stress Relief">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" alt="Executive Soundbath" class="card-img" loading="lazy">
+          <span class="badge-category">🧘 Team Building</span>
+          <span class="badge-rating">★ 4.9</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Bangkok • Full-Day Retreat</div>
+          <h3 class="card-title">Executive Soundbath &amp; Somatic Healing</h3>
+          <p class="card-desc">A tranquil indoor soundbath and mindfulness retreat curated for 120 executives. Guided meditation, singing bowls, and collaborative art.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🎵 Singing Bowls</span>
+            <span class="tag-pill">🧘 Mindfulness</span>
+            <span class="tag-pill">🎨 Somatic Art</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">✨ 99% Satisfaction</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Outdoor Farm -->
+      <div class="agoda-card" data-category="farm" data-title="Khaoyai Farm Village CSR & Outing" data-client="Sapura Energy / Global Drilling Team" data-desc="An engaging outdoor farm village experience in Nakorn Ratchasima featuring agricultural workshops, school lunch CSR donations, interactive animal encounters, and team-based cooking competitions." data-attendees="180 Participants" data-format="2-Day Outing" data-outcome="High Team Cohesion">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=800&q=80" alt="Khaoyai Farm Village" class="card-img" loading="lazy">
+          <span class="badge-category">🌲 Farm Outing</span>
+          <span class="badge-rating">★ 4.8</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Khaoyai, Nakorn Ratchasima • 2-Day Outing</div>
+          <h3 class="card-title">Khaoyai Farm Village CSR &amp; Outing</h3>
+          <p class="card-desc">An engaging outdoor farm village experience featuring agricultural workshops, school lunch CSR donations, and team cooking competitions.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🌱 CSR Donation</span>
+            <span class="tag-pill">🍳 Cooking Battle</span>
+            <span class="tag-pill">🚜 Farm Tour</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">🤝 180 Staff Engaged</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Fun Run -->
+      <div class="agoda-card" data-category="sports" data-title="Annual 5K Fun Run & Sports Festival" data-client="Vantris Energy" data-desc="A vibrant corporate sports activation and 5K park run bringing together 300+ employees and their families. Included custom finisher medals, warm-up stage choreography, wellness booths, and interactive family zones." data-attendees="350 Runners" data-format="Half-Day Activation" data-outcome="100% Finish Rate">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80" alt="Annual 5K Fun Run" class="card-img" loading="lazy">
+          <span class="badge-category">🏃 Sports Event</span>
+          <span class="badge-rating">★ 5.0</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Benchakitti Park, Bangkok • Half-Day</div>
+          <h3 class="card-title">Annual 5K Fun Run &amp; Sports Festival</h3>
+          <p class="card-desc">A vibrant corporate sports activation and 5K park run bringing together 350+ staff and families with custom medals and wellness booths.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🏅 Finisher Medals</span>
+            <span class="tag-pill">💃 Stage Warmup</span>
+            <span class="tag-pill">🥤 Refreshment Zone</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">⚡ 350 Runners Engaged</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Company Party -->
+      <div class="agoda-card" data-category="party" data-title="50th Anniversary Gala & Handpan Concert" data-client="International Engineering Firm" data-desc="An opulent golden anniversary gala dinner featuring live acoustic handpan performances, custom scenic lighting, luxury table settings, and an interactive awards ceremony celebrating 50 years of corporate excellence." data-attendees="220 Guests" data-format="Gala Night" data-outcome="Unforgettable Evening">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Anniversary Gala" class="card-img" loading="lazy">
+          <span class="badge-category">🥂 Gala Dinner</span>
+          <span class="badge-rating">★ 4.9</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Capella Hotel Bangkok • Evening Gala</div>
+          <h3 class="card-title">50th Anniversary Gala &amp; Handpan Concert</h3>
+          <p class="card-desc">An opulent golden anniversary gala dinner featuring live acoustic handpan performances, custom scenic lighting, and luxury table settings.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🪘 Acoustic Handpan</span>
+            <span class="tag-pill">🏆 Award Ceremony</span>
+            <span class="tag-pill">✨ Scenic Lighting</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">🌟 VIP Luxury Scale</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 5: Somatic Art -->
+      <div class="agoda-card" data-category="soundbath" data-title="Somatic Art Therapy & Sound Immersion" data-client="Financial Banking Institute" data-desc="An experiential communication and art therapy workshop paired with crystal bowl sound baths. Designed to break down departmental silos and foster empathetic leadership among senior financial directors." data-attendees="80 C-Suite Leaders" data-format="Exclusive Workshop" data-outcome="Deep Synergy">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=800&q=80" alt="Somatic Art" class="card-img" loading="lazy">
+          <span class="badge-category">🧘 Team Building</span>
+          <span class="badge-rating">★ 4.9</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Hua Hin Beach Resort • 2-Day Retreat</div>
+          <h3 class="card-title">Somatic Art Therapy &amp; Sound Immersion</h3>
+          <p class="card-desc">An experiential communication and art therapy workshop paired with crystal bowl sound baths to break down departmental silos.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🎨 Art Therapy</span>
+            <span class="tag-pill">🗣️ Silo Busting</span>
+            <span class="tag-pill">🔮 Crystal Bowls</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">💡 80 C-Suite Leaders</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 6: Mangrove CSR -->
+      <div class="agoda-card" data-category="farm" data-title="Mangrove Reforestation & Coastal CSR" data-client="Global Oil & Gas Partner" data-desc="Hands-on environmental conservation day where corporate teams planted over 1,000 mangrove saplings, followed by an outdoor seafood feast and collaborative team reflection." data-attendees="150 Volunteers" data-format="CSR Activation" data-outcome="1,000+ Trees Planted">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Mangrove CSR" class="card-img" loading="lazy">
+          <span class="badge-category">🌲 Coastal CSR</span>
+          <span class="badge-rating">★ 4.8</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Chonburi Coast • Day Outing</div>
+          <h3 class="card-title">Mangrove Reforestation &amp; Coastal CSR</h3>
+          <p class="card-desc">Hands-on environmental conservation day where corporate teams planted over 1,000 mangrove saplings with seafood dining.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🌱 1,000 Trees Planted</span>
+            <span class="tag-pill">🦐 Seafood Feast</span>
+            <span class="tag-pill">🤝 Team Reflection</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">🌍 High ESG Value</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 7: Golf Tournament -->
+      <div class="agoda-card" data-category="sports" data-title="Championship Corporate Golf Tournament" data-client="HSBC & VIP Partner Network" data-desc="A flawless 18-hole corporate golf tournament featuring customized tee gifts, real-time digital leaderboards, clubhouse VIP dining, and an exclusive trophy presentation ceremony." data-attendees="100 VIP Golfers" data-format="Golf Tournament" data-outcome="Elite Networking">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80" alt="Corporate Golf" class="card-img" loading="lazy">
+          <span class="badge-category">🏃 VIP Sports</span>
+          <span class="badge-rating">★ 5.0</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Amata Spring Country Club • 18 Holes</div>
+          <h3 class="card-title">Championship Corporate Golf Tournament</h3>
+          <p class="card-desc">A flawless 18-hole corporate golf tournament featuring customized tee gifts, digital leaderboards, and clubhouse VIP dining.</p>
+          <div class="card-tags">
+            <span class="tag-pill">⛳ 18-Hole VIP</span>
+            <span class="tag-pill">📱 Live Scoring</span>
+            <span class="tag-pill">🍽️ Clubhouse Banquet</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">👑 Elite Networking</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 8: Retro Party -->
+      <div class="agoda-card" data-category="party" data-title="Neon Retro Party & DJ Spectacular" data-client="Leading Tech & Telecommunications Brand" data-desc="An electrifying year-end celebration featuring futuristic neon decor, live DJ sets, interactive photo booths, and custom cocktail bars that kept 400+ staff celebrating into the night." data-attendees="450 Staff" data-format="Year-End Party" data-outcome="100% High Energy">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Neon Party" class="card-img" loading="lazy">
+          <span class="badge-category">🥂 Company Party</span>
+          <span class="badge-rating">★ 4.9</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Bangkok Convention Center • Year-End</div>
+          <h3 class="card-title">Neon Retro Party &amp; DJ Spectacular</h3>
+          <p class="card-desc">An electrifying year-end celebration featuring futuristic neon decor, live DJ sets, interactive photo booths, and custom bars.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🎧 Live DJ Sets</span>
+            <span class="tag-pill">📸 Neon Photobooth</span>
+            <span class="tag-pill">🍸 Custom Cocktails</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">⚡ 450 Staff Celebrating</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 9: Outdoor Olympics -->
+      <div class="agoda-card" data-category="farm" data-title="Outdoor Tug-of-War & Adventure Olympics" data-client="Consumer Goods Conglomerate" data-desc="High-adrenaline team adventure games in open green fields, featuring tug-of-war, obstacle courses, giant puzzle challenges, and celebratory outdoor barbecue dining." data-attendees="200 Employees" data-format="Adventure Day" data-outcome="Silobusting">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80" alt="Outdoor Olympics" class="card-img" loading="lazy">
+          <span class="badge-category">🌲 Adventure Games</span>
+          <span class="badge-rating">★ 4.8</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Khaoyai National Park Area • Day Games</div>
+          <h3 class="card-title">Outdoor Tug-of-War &amp; Adventure Olympics</h3>
+          <p class="card-desc">High-adrenaline team adventure games in open green fields, featuring obstacle courses, giant puzzle challenges, and barbecue dining.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🏆 Obstacle Course</span>
+            <span class="tag-pill">🧩 Giant Puzzles</span>
+            <span class="tag-pill">🍖 BBQ Party</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">🔥 High Adrenaline</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 10: Sunset Rooftop -->
+      <div class="agoda-card" data-category="soundbath" data-title="Sunset Rooftop Yoga & Sound Healing" data-client="Luxury Retail Brand" data-desc="An exclusive twilight wellness session on a Bangkok skyscraper rooftop. Combining gentle flow yoga, Tibetan gong vibrations, and organic herbal refreshments for brand executives." data-attendees="60 VIPs" data-format="Twilight Session" data-outcome="Total Serenity">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Rooftop Yoga" class="card-img" loading="lazy">
+          <span class="badge-category">🧘 Twilight Wellness</span>
+          <span class="badge-rating">★ 5.0</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 MahaNakhon Rooftop, Bangkok • Twilight</div>
+          <h3 class="card-title">Sunset Rooftop Yoga &amp; Sound Healing</h3>
+          <p class="card-desc">An exclusive twilight wellness session on a skyscraper rooftop combining gentle flow yoga, gong vibrations, and herbal drinks.</p>
+          <div class="card-tags">
+            <span class="tag-pill">🌅 Skyscraper Sunset</span>
+            <span class="tag-pill">🧘 Flow Yoga</span>
+            <span class="tag-pill">🍵 Herbal Bar</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">✨ VIP Executive Luxury</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 11: Winter Wonderland -->
+      <div class="agoda-card" data-category="party" data-title="Winter Wonderland Christmas Gala" data-client="Multinational Medical Corporation" data-desc="A enchanting winter-themed holiday celebration featuring snow machines, acoustic carolers, lavish banquet dining, and an interactive charity auction raising funds for local hospitals." data-attendees="300 Staff & Partners" data-format="Holiday Gala" data-outcome="Festive Spirit">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Winter Gala" class="card-img" loading="lazy">
+          <span class="badge-category">🥂 Holiday Gala</span>
+          <span class="badge-rating">★ 4.9</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Hyatt Regency Bangkok • Holiday Gala</div>
+          <h3 class="card-title">Winter Wonderland Christmas Gala</h3>
+          <p class="card-desc">A enchanting winter-themed holiday celebration featuring snow machines, acoustic carolers, lavish banquet dining, and charity auction.</p>
+          <div class="card-tags">
+            <span class="tag-pill">❄️ Snow Machines</span>
+            <span class="tag-pill">🎤 Acoustic Carolers</span>
+            <span class="tag-pill">🎁 Charity Auction</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">🎉 300 Staff &amp; Partners</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+      <!-- Card 12: Charity Marathon -->
+      <div class="agoda-card" data-category="sports" data-title="Charity Fun Run & Park Marathon" data-client="University Alumni Network" data-desc="A community-focused 10K charity marathon organized for over 500 alumni and corporate sponsors, complete with chip timing, hydration stations, and live concert post-race entertainment." data-attendees="500+ Runners" data-format="Marathon Event" data-outcome="Massive Engagement">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80" alt="Marathon" class="card-img" loading="lazy">
+          <span class="badge-category">🏃 Marathon Event</span>
+          <span class="badge-rating">★ 4.9</span>
+        </div>
+        <div class="card-body">
+          <div class="card-location">📍 Lumphini Park, Bangkok • Morning 10K</div>
+          <h3 class="card-title">Charity Fun Run &amp; Park Marathon</h3>
+          <p class="card-desc">A community-focused 10K charity marathon organized for over 500 alumni and corporate sponsors with chip timing and live concert.</p>
+          <div class="card-tags">
+            <span class="tag-pill">⏱️ RFID Chip Timing</span>
+            <span class="tag-pill">🎸 Post-Race Concert</span>
+            <span class="tag-pill">🥤 Hydration Hubs</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="footer-stat">🚀 500+ Runners Engaged</span>
+          <span class="agoda-btn">Explore Details ➔</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: CLIENT NETWORK (MINIMALIST MONOCHROME TYPOGRAPHIC MARQUEE WITH KANIT) -->
+<section class="clients-section" id="clients">
+  <div class="wrap">
+    <span class="section-label">Social Proof &amp; Prestige</span>
+    <h2 class="section-title">Trusted Partners Across Industries</h2>
+    <p style="font-size:16px; opacity:0.8; max-width:640px;">We earn the enduring trust of Thailand's leading corporations, multinational brands, financial institutions, and universities.</p>
+  </div>
+  
+  <div class="marquee-wrapper">
+    <!-- Row 1: Scrolling Left -->
+    <div class="marquee-track track-left">
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">⚡</span> PTT GROUP</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🏦</span> SCB Banking</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛢️</span> CHEVRON</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🌐</span> HSBC</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">📱</span> HUAWEI</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛡️</span> UNDER ARMOUR</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🎓</span> Kasetsart Univ.</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🏛️</span> CHULALONGKORN</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🌱</span> ECOLAB</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">⚙️</span> EMERSON</div>
+      <!-- Duplicated for seamless loop -->
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">⚡</span> PTT GROUP</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🏦</span> SCB Banking</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛢️</span> CHEVRON</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🌐</span> HSBC</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">📱</span> HUAWEI</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛡️</span> UNDER ARMOUR</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🎓</span> Kasetsart Univ.</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🏛️</span> CHULALONGKORN</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🌱</span> ECOLAB</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">⚙️</span> EMERSON</div>
+    </div>
+    
+    <!-- Row 2: Scrolling Right -->
+    <div class="marquee-track track-right">
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">👑</span> PRADA MILANO</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🚢</span> BORR DRILLING</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">⚡</span> VANTRIS ENERGY</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">📈</span> SET Thailand</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🍽️</span> GRIFFITH FOODS</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🏫</span> NIST SCHOOL</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛡️</span> THAI LIFE</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">💼</span> Eastspring</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🌟</span> AXA GLOBAL</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🚜</span> CNH INDUSTRIAL</div>
+      <!-- Duplicated for seamless loop -->
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">👑</span> PRADA MILANO</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🚢</span> BORR DRILLING</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">⚡</span> VANTRIS ENERGY</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">📈</span> SET Thailand</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🍽️</span> GRIFFITH FOODS</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🏫</span> NIST SCHOOL</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🛡️</span> THAI LIFE</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">💼</span> Eastspring</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🌟</span> AXA GLOBAL</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🚜</span> CNH INDUSTRIAL</div>
+    </div>
+
+    <!-- Row 3: Scrolling Left -->
+    <div class="marquee-track track-left-2">
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">📊</span> SAS ANALYTICS</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🛞</span> YOKOHAMA</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">⚓</span> Sapura Marine</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">💨</span> LINDE GASES</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">📈</span> ALPHA CAPITAL</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🐘</span> Amazing Thailand</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🏦</span> KRUNGSRI AUTO</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🎓</span> SRIPATUM UNIV.</div>
+      <!-- Duplicated for seamless loop -->
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">📊</span> SAS ANALYTICS</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">🛞</span> YOKOHAMA</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">⚓</span> Sapura Marine</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">💨</span> LINDE GASES</div>
+      <div class="brand-logo-item logo-style-sans"><span class="logo-symbol">📈</span> ALPHA CAPITAL</div>
+      <div class="brand-logo-item logo-style-serif"><span class="logo-symbol">🐘</span> Amazing Thailand</div>
+      <div class="brand-logo-item logo-style-bold"><span class="logo-symbol">🏦</span> KRUNGSRI AUTO</div>
+      <div class="brand-logo-item logo-style-classic"><span class="logo-symbol">🎓</span> SRIPATUM UNIV.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION BANNER -->
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Inspired by our corporate case studies?</h2>
+    <p>Let's design your organization's next milestone experience with our Agoda-style seamless booking and production excellence.</p>
+    <a href="contact.html" class="navcta" style="background:var(--orange); color:#fff; padding:16px 36px; font-size:16px;">Check Availability &amp; Request Proposal ➔</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; width:100%;">
+    <div class="fname">Craig &amp; Co.</div>
+    <div>© 2026 Craig &amp; Co. — Bespoke Experience House Agency</div>
+  </div>
+</footer>
+
+<!-- AGODA-STYLE MODERN BOOKING DETAIL LIGHTBOX MODAL -->
+<div class="lightbox-overlay" id="lightboxModal">
+  <div class="lightbox-box">
+    <div class="lightbox-header">
+      <img src="" alt="Event Case Portrait" class="lightbox-img" id="lbImg">
+      <button class="lightbox-close" id="closeLightbox">&times;</button>
+    </div>
+    <div class="lightbox-body">
+      <div class="lb-left">
+        <div class="lb-cat" id="lbCat">🧘 Team Building &amp; Soundbath</div>
+        <h3 class="lb-title" id="lbTitle">Executive Soundbath &amp; Somatic Healing</h3>
+        <div class="lb-client" id="lbClient">🏢 Leading Energy Sector Corporation • Verified Client</div>
+        <p class="lb-desc" id="lbDesc">A tranquil indoor soundbath and mindfulness retreat curated for 120 executives...</p>
+        
+        <div style="background:#f1f5f9; padding:18px; border-radius:12px; margin-bottom:12px;">
+          <h4 style="font-size:15px; color:var(--navy); margin-bottom:8px;">✨ Why Clients Loved This Package:</h4>
+          <p style="font-size:14px; color:var(--charcoal); margin:0;">"Craig &amp; Co. executed our executive soundbath flawlessly. The attention to detail and atmosphere completely transformed our leadership team's energy!"</p>
+        </div>
+      </div>
+      
+      <div class="lb-sidebar">
+        <div>
+          <div class="sidebar-price">
+            <span>Corporate Package</span>
+            <span class="sidebar-badge">★ 4.9 / 5.0</span>
+          </div>
+          <p style="font-size:13px; color:var(--grey-light); margin-top:2px;">Customized to your organization's headcount and location.</p>
+          
+          <div class="sidebar-meta">
+            <div class="meta-row"><span>👥 Attendees:</span> <strong id="lbMetric1">120 Executives</strong></div>
+            <div class="meta-row"><span>🕒 Format:</span> <strong id="lbMetric2">Full-Day Retreat</strong></div>
+            <div class="meta-row"><span>🎯 Outcome:</span> <strong id="lbMetric3">99% Stress Relief</strong></div>
+          </div>
+        </div>
+        
+        <div>
+          <a href="contact.html" class="btn-book">Request This Exact Package ➔</a>
+          <button class="btn-book" style="background:transparent; color:var(--grey-light); border:1px solid #cbd5e1; margin-top:10px; box-shadow:none;" id="closeLightboxBtn">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.agoda-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox modal functionality
+    const lightbox = document.getElementById('lightboxModal');
+    const closeBtn = document.getElementById('closeLightbox');
+    const closeBtn2 = document.getElementById('closeLightboxBtn');
+    const lbImg = document.getElementById('lbImg');
+    const lbCat = document.getElementById('lbCat');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbClient = document.getElementById('lbClient');
+    const lbDesc = document.getElementById('lbDesc');
+    const lbM1 = document.getElementById('lbMetric1');
+    const lbM2 = document.getElementById('lbMetric2');
+    const lbM3 = document.getElementById('lbMetric3');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Extract data
+        const cat = card.querySelector('.badge-category').innerText;
+        const title = card.getAttribute('data-title');
+        const client = card.getAttribute('data-client');
+        const desc = card.getAttribute('data-desc');
+        const m1 = card.getAttribute('data-attendees') || '100+ Executives';
+        const m2 = card.getAttribute('data-format') || 'Bespoke Package';
+        const m3 = card.getAttribute('data-outcome') || 'Verified Excellence';
+        const imgSrc = card.querySelector('.card-img').src;
+
+        // Populate lightbox
+        lbCat.innerText = cat;
+        lbTitle.innerText = title;
+        lbClient.innerHTML = `🏢 ${client} • Verified Client`;
+        lbDesc.innerText = desc;
+        lbM1.innerText = m1;
+        lbM2.innerText = m2;
+        lbM3.innerText = m3;
+        lbImg.src = imgSrc;
+
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function hideLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', hideLightbox);
+    closeBtn2.addEventListener('click', hideLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) hideLightbox();
+    });
+
+    // Sticky Navbar shadow on scroll
+    const header = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.style.boxShadow = '0 10px 30px rgba(14,34,68,0.1)';
+      } else {
+        header.style.boxShadow = '0 4px 20px rgba(14,34,68,0.05)';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
