@@ -9,20 +9,20 @@
 <style>
   :root {
     --serif: 'Minion Variable', serif;
-    --navy: #1B2A4A;
-    --navy-light: #253963;
-    --gold: #D4AF37;
-    --gold-light: #f5eacf;
-    --charcoal: #2C3E50;
-    --cream: #F9F9F7;
-    --terracotta: #C86D51;
-    --terracotta-light: #f7e6e0;
-    --cream-2: #f2f0e9;
-    --line: rgba(27,42,74,0.12);
+    --navy: #2B3467;
+    --navy-light: #5A6293;
+    --gold: #F2651D;
+    --gold-light: #F8C89A;
+    --charcoal: #1A1B2E;
+    --cream: #FFFFFF;
+    --terracotta: #F2651D;
+    --terracotta-light: #F5A56B;
+    --cream-2: #E9EBF6;
+    --line: rgba(43,52,103,0.12);
     --line-light: rgba(249,249,247,0.15);
-    --shadow-sm: 0 4px 12px rgba(27,42,74,0.05);
-    --shadow-md: 0 12px 28px rgba(27,42,74,0.08);
-    --shadow-lg: 0 24px 48px rgba(27,42,74,0.12);
+    --shadow-sm: 0 4px 12px rgba(43,52,103,0.05);
+    --shadow-md: 0 12px 28px rgba(43,52,103,0.08);
+    --shadow-lg: 0 24px 48px rgba(43,52,103,0.12);
   }
   
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -96,7 +96,7 @@
   .page-header {
     position: relative;
     padding: 160px 0 100px;
-    background: linear-gradient(135deg, var(--navy) 0%, #111b30 100%);
+    background: var(--navy);
     color: var(--cream);
     overflow: hidden;
     border-bottom: 1px solid rgba(212,175,55,0.25);
@@ -349,8 +349,7 @@
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(212,175,55,0.35);
-    background: radial-gradient(circle at 80% 20%, rgba(212,175,55,0.25) 0%, transparent 60%),
-                linear-gradient(145deg, #182645 0%, #1f3156 60%, #111b30 100%);
+    background: var(--navy);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -358,16 +357,13 @@
   }
   /* Pillar 2 & 4 visual styling variations */
   .pillar-visual.theme-ops {
-    background: radial-gradient(circle at 20% 80%, rgba(200,109,81,0.25) 0%, transparent 60%),
-                linear-gradient(145deg, #131f38 0%, #203358 60%, #111b30 100%);
+    background: var(--navy);
   }
   .pillar-visual.theme-travel {
-    background: radial-gradient(circle at 50% 50%, rgba(212,175,55,0.3) 0%, transparent 70%),
-                linear-gradient(160deg, #1f3156 0%, #17243f 100%);
+    background: var(--navy);
   }
   .pillar-visual.theme-events {
-    background: radial-gradient(circle at 80% 80%, rgba(200,109,81,0.3) 0%, transparent 60%),
-                linear-gradient(145deg, #1b2a4a 0%, #294070 100%);
+    background: var(--navy);
   }
 
   .mockup-rings {
@@ -420,7 +416,7 @@
     display: flex; flex-direction: column; gap: 10px;
   }
   .mockup-row {
-    background: rgba(27,42,74,0.65);
+    background: rgba(43,52,103,0.65);
     border: 1px solid rgba(249,249,247,0.12);
     padding: 12px 16px;
     border-radius: 4px;
@@ -451,7 +447,7 @@
 
   .visual-badge {
     position: absolute; bottom: 20px; left: 20px; right: 20px;
-    background: rgba(27,42,74,0.92);
+    background: rgba(43,52,103,0.92);
     backdrop-filter: blur(10px);
     padding: 16px 20px;
     border: 1px solid rgba(212,175,55,0.4);
@@ -471,7 +467,7 @@
 
   /* PACKAGE BUILDER / PROPOSAL BANNER */
   .package-banner {
-    background: linear-gradient(135deg, var(--navy) 0%, #111b30 100%);
+    background: var(--navy);
     color: var(--cream);
     padding: 100px 0;
     text-align: center;
@@ -1049,7 +1045,7 @@
     const header = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 20) {
-        header.style.boxShadow = '0 10px 30px rgba(27,42,74,0.08)';
+        header.style.boxShadow = '0 10px 30px rgba(43,52,103,0.08)';
       } else {
         header.style.boxShadow = 'none';
       }
@@ -1081,3 +1077,4 @@
 
 </body>
 </html>
+

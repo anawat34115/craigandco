@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craig & Co. — Bespoke Experience House Agency | Bangkok (Design 3 — Bold)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1A1B2E;
+            --bg-2: #222342;
+            --card: #272A4A;
+            --ink: #E5E3D2;
+            --dim: rgba(229, 227, 210, .62);
+            --coral: #F2651D;
+            --lime: #607FF3;
+            --line: rgba(229, 227, 210, .14);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.6
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 40px
+        }
+
+        section {
+            padding: 110px 0
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: rgba(17, 16, 20, .85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        nav.wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px
+        }
+
+        .logo {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 900;
+            font-size: 19px;
+            text-transform: uppercase;
+            letter-spacing: -.01em
+        }
+
+        .logo span {
+            color: var(--coral)
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 34px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .04em
+        }
+
+        .navlinks a {
+            opacity: .65;
+            transition: opacity .2s
+        }
+
+        .navlinks a:hover,
+        .navlinks a.active {
+            opacity: 1;
+            color: var(--coral)
+        }
+
+        .navcta {
+            background: var(--coral);
+            color: var(--bg);
+            padding: 12px 22px;
+            font-weight: 700;
+            font-size: 12.5px;
+            text-transform: uppercase;
+            border-radius: 100px
+        }
+
+        .navcta:hover {
+            background: var(--lime)
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 30px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+            border-radius: 100px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all .2s
+        }
+
+        .btn-solid {
+            background: var(--coral);
+            color: var(--bg)
+        }
+
+        .btn-solid:hover {
+            background: var(--lime);
+            transform: translateY(-2px)
+        }
+
+        .btn-outline {
+            border-color: var(--line);
+            color: var(--ink)
+        }
+
+        .btn-outline:hover {
+            border-color: var(--ink)
+        }
+
+        /* hero */
+        .hero {
+            padding: 200px 0 90px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: var(--coral);
+            filter: blur(180px);
+            opacity: .25;
+            border-radius: 50%
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--line);
+            border-radius: 100px;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin-bottom: 32px;
+            color: var(--lime)
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 108px);
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 2
+        }
+
+        .hero h1 .c {
+            color: var(--coral)
+        }
+
+        .hero h1 .o {
+            -webkit-text-stroke: 2px var(--ink);
+            color: transparent
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: var(--dim);
+            max-width: 520px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+            font-family: 'Space Grotesk', sans-serif
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            z-index: 2
+        }
+
+        .hero-stat {
+            background: var(--bg);
+            padding: 28px 20px;
+            text-align: center
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-family: 'Archivo', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--lime)
+        }
+
+        .hero-stat span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--dim)
+        }
+
+        /* why */
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--coral);
+            margin-bottom: 18px
+        }
+
+        .kicker::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--coral);
+            border-radius: 50%
+        }
+
+        .why-head h2 {
+            font-size: clamp(30px, 3.8vw, 48px);
+            text-transform: uppercase;
+            margin-bottom: 48px
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px
+        }
+
+        .why-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 34px 26px;
+            transition: all .25s;
+            border: 2px solid transparent
+        }
+
+        .why-card:hover {
+            border-color: var(--coral);
+            transform: translateY(-6px)
+        }
+
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 22px
+        }
+
+        .why-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: none
+        }
+
+        .why-card p {
+            font-size: 13.5px;
+            color: var(--dim)
+        }
+
+        /* services */
+        .services-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            gap: 20px
+        }
+
+        .srv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .srv-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 36px 28px;
+            transition: all .3s;
+            border: 2px solid var(--line)
+        }
+
+        .srv-card:hover {
+            border-color: var(--lime);
+            background: var(--bg-2)
+        }
+
+        .srv-emoji {
+            font-size: 30px;
+            margin-bottom: 20px;
+            display: block
+        }
+
+        .srv-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: none;
+            margin-bottom: 10px
+        }
+
+        .srv-card p {
+            font-size: 13.5px;
+            color: var(--dim)
+        }
+
+        /* stats */
+        .stats-bar {
+            background: linear-gradient(120deg, var(--coral), var(--forest, var(--coral)) 130%);
+            background: linear-gradient(120deg, #F2651D, #2B3467)
+        }
+
+        .stats-inner {
+            display: flex;
+            flex-wrap: wrap
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 170px;
+            padding: 52px 30px;
+            text-align: center;
+            border-right: 1px solid rgba(17, 16, 20, .15)
+        }
+
+        .stat-item:last-child {
+            border-right: none
+        }
+
+        .stat-item strong {
+            display: block;
+            font-family: 'Archivo', sans-serif;
+            font-size: clamp(30px, 3.8vw, 46px);
+            font-weight: 900;
+            color: var(--bg)
+        }
+
+        .stat-item span {
+            font-size: 11.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            color: rgba(17, 16, 20, .7)
+        }
+
+        /* portfolio */
+        .pf-grid {
+            columns: 3;
+            column-gap: 14px
+        }
+
+        .pf-item {
+            break-inside: avoid;
+            margin-bottom: 14px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            background: var(--card);
+            cursor: pointer;
+            border: 2px solid var(--line);
+            transition: border-color .2s
+        }
+
+        .pf-item:hover {
+            border-color: var(--lime)
+        }
+
+        .pf-ph {
+            padding-bottom: 80%;
+            position: relative
+        }
+
+        .pf-ph .icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px
+        }
+
+        .pf-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 18px 16px;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .85), transparent);
+            font-size: 12.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+            opacity: 0;
+            transition: opacity .25s
+        }
+
+        .pf-item:hover .pf-caption {
+            opacity: 1
+        }
+
+        @media(max-width:768px) {
+            .pf-grid {
+                columns: 2
+            }
+        }
+
+        @media(max-width:480px) {
+            .pf-grid {
+                columns: 1
+            }
+        }
+
+        /* clients */
+        .clients {
+            background: var(--bg-2);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 40px
+        }
+
+        .brand-cell {
+            background: var(--bg-2);
+            padding: 26px 16px;
+            text-align: center;
+            font-size: 12.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+            color: var(--dim);
+            transition: color .2s
+        }
+
+        .brand-cell:hover {
+            color: var(--lime)
+        }
+
+        /* cta */
+        .cta-banner {
+            background: var(--ink);
+            color: var(--bg);
+            text-align: center;
+            padding: 120px 0;
+            border-radius: 40px 40px 0 0;
+            margin: 0 20px
+        }
+
+        .cta-banner h2 {
+            color: var(--bg);
+            font-size: clamp(32px, 4.6vw, 58px);
+            text-transform: uppercase;
+            margin-bottom: 18px
+        }
+
+        .cta-banner h2 span {
+            color: var(--coral)
+        }
+
+        .cta-banner p {
+            color: rgba(17, 16, 20, .65);
+            max-width: 540px;
+            margin: 0 auto 36px;
+            font-size: 16px;
+            font-family: 'Space Grotesk', sans-serif
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .btn-dark {
+            background: var(--bg);
+            color: var(--ink)
+        }
+
+        .btn-dark:hover {
+            background: var(--coral);
+            color: var(--bg)
+        }
+
+        .btn-outline-dark {
+            border: 2px solid var(--bg);
+            color: var(--bg)
+        }
+
+        .btn-outline-dark:hover {
+            background: var(--bg);
+            color: var(--ink)
+        }
+
+        /* footer */
+        footer {
+            background: var(--bg);
+            padding: 60px 0 28px
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 44px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .footer-name {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 900;
+            font-size: 19px;
+            text-transform: uppercase
+        }
+
+        .footer-name span {
+            color: var(--coral)
+        }
+
+        .footer-brand p {
+            margin-top: 16px;
+            font-size: 13.5px;
+            color: var(--dim);
+            max-width: 260px
+        }
+
+        .footer-col h5 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--lime);
+            margin-bottom: 18px
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 13.5px;
+            color: var(--dim);
+            margin-bottom: 10px
+        }
+
+        .footer-col a:hover {
+            color: var(--ink)
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-top: 22px;
+            font-size: 11.5px;
+            color: var(--dim)
+        }
+
+        @media(max-width:900px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .srv-grid {
+                grid-template-columns: 1fr
+            }
+
+            .brand-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr
+            }
+
+            .navlinks {
+                display: none
+            }
+
+            .cta-banner {
+                margin: 0;
+                border-radius: 0
+            }
+        }
+
+        /* ─── DESIGN SWITCHER DROPDOWN ────────────────────────────── */
+        .nav-dropdown {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .nav-dropdown-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .design-tag {
+            font-size: 10px;
+            font-weight: 700;
+            background: var(--coral);
+            color: #ffffff;
+            padding: 2px 7px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: -10px;
+            width: 270px;
+            background: #FFFFFF;
+            border: 1px solid rgba(43, 52, 103, 0.16);
+            border-radius: 8px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 300;
+            text-align: left;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(6px);
+        }
+
+        .dropdown-header-title {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #777788;
+            padding: 8px 16px 4px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            margin-bottom: 4px;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 16px;
+            color: #1A1B2E;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover {
+            background: #F4F5F9;
+            border-left-color: var(--coral);
+        }
+
+        .dropdown-item.active {
+            background: rgba(242, 101, 29, 0.09);
+            border-left-color: var(--coral);
+        }
+
+        .opt-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2B3467;
+            margin-bottom: 2px;
+            text-transform: none;
+        }
+
+        .dropdown-item.active .opt-title {
+            color: var(--coral);
+        }
+
+        .opt-desc {
+            font-size: 11px;
+            color: rgba(26, 27, 46, 0.65);
+            line-height: 1.35;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="wrap">
+            <a href="index.html" class="logo">Craig <span>&</span> Co.</a>
+            <div class="navlinks">
+                <div class="nav-dropdown">
+                    <a href="index3.html" class="active nav-dropdown-trigger">
+                        Home <span style="font-size:9px;margin-left:2px;">▼</span>
+                        <span class="design-tag">Design 3</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header-title">🎨 Select Design Option:</div>
+                        <a href="index.html" class="dropdown-item">
+                            <div class="opt-title">✦ Design 1: Classic Solid Navy</div>
+                            <div class="opt-desc">Clean corporate executive split layout</div>
+                        </a>
+                        <a href="index2.html" class="dropdown-item">
+                            <div class="opt-title">✦ Design 2: Editorial Warm Paper</div>
+                            <div class="opt-desc">Luxury serif typography & magazine spread</div>
+                        </a>
+                        <a href="index3.html" class="dropdown-item active">
+                            <div class="opt-title">✦ Design 3: Bold Modern Dark</div>
+                            <div class="opt-desc">Bento box dark grid & high-contrast style</div>
+                        </a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a class="navcta" href="contact.html">Get a Proposal</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero-tag">✦ Bespoke Experience House</div>
+            <h1>Events that<br><span class="c">hit</span> <span class="o">different.</span></h1>
+            <p class="hero-sub">End-to-end corporate event management, team building, luxury travel and concierge
+                services — built for organizations that expect every detail handled before they think to ask.</p>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-solid">Get a Free Proposal</a>
+                <a href="#" class="btn btn-outline">Explore Services →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>10+</strong><span>Years</span></div>
+                <div class="hero-stat"><strong>120+</strong><span>Events</span></div>
+                <div class="hero-stat"><strong>30+</strong><span>Clients</span></div>
+                <div class="hero-stat"><strong>TH/EN</strong><span>Bilingual</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why">
+        <div class="wrap">
+            <div class="why-head">
+                <div class="kicker">Why Craig & Co.</div>
+                <h2>We engineer experiences<br>that matter.</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🎨</div>
+                    <h3>Creative by Design</h3>
+                    <p>Original ideas shaped around your brand and culture — no two events are ever the same.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎯</div>
+                    <h3>Strategy-Led</h3>
+                    <p>Built backward from the outcome that matters — engagement, culture, brand alignment.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🤝</div>
+                    <h3>Personal Service</h3>
+                    <p>A hands-on team, not a dashboard. You always know who to call — and they pick up.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🌏</div>
+                    <h3>Regional Network</h3>
+                    <p>Trusted venues and partners across Thailand and key destinations — seamless delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="wrap">
+            <div class="services-head">
+                <div>
+                    <div class="kicker">Our Services</div>
+                    <h2 style="font-size:clamp(28px,3.6vw,44px);text-transform:uppercase">Full-service experiences</h2>
+                </div>
+                <a href="#" class="btn btn-outline">View All Services →</a>
+            </div>
+            <div class="srv-grid">
+                <div class="srv-card"><span class="srv-emoji">🎤</span>
+                    <h3>Training & Consulting</h3>
+                    <p>Leadership, mindset, team building, AI and more — tailored workshops for your people.</p>
+                </div>
+                <div class="srv-card"><span class="srv-emoji">⚙️</span>
+                    <h3>Operation & Management</h3>
+                    <p>End-to-end project management, vendor coordination, and corporate procurement.</p>
+                </div>
+                <div class="srv-card"><span class="srv-emoji">✈️</span>
+                    <h3>Travel & Leisure</h3>
+                    <p>Bespoke corporate retreats, luxury travel, golf experiences and VIP services.</p>
+                </div>
+                <div class="srv-card"><span class="srv-emoji">🎉</span>
+                    <h3>Events & Entertainment</h3>
+                    <p>Corporate events, gala nights, brand activations and private celebrations.</p>
+                </div>
+                <div class="srv-card"><span class="srv-emoji">🏌️</span>
+                    <h3>Golf & Sports</h3>
+                    <p>Golf business networking, sports days, and competitive team activities.</p>
+                </div>
+                <div class="srv-card"><span class="srv-emoji">🛎️</span>
+                    <h3>Concierge & Lifestyle</h3>
+                    <p>On-call personal and corporate concierge — the everyday handled quietly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stats-inner wrap">
+            <div class="stat-item"><strong>10+</strong><span>Years in the industry</span></div>
+            <div class="stat-item"><strong>120+</strong><span>Events delivered</span></div>
+            <div class="stat-item"><strong>30+</strong><span>Corporate clients</span></div>
+            <div class="stat-item"><strong>100%</strong><span>Free consultation</span></div>
+        </div>
+    </div>
+
+    <section class="portfolio">
+        <div class="wrap">
+            <div class="services-head">
+                <div>
+                    <div class="kicker">Our Work</div>
+                    <h2 style="font-size:clamp(28px,3.6vw,44px);text-transform:uppercase">A glimpse of our experiences
+                    </h2>
+                </div>
+                <a href="#" class="btn btn-outline">Explore Full Portfolio →</a>
+            </div>
+            <div class="pf-grid">
+                <div class="pf-item">
+                    <div class="pf-ph">
+                        <div class="icon">🎤</div>
+                    </div>
+                    <div class="pf-caption">Team Building & Soundbath</div>
+                </div>
+                <div class="pf-item">
+                    <div class="pf-ph" style="padding-bottom:55%">
+                        <div class="icon">🎉</div>
+                    </div>
+                    <div class="pf-caption">Gala Night</div>
+                </div>
+                <div class="pf-item">
+                    <div class="pf-ph" style="padding-bottom:95%">
+                        <div class="icon">✈️</div>
+                    </div>
+                    <div class="pf-caption">Corporate Retreat</div>
+                </div>
+                <div class="pf-item">
+                    <div class="pf-ph" style="padding-bottom:60%">
+                        <div class="icon">🏌️</div>
+                    </div>
+                    <div class="pf-caption">Golf & Networking</div>
+                </div>
+                <div class="pf-item">
+                    <div class="pf-ph">
+                        <div class="icon">🏃</div>
+                    </div>
+                    <div class="pf-caption">Fun Run & Sports</div>
+                </div>
+                <div class="pf-item">
+                    <div class="pf-ph" style="padding-bottom:65%">
+                        <div class="icon">🌿</div>
+                    </div>
+                    <div class="pf-caption">Farm & Outdoor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients">
+        <div class="wrap">
+            <div class="kicker">Trusted By</div>
+            <h2 style="font-size:clamp(28px,3.6vw,44px);text-transform:uppercase">Clients & Partners</h2>
+            <div class="brand-grid">
+                <div class="brand-cell">PTT Group</div>
+                <div class="brand-cell">SCB Bank</div>
+                <div class="brand-cell">Chevron</div>
+                <div class="brand-cell">HSBC</div>
+                <div class="brand-cell">Huawei</div>
+                <div class="brand-cell">Under Armour</div>
+                <div class="brand-cell">Kasetsart</div>
+                <div class="brand-cell">Chula</div>
+                <div class="brand-cell">Ecolab</div>
+                <div class="brand-cell">Emerson</div>
+                <div class="brand-cell">Prada Milano</div>
+                <div class="brand-cell">Borr Drilling</div>
+                <div class="brand-cell">Vantris Energy</div>
+                <div class="brand-cell">SET Thailand</div>
+                <div class="brand-cell">Griffith Foods</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <div class="wrap">
+            <h2>Ready to create<br>something <span>memorable?</span></h2>
+            <p>Tell us about your event or retreat. Our team will respond within 24 hours with a tailored proposal —
+                free of charge, no commitment required.</p>
+            <div class="cta-actions">
+                <a href="#" class="btn btn-dark">Get a Free Proposal</a>
+                <a href="tel:+66956562955" class="btn btn-outline-dark">📞 Call Us Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-name">Craig <span>&</span> Co.</div>
+                    <p>A Bangkok-based bespoke experience house delivering corporate events, team building, luxury
+                        travel and concierge services across Thailand and beyond.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5><a href="#">About Us</a><a href="#">Our Services</a><a href="#">Portfolio</a><a
+                        href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5><a href="mailto:contactcraigandco@gmail.com">contactcraigandco@gmail.com</a><a
+                        href="tel:+66956562955">Bank — +66 95 656 2955</a><a href="tel:+66909743215">Film — +66 90 974
+                        3215</a>
+                </div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 Craig & Co. — Bespoke Experience House Agency.</span><span>Bangkok,
+                    Thailand · TH / EN</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>

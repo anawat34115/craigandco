@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craig&Co — Color System Guideline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Thai:wght@400;500;600&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="color-system.css">
+</head>
+<body>
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">Craig&Co.</a>
+        <div class="nav-links">
+            <a href="#primary">01 Primary</a>
+            <a href="#extended">02 Tints & Shades</a>
+            <a href="#combinations">03 Pairings</a>
+            <a href="#application">04 Ratio</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section full-bleed">
+            <div class="hero-content">
+                <h1 class="display-title">Bold meets <span class="text-orange">Steady.</span></h1>
+                <p class="hero-subtext">ระบบสีของ Craig&Co สร้างจาก Navy ที่หนักแน่นน่าเชื่อถือ คู่กับ Signal Orange ที่กระตุ้นพลังงาน — สมดุลระหว่างความมั่นคงและความกล้าแสดงออก</p>
+            </div>
+            <div class="hero-corners">
+                <div class="corner-hex">#2B3467</div>
+                <div class="corner-hex">#F2651D</div>
+            </div>
+        </section>
+
+        <!-- 01 Primary Color -->
+        <section id="primary" class="section-block">
+            <div class="section-header">
+                <span class="eyebrow">01 &mdash; Palette</span>
+                <div class="header-main">
+                    <h2>Primary Color</h2>
+                    <p class="desc">สีหลักทั้ง 4 สีที่เป็นรากฐานของ Craig&Co ใช้เป็นตัวแทนของแบรนด์ในทุกช่องทาง คลิกที่สวอตช์เพื่อคัดลอกโค้ดสี</p>
+                </div>
+            </div>
+            
+            <div class="grid-4 primary-grid">
+                <!-- Swatches -->
+                <div class="color-card swatch-navy interactive-swatch" data-hex="#2B3467">
+                    <div class="card-content">
+                        <h3 class="color-name text-orange">Navy Blue</h3>
+                        <span class="hex-code text-orange">#2B3467</span>
+                        <div class="copy-hint text-orange">Click to copy</div>
+                    </div>
+                </div>
+                <div class="color-card swatch-orange interactive-swatch" data-hex="#F2651D">
+                    <div class="card-content">
+                        <h3 class="color-name text-white">Signal Orange</h3>
+                        <span class="hex-code text-white">#F2651D</span>
+                        <div class="copy-hint text-white">Click to copy</div>
+                    </div>
+                </div>
+                <div class="color-card swatch-black interactive-swatch" data-hex="#1A1B2E">
+                    <div class="card-content">
+                        <h3 class="color-name text-platinum">Deep Black</h3>
+                        <span class="hex-code text-platinum">#1A1B2E</span>
+                        <div class="copy-hint text-platinum">Click to copy</div>
+                    </div>
+                </div>
+                <div class="color-card swatch-platinum interactive-swatch" data-hex="#E5E3D2">
+                    <div class="card-content">
+                        <h3 class="color-name text-black">Platinum</h3>
+                        <span class="hex-code text-black">#E5E3D2</span>
+                        <div class="copy-hint text-black">Click to copy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 Extended Color -->
+        <section id="extended" class="section-block bg-navy-tint-4">
+            <div class="section-header">
+                <span class="eyebrow">02 &mdash; Tints & Shades</span>
+                <div class="header-main">
+                    <h2>Extended Color</h2>
+                    <p class="desc">ทำ 5 ระดับของทั้ง Navy และ Orange เพื่อให้มีตัวเลือกสำหรับงานดีไซน์จริง เช่น background, hover state, text, border</p>
+                </div>
+            </div>
+
+            <div class="grid-2 extended-grid">
+                <div class="shade-column">
+                    <div class="shade-row interactive-swatch bg-navy-shade text-white" data-hex="#1A1B2E">
+                        <span>Shade</span><span class="mono">#1A1B2E</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-navy-base text-white" data-hex="#2B3467">
+                        <span>Base</span><span class="mono">#2B3467</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-navy-tint1 text-white" data-hex="#3B4270">
+                        <span>Tint 1</span><span class="mono">#3B4270</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-navy-tint2 text-white" data-hex="#5A6293">
+                        <span>Tint 2</span><span class="mono">#5A6293</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-navy-tint3 text-black" data-hex="#AAB0D6">
+                        <span>Tint 3</span><span class="mono">#AAB0D6</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-navy-tint4 text-black" data-hex="#E9EBF6">
+                        <span>Tint 4</span><span class="mono">#E9EBF6</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                </div>
+
+                <div class="shade-column">
+                    <div class="shade-row interactive-swatch bg-orange-shade text-white" data-hex="#B03E12">
+                        <span>Shade</span><span class="mono">#B03E12</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-orange-base text-white" data-hex="#F2651D">
+                        <span>Base</span><span class="mono">#F2651D</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-orange-tint1 text-black" data-hex="#F3782E">
+                        <span>Tint 1</span><span class="mono">#F3782E</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-orange-tint2 text-black" data-hex="#F5A56B">
+                        <span>Tint 2</span><span class="mono">#F5A56B</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-orange-tint3 text-black" data-hex="#F8C89A">
+                        <span>Tint 3</span><span class="mono">#F8C89A</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                    <div class="shade-row interactive-swatch bg-orange-tint4 text-black" data-hex="#FCEFE4">
+                        <span>Tint 4</span><span class="mono">#FCEFE4</span><div class="copy-hint-row">Copy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 Color Combinations -->
+        <section id="combinations" class="section-block">
+            <div class="section-header">
+                <span class="eyebrow">03 &mdash; Pairings</span>
+                <div class="header-main">
+                    <h2>Color Combinations</h2>
+                    <p class="desc">การจับคู่สีพื้นหลังและตัวอักษรที่ผ่านการทดสอบคอนทราสต์ ใช้อ้างอิงสำหรับงานดีไซน์ทุกประเภท</p>
+                </div>
+            </div>
+
+            <div class="grid-3 combinations-grid">
+                <div class="combo-card combo-1">
+                    <div class="combo-label">Navy / Orange</div>
+                </div>
+                <div class="combo-card combo-2">
+                    <div class="combo-label">Orange / Navy</div>
+                </div>
+                <div class="combo-card combo-3">
+                    <div class="combo-label">Navy / White</div>
+                </div>
+                <div class="combo-card combo-4">
+                    <div class="combo-label">Orange / White</div>
+                </div>
+                <div class="combo-card combo-5">
+                    <div class="combo-label">White / Navy</div>
+                </div>
+                <div class="combo-card combo-6">
+                    <div class="combo-label">Black / Orange</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 Color Application -->
+        <section id="application" class="section-block bg-navy-tint-4">
+            <div class="section-header">
+                <span class="eyebrow">04 &mdash; Ratio</span>
+                <div class="header-main">
+                    <h2>Color Application</h2>
+                    <p class="desc">สัดส่วนการใช้สีที่แนะนำในงานดีไซน์จริง เพื่อรักษาสมดุลระหว่างความโดดเด่นและความน่าเชื่อถือ</p>
+                </div>
+            </div>
+
+            <div class="ratio-bar-container">
+                <div class="ratio-bar">
+                    <div class="ratio-segment bg-orange-base" style="--w: 60%">
+                        <div class="ratio-label">60%</div>
+                    </div>
+                    <div class="ratio-segment bg-navy-base" style="--w: 30%">
+                        <div class="ratio-label">30%</div>
+                    </div>
+                    <div class="ratio-segment bg-navy-tint2" style="--w: 5%">
+                        <div class="ratio-label">5%</div>
+                    </div>
+                    <div class="ratio-segment bg-platinum" style="--w: 5%">
+                        <div class="ratio-label text-black">5%</div>
+                    </div>
+                </div>
+                <div class="ratio-descriptions grid-2">
+                    <div class="ratio-desc-item">
+                        <div class="ratio-dot bg-orange-base"></div>
+                        <div>
+                            <h4>60% — Signal Orange (Primary)</h4>
+                            <p>พื้นหลักของงาน, Header, Keynote Slide Background ให้ความรู้สึก Professional และ Trustworthy</p>
+                        </div>
+                    </div>
+                    <div class="ratio-desc-item">
+                        <div class="ratio-dot bg-navy-base"></div>
+                        <div>
+                            <h4>30% — Navy Blue (Accent)</h4>
+                            <p>สีไฮไลท์ที่ตัดกับสีหลัก เพิ่มความโดดเด่น ดึงดูดสายตา ให้ความรู้สึก Energetic และ Bold</p>
+                        </div>
+                    </div>
+                    <div class="ratio-desc-item">
+                        <div class="ratio-dot bg-platinum"></div>
+                        <div>
+                            <h4>5% — Neutral (Platinum)</h4>
+                            <p>Typography, Divider, Data Display รักษาความสะอาดอ่านง่าย ไม่แย่ง Accent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">Craig&Co. <span class="footer-dim">/ Color System</span></div>
+            <div class="footer-hexes">
+                <span>#2B3467</span>
+                <span>#F2651D</span>
+                <span>#1A1B2E</span>
+                <span>#E5E3D2</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>BRAND GUIDELINE — COLOR</span>
+            <span>&copy; <span id="currentYear"></span></span>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast hidden">HEX copied</div>
+
+    <script src="color-system.js"></script>
+</body>
+</html>

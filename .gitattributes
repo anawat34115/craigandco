@@ -1,0 +1,2 @@
+*.pdf filter=lfs diff=lfs merge=lfs -text
+Craig&Co[[:space:]]Color.pdf !text !filter !merge !diff
