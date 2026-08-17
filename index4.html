@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craig &amp; Co. — Bespoke Experience House Agency | Bangkok (Design 4 — Co-Series Layout)</title>
+    <meta name="description"
+        content="Craig &amp; Co. is a bespoke Experience House operating at the intersection of creative vision and meticulous execution, crafting moments that elevate brands and captivate audiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ─── TOKENS & DESIGN SYSTEM ────────────────────────────────── */
+        :root {
+            --bg-canvas: #E6E4D6;
+            --bg-card: #DFDDD0;
+            --bg-card-hover: #D7D4C5;
+            --navy: #1D2C4D;
+            --navy-deep: #141E36;
+            --navy-light: #2E4068;
+            --navy-muted: rgba(29, 44, 77, 0.78);
+            --orange: #F2651D;
+            --orange-hover: #D95412;
+            --orange-light: #FEEFE6;
+            --white: #FFFFFF;
+            --line: rgba(29, 44, 77, 0.12);
+            --line-strong: rgba(29, 44, 77, 0.22);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --shadow-subtle: 0 8px 24px rgba(29, 44, 77, 0.06);
+            --shadow-elevated: 0 16px 36px rgba(29, 44, 77, 0.12);
+            --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ─── RESET & BASE ─────────────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-canvas);
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 36px;
+        }
+
+        @media (max-width: 768px) {
+            .wrap {
+                padding: 0 20px;
+            }
+        }
+
+        /* ─── TOP STICKY NAVBAR ─────────────────────────────────────── */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: rgba(230, 228, 214, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line);
+            transition: all 0.3s ease;
+        }
+
+        nav.wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+        }
+
+        .nav-brand .brand-craig {
+            color: var(--navy);
+            position: relative;
+        }
+
+        .nav-brand .brand-craig span.accent-dot {
+            color: var(--orange);
+            font-weight: 900;
+        }
+
+        .nav-brand .brand-co {
+            color: var(--orange);
+            font-weight: 800;
+            margin-left: 4px;
+        }
+
+        .navlinks {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .navlinks a {
+            position: relative;
+            padding: 6px 0;
+            color: var(--navy);
+            opacity: 0.8;
+            transition: all 0.2s;
+        }
+
+        .navlinks a:hover,
+        .navlinks a.active {
+            opacity: 1;
+            color: var(--orange);
+        }
+
+        .navcta {
+            background: var(--navy);
+            color: var(--white);
+            padding: 11px 22px;
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.25s;
+        }
+
+        .navcta:hover {
+            background: var(--orange);
+            transform: translateY(-1px);
+        }
+
+        /* ─── DESIGN SWITCHER DROPDOWN ────────────────────────────── */
+        .nav-dropdown {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .nav-dropdown-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .design-tag {
+            font-size: 10px;
+            font-weight: 700;
+            background: var(--orange);
+            color: #ffffff;
+            padding: 2px 7px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: -10px;
+            width: 280px;
+            background: #FFFFFF;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 300;
+            text-align: left;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(6px);
+        }
+
+        .dropdown-header-title {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #777788;
+            padding: 8px 16px 4px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            margin-bottom: 4px;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 16px;
+            color: #1A1B2E;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover {
+            background: #F4F5F9;
+            border-left-color: var(--orange);
+        }
+
+        .dropdown-item.active {
+            background: rgba(242, 101, 29, 0.09);
+            border-left-color: var(--orange);
+        }
+
+        .opt-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2B3467;
+            margin-bottom: 2px;
+            text-transform: none;
+        }
+
+        .dropdown-item.active .opt-title {
+            color: var(--orange);
+        }
+
+        .opt-desc {
+            font-size: 11px;
+            color: rgba(26, 27, 46, 0.65);
+            line-height: 1.35;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        /* ─── SHARED SECTION HEADER & ICON ─────────────────────────── */
+        .section-header-centered {
+            text-align: center;
+            margin-bottom: 56px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .co-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .co-icon-wrapper:hover {
+            transform: scale(1.08);
+        }
+
+        .co-svg-icon {
+            width: 58px;
+            height: 58px;
+        }
+
+        .section-main-title {
+            font-size: clamp(28px, 3.8vw, 42px);
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .section-main-title .co-part {
+            color: var(--navy);
+            margin-right: 6px;
+        }
+
+        .section-main-title .keyword-part {
+            color: var(--orange);
+        }
+
+        /* ─── SECTION 1: HERO & BESPOKE EXPERIENCE HOUSE ────────────── */
+        .sec-hero {
+            padding-top: 108px;
+            padding-bottom: 80px;
+        }
+
+        .hero-banner-frame {
+            width: 100%;
+            height: 380px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 60px;
+            box-shadow: var(--shadow-subtle);
+            position: relative;
+            background: #111;
+        }
+
+        .hero-banner-img {
+            filter: grayscale(100%) contrast(110%);
+            transition: transform 0.8s ease, filter 0.8s ease;
+        }
+
+        .hero-banner-frame:hover .hero-banner-img {
+            transform: scale(1.02);
+            filter: grayscale(85%) contrast(115%);
+        }
+
+        .hero-content-split {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .hero-narrative h1.hero-house-title {
+            font-size: clamp(26px, 3.2vw, 36px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--navy);
+        }
+
+        .hero-welcome-box {
+            margin-bottom: 24px;
+        }
+
+        .hero-welcome-box h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.35;
+        }
+
+        .hero-paragraphs {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--navy-muted);
+        }
+
+        .hero-visual-card-wrap {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-feature-card {
+            background: #BCD7F2;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            width: 100%;
+            position: relative;
+            box-shadow: var(--shadow-subtle);
+            border: 2px solid rgba(29, 44, 77, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-feature-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-feature-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-arrow-btn {
+            position: absolute;
+            right: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--navy);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-elevated);
+            z-index: 10;
+        }
+
+        .hero-arrow-btn:hover {
+            background: var(--orange);
+            transform: translateY(-50%) translateX(6px) scale(1.05);
+        }
+
+        @media (max-width: 960px) {
+            .hero-content-split {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-banner-frame {
+                height: 240px;
+                margin-bottom: 40px;
+            }
+
+            .hero-arrow-btn {
+                right: 12px;
+                bottom: 12px;
+                top: auto;
+                transform: none;
+            }
+
+            .hero-arrow-btn:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        /* ─── SECTION 2: CO SOLUTIONS. (4 CARDS) ───────────────────── */
+        .sec-solutions {
+            padding: 90px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .co-card {
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-smooth);
+        }
+
+        .co-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .co-card-media {
+            aspect-ratio: 16/10;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            box-shadow: var(--shadow-subtle);
+            background: #ccc;
+        }
+
+        .co-card-media img {
+            transition: transform 0.6s ease;
+        }
+
+        .co-card:hover .co-card-media img {
+            transform: scale(1.06);
+        }
+
+        .co-card-title {
+            font-size: 17px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            line-height: 1.25;
+            min-height: 42px;
+            display: flex;
+            align-items: center;
+        }
+
+        .co-card-desc {
+            font-size: 14px;
+            line-height: 1.55;
+            color: var(--navy-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .co-readmore-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            transition: color 0.2s ease;
+            margin-top: auto;
+        }
+
+        .co-readmore-link .arrow-line {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .co-card:hover .co-readmore-link {
+            color: var(--orange);
+        }
+
+        .co-card:hover .co-readmore-link .arrow-line {
+            transform: translateX(8px);
+        }
+
+        @media (max-width: 1024px) {
+            .solutions-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px 24px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .co-card-title {
+                min-height: auto;
+            }
+        }
+
+        /* ─── SECTION 3: CO SERVICE. (5 CARDS) ─────────────────────── */
+        .sec-service {
+            padding: 90px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .service-grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 22px;
+        }
+
+        .service-card .co-card-media {
+            aspect-ratio: 4/3;
+        }
+
+        .service-card .co-card-title {
+            font-size: 15px;
+            min-height: 40px;
+        }
+
+        .service-card .co-card-desc {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1150px) {
+            .service-grid-5 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 28px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-grid-5 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .service-grid-5 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── SECTION 4: CO CREATORS. (12 GALLERY GRID) ────────────── */
+        .sec-creators {
+            padding: 90px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .creators-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .creator-item {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            background: #2B3467;
+            cursor: pointer;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .creator-item img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+        }
+
+        .creator-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        .creator-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(29, 44, 77, 0.9) 0%, rgba(29, 44, 77, 0.2) 60%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 16px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .creator-item:hover .creator-item-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .creator-tag {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 2px;
+        }
+
+        .creator-caption {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.25;
+        }
+
+        @media (max-width: 1024px) {
+            .creators-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .creators-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .creators-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── SECTION 5: CO CONNECT. (FOOTER CONTACT) ──────────────── */
+        .sec-connect {
+            padding: 90px 0 100px;
+            border-top: 1px solid var(--line);
+        }
+
+        .connect-split {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .connect-company-name {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        .connect-address {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--navy);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            max-width: 520px;
+        }
+
+        .connect-direct {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .connect-direct a {
+            transition: color 0.2s ease;
+        }
+
+        .connect-direct a:hover {
+            color: var(--orange);
+        }
+
+        .connect-social-group {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            justify-content: flex-start;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .social-btn.btn-fb {
+            background: #1877F2;
+            color: #FFFFFF;
+        }
+
+        .social-btn.btn-ig {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: #FFFFFF;
+            border-radius: 20px;
+        }
+
+        .social-btn svg {
+            width: 36px;
+            height: 36px;
+            fill: currentColor;
+        }
+
+        .connect-actions-extra {
+            margin-top: 36px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-inquire {
+            background: var(--orange);
+            color: var(--white);
+            padding: 14px 28px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 4px;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-inquire:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .btn-phone {
+            border: 2px solid var(--navy);
+            color: var(--navy);
+            padding: 14px 28px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 4px;
+            transition: all 0.25s;
+        }
+
+        .btn-phone:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        @media (max-width: 860px) {
+            .connect-split {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* ─── COPYRIGHT BAR ────────────────────────────────────────── */
+        .copyright-bar {
+            padding: 24px 0;
+            border-top: 1px solid var(--line);
+            font-size: 12px;
+            color: var(--navy-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* ─── LIGHTBOX MODAL ───────────────────────────────────────── */
+        #creator-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(20, 30, 54, 0.95);
+            backdrop-filter: blur(12px);
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #creator-lightbox.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-dialog {
+            max-width: 900px;
+            width: 100%;
+            background: var(--bg-canvas);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 32px 72px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.92);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lightbox-img-wrap {
+            max-height: 520px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .lightbox-img-wrap img {
+            width: 100%;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+        }
+
+        .lightbox-info {
+            padding: 24px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--line);
+        }
+
+        .lightbox-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, background 0.2s;
+            z-index: 10;
+        }
+
+        .lightbox-close-btn:hover {
+            background: var(--orange);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ─── HEADER / NAVBAR ──────────────────────────────────────── -->
+    <header>
+        <nav class="wrap">
+            <a href="index4.html" class="nav-brand">
+                <span class="brand-craig">CR<span class="accent-dot">À</span>IG</span>
+                <span class="brand-co">&amp; CO.</span>
+            </a>
+
+            <div class="navlinks">
+                <div class="nav-dropdown">
+                    <a href="index4.html" class="active nav-dropdown-trigger">
+                        Home <span style="font-size:9px;margin-left:2px;">▼</span>
+                        <span class="design-tag">Design 4</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header-title">🎨 Select Design Option:</div>
+                        <a href="index.html" class="dropdown-item">
+                            <div class="opt-title">✦ Design 1: Classic Solid Navy</div>
+                            <div class="opt-desc">Clean corporate executive split layout</div>
+                        </a>
+                        <a href="index2.html" class="dropdown-item">
+                            <div class="opt-title">✦ Design 2: Editorial Warm Paper</div>
+                            <div class="opt-desc">Luxury serif typography &amp; magazine spread</div>
+                        </a>
+                        <a href="index3.html" class="dropdown-item">
+                            <div class="opt-title">✦ Design 3: Bold Modern Dark</div>
+                            <div class="opt-desc">Bento box dark grid &amp; high-contrast style</div>
+                        </a>
+                        <a href="index4.html" class="dropdown-item active">
+                            <div class="opt-title">✦ Design 4: Co-Series Layout</div>
+                            <div class="opt-desc">Warm archetype aesthetic &amp; sequential Co-structure</div>
+                        </a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <a class="navcta" href="contact.html">Get a Proposal</a>
+        </nav>
+    </header>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         SECTION 1: HERO & BESPOKE EXPERIENCE HOUSE (1.png)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="sec-hero">
+        <div class="wrap">
+            
+            <!-- Top Wide Monochrome Silhouette Crowd Banner -->
+            <div class="hero-banner-frame">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80"
+                    alt="Craig & Co. Bespoke Experience House Atmosphere" class="hero-banner-img" loading="eager">
+            </div>
+
+            <!-- Lower Hero 2-Column Split -->
+            <div class="hero-content-split">
+                
+                <!-- Left Column: Story & Positioning -->
+                <div class="hero-narrative">
+                    <h1 class="hero-house-title">Craig &amp; Co. Bespoke Experience House</h1>
+
+                    <div class="hero-welcome-box">
+                        <h3>Welcome to Craig &amp; Co.<br>Where Precision Meets Inspiration in the Heart of Experience Design</h3>
+                    </div>
+
+                    <div class="hero-paragraphs">
+                        <p>
+                            Craig &amp; Co. is a bespoke Experience House operating at the intersection of creative vision and meticulous execution, crafting moments that elevate brands and captivate audiences.
+                        </p>
+                        <p>
+                            Craig &amp; Co. is a premier experience design hub. Bold and intentional, we specialize in end-to-end event production, strategic brand activations, and immersive environments. Every concept is thoughtfully engineered to shift perspectives, provoke emotion, and leave a lasting impression long after the lights go down.
+                        </p>
+                        <p>
+                            Guests and clients can immerse themselves in seamlessly tailored journey design, where every sensory detail from spatial flow and atmospheric curation to unexpected signature moments is crafted to deeply engage and inspire.
+                        </p>
+                        <p>
+                            Craig &amp; Co. is a trusted partner for global brands, visionary leaders, and exclusive gatherings seeking high-impact experience design, bespoke retreats, and unforgettable corporate activations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Feature Card with Arrow Link -->
+                <div class="hero-visual-card-wrap">
+                    <div class="hero-feature-card">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=80"
+                            alt="Experience House Concept Showcase" loading="lazy">
+                        <a href="services.html" class="hero-arrow-btn" aria-label="Explore Craig & Co. Services">
+                            ↗
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         SECTION 2: CO SOLUTIONS. (2.png)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="sec-solutions" id="solutions">
+        <div class="wrap">
+            
+            <!-- Section Header with Dual Person Icon -->
+            <div class="section-header-centered">
+                <div class="co-icon-wrapper">
+                    <!-- SVG Twin-Person Icon matching Reference -->
+                    <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h2 class="section-main-title">
+                    <span class="co-part">CO</span><span class="keyword-part">SOLUTIONS.</span>
+                </h2>
+            </div>
+
+            <!-- 4 Cards Grid -->
+            <div class="solutions-grid">
+                
+                <!-- Card 1 -->
+                <div class="co-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
+                            alt="Corporate Events" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">CORPORATE EVENTS</h3>
+                    <p class="co-card-desc">High impact events that communicate, inspire and engage.</p>
+                    <a href="services.html#pillar-events" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="co-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80"
+                            alt="Leadership Retreats" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">LEADERSHIP RETREATS</h3>
+                    <p class="co-card-desc">Strategic offsites that realign leaders and drive results</p>
+                    <a href="services.html#pillar-training" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="co-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80"
+                            alt="Team Building Experience" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">TEAM BUILDING EXPERIENCE</h3>
+                    <p class="co-card-desc">Experiences that strengthen trust, communication and collaboration.</p>
+                    <a href="services.html#pillar-training" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="co-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+                            alt="Brand Activations" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">BRAND ACTIVATIONS</h3>
+                    <p class="co-card-desc">Cretivations that bring brands to life.</p>
+                    <a href="services.html#pillar-events" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         SECTION 3: CO SERVICE. (3.png)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="sec-service" id="services">
+        <div class="wrap">
+            
+            <!-- Section Header with Dual Person Icon -->
+            <div class="section-header-centered">
+                <div class="co-icon-wrapper">
+                    <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h2 class="section-main-title">
+                    <span class="co-part">CO</span><span class="keyword-part">SERVICE.</span>
+                </h2>
+            </div>
+
+            <!-- 5 Cards Grid -->
+            <div class="service-grid-5">
+                
+                <!-- Service 1 -->
+                <div class="co-card service-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80"
+                            alt="Experience Design" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">EXPERIENCE DESIGN</h3>
+                    <p class="co-card-desc">We develop creative concepts and tailor-made experiences that reflect your brand identity, engage your audience, and achieve your business goals.</p>
+                    <a href="services.html" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="co-card service-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80"
+                            alt="Venue Sourcing" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">VENUE SOURCING</h3>
+                    <p class="co-card-desc">Finding the right venue is the foundation of every successful event. We carefully select locations that match your vision, audience, and budget.</p>
+                    <a href="services.html" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="co-card service-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80"
+                            alt="Transportation" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">TRANSPORTATION</h3>
+                    <p class="co-card-desc">Reliable transportation solutions that ensure smooth logistics, punctual arrivals, and hassle-free movement for every participant.</p>
+                    <a href="services.html" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="co-card service-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=800&q=80"
+                            alt="Travel Management" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">TRAVEL MANAGEMENT</h3>
+                    <p class="co-card-desc">Comprehensive travel planning including accommodation, transfers, itineraries, and guest coordination for a seamless experience.</p>
+                    <a href="services.html#pillar-travel" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="co-card service-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
+                            alt="Photo & Video Production" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">PHOTO &amp; VIDEO PRODUCTION</h3>
+                    <p class="co-card-desc">Capture every meaningful moment through professional photography and cinematic video production that tells your story beautifully.</p>
+                    <a href="portfolio.html" class="co-readmore-link">
+                        Read more <span class="arrow-line">──────&gt;</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         SECTION 4: CO CREATORS. (4.png)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="sec-creators" id="creators">
+        <div class="wrap">
+            
+            <!-- Section Header with Dual Person Icon -->
+            <div class="section-header-centered">
+                <div class="co-icon-wrapper">
+                    <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h2 class="section-main-title">
+                    <span class="co-part">CO</span><span class="keyword-part">CREATORS.</span>
+                </h2>
+            </div>
+
+            <!-- 12-Item Gallery Grid (4x3 layout) -->
+            <div class="creators-gallery-grid">
+                
+                <!-- Row 1 -->
+                <div class="creator-item" data-title="Luxury Yacht Gathering" data-tag="Bespoke Leisure" data-img="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=600&q=80" alt="Luxury Yacht Gathering" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Bespoke Leisure</span>
+                        <h4 class="creator-caption">Luxury Yacht Gathering</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Intimate Chef Experience" data-tag="VIP Hospitality" data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Intimate Chef Experience" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">VIP Hospitality</span>
+                        <h4 class="creator-caption">Intimate Chef Experience</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Sunset Marina Cruise" data-tag="Executive Travel" data-img="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80" alt="Sunset Marina Cruise" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Executive Travel</span>
+                        <h4 class="creator-caption">Sunset Marina Cruise</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Signature Conversation" data-tag="Leadership Dialogue" data-img="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80" alt="Signature Conversation" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Leadership Dialogue</span>
+                        <h4 class="creator-caption">Signature Conversation</h4>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="creator-item" data-title="Executive Soundbath Immersion" data-tag="Wellness Retreat" data-img="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80" alt="Executive Soundbath" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Wellness Retreat</span>
+                        <h4 class="creator-caption">Executive Soundbath Immersion</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Khaoyai Nature Retreat" data-tag="Team Experience" data-img="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80" alt="Khaoyai Nature Retreat" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Team Experience</span>
+                        <h4 class="creator-caption">Khaoyai Nature Retreat</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Anniversary Gala Night" data-tag="Brand Activation" data-img="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Anniversary Gala Night" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Brand Activation</span>
+                        <h4 class="creator-caption">Anniversary Gala Night</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Somatic Art Workshop" data-tag="Creative Expression" data-img="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80" alt="Somatic Art Workshop" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Creative Expression</span>
+                        <h4 class="creator-caption">Somatic Art Workshop</h4>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="creator-item" data-title="Neon Luminary Experience" data-tag="Creative Night" data-img="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Neon Luminary Experience" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Creative Night</span>
+                        <h4 class="creator-caption">Neon Luminary Experience</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Corporate Golf Invitational" data-tag="Executive Sports" data-img="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" alt="Corporate Golf Invitational" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Executive Sports</span>
+                        <h4 class="creator-caption">Corporate Golf Invitational</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Mangrove Sanctuary CSR" data-tag="Sustainability" data-img="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Mangrove Sanctuary CSR" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Sustainability</span>
+                        <h4 class="creator-caption">Mangrove Sanctuary CSR</h4>
+                    </div>
+                </div>
+
+                <div class="creator-item" data-title="Keynote Vision Summit" data-tag="Global Conference" data-img="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85">
+                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80" alt="Keynote Vision Summit" loading="lazy">
+                    <div class="creator-item-overlay">
+                        <span class="creator-tag">Global Conference</span>
+                        <h4 class="creator-caption">Keynote Vision Summit</h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         SECTION 5: CO CONNECT. (5.png)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="sec-connect" id="connect">
+        <div class="wrap">
+            
+            <!-- Section Header with Dual Person Icon -->
+            <div class="section-header-centered">
+                <div class="co-icon-wrapper">
+                    <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h2 class="section-main-title">
+                    <span class="co-part">CO</span><span class="keyword-part">CONNECT.</span>
+                </h2>
+            </div>
+
+            <!-- Connect Split: Contact Information & Social Icons -->
+            <div class="connect-split">
+                
+                <!-- Left Details -->
+                <div class="connect-info">
+                    <h3 class="connect-company-name">CRAIG &amp; CO CO., LTD</h3>
+                    
+                    <p class="connect-address">
+                        519/19 Dechatungka 1 Alley, Si Kan,<br>
+                        Don Mueang, Bangkok 10210, Thailand
+                    </p>
+
+                    <div class="connect-direct">
+                        <div>Tel: <a href="tel:+66956562955">+66 95 656 2955</a></div>
+                        <div>E: <a href="mailto:contactcraigandco@gmail.com">contactcraigandco@gmail.com</a></div>
+                    </div>
+
+                    <div class="connect-actions-extra">
+                        <a href="contact.html" class="btn-inquire">Send an Inquiry ↗</a>
+                        <a href="tel:+66956562955" class="btn-phone">Call Direct</a>
+                    </div>
+                </div>
+
+                <!-- Right Details: Official Social Buttons -->
+                <div class="connect-social-wrapper">
+                    <div class="connect-social-group">
+                        
+                        <!-- Facebook Official SVG Button -->
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn btn-fb" aria-label="Craig & Co. Facebook">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Instagram Official SVG Button -->
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn btn-ig" aria-label="Craig & Co. Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Line -->
+            <div class="copyright-bar" style="margin-top:60px;">
+                <div>&copy; 2026 Craig &amp; Co Co., Ltd. All rights reserved.</div>
+                <div>Bangkok &bull; Thailand &bull; Global Activations</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── LIGHTBOX MODAL (FOR CO CREATORS GALLERY) ─────────────── -->
+    <div id="creator-lightbox" role="dialog" aria-modal="true">
+        <div class="lightbox-dialog">
+            <button class="lightbox-close-btn" id="lb-close" aria-label="Close Preview">&times;</button>
+            <div class="lightbox-img-wrap">
+                <img id="lb-img" src="" alt="Craig & Co Creator Work Preview">
+            </div>
+            <div class="lightbox-info">
+                <div>
+                    <div id="lb-tag" style="font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;"></div>
+                    <h3 id="lb-title" style="font-size:18px;color:var(--navy);font-weight:700;"></h3>
+                </div>
+                <a href="contact.html" class="navcta" style="font-size:11.5px;padding:9px 18px;">Plan This Experience ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── INTERACTIVE SCRIPTS ──────────────────────────────────── -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('creator-lightbox');
+            const lbImg = document.getElementById('lb-img');
+            const lbTitle = document.getElementById('lb-title');
+            const lbTag = document.getElementById('lb-tag');
+            const lbClose = document.getElementById('lb-close');
+
+            // Open lightbox for creator items
+            document.querySelectorAll('.creator-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgUrl = item.getAttribute('data-img');
+                    const title = item.getAttribute('data-title');
+                    const tag = item.getAttribute('data-tag');
+
+                    lbImg.src = imgUrl;
+                    lbTitle.textContent = title;
+                    lbTag.textContent = tag;
+
+                    lightbox.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close lightbox
+            const closeLb = () => {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            };
+
+            lbClose.addEventListener('click', closeLb);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLb();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+                    closeLb();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
