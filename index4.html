@@ -285,7 +285,7 @@
         /* ─── SHARED SECTION HEADER & ICON ─────────────────────────── */
         .section-header-centered {
             text-align: center;
-            margin-bottom: 56px;
+            margin-bottom: 44px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -295,21 +295,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             transition: transform 0.3s ease;
         }
 
         .co-icon-wrapper:hover {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
         .co-svg-icon {
-            width: 58px;
-            height: 58px;
+            width: 44px;
+            height: 44px;
         }
 
         .section-main-title {
-            font-size: clamp(28px, 3.8vw, 42px);
+            font-size: clamp(20px, 2.2vw, 26px);
             font-weight: 800;
             letter-spacing: 0.04em;
             text-transform: uppercase;
@@ -478,6 +478,8 @@
         .co-card {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            text-align: center;
             transition: transform var(--transition-smooth);
         }
 
@@ -487,6 +489,7 @@
 
         .co-card-media {
             aspect-ratio: 16/10;
+            width: 100%;
             border-radius: 2px;
             overflow: hidden;
             margin-bottom: 22px;
@@ -513,6 +516,8 @@
             min-height: 42px;
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .co-card-desc {
@@ -521,11 +526,13 @@
             color: var(--navy-muted);
             margin-bottom: 20px;
             flex-grow: 1;
+            text-align: center;
         }
 
         .co-readmore-link {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             font-size: 13px;
             font-weight: 600;
@@ -697,45 +704,61 @@
 
         /* ─── SECTION 5: CO CONNECT. (FOOTER CONTACT) ──────────────── */
         .sec-connect {
-            padding: 90px 0 100px;
+            padding: 64px 0 36px;
             border-top: 1px solid var(--line);
+            background-color: var(--bg-canvas);
+        }
+
+        .connect-wrap {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 36px;
         }
 
         .connect-split {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
+            grid-template-columns: 1.25fr 0.75fr;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 36px;
+            gap: 40px;
+        }
+
+        .connect-info {
+            max-width: 540px;
         }
 
         .connect-company-name {
-            font-size: clamp(22px, 3vw, 32px);
+            font-size: 17px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.01em;
             color: var(--navy);
-            margin-bottom: 24px;
+            margin-bottom: 14px;
+            line-height: 1.25;
         }
 
         .connect-address {
-            font-size: clamp(16px, 2vw, 20px);
+            font-size: 14.5px;
             color: var(--navy);
             line-height: 1.5;
-            margin-bottom: 20px;
-            max-width: 520px;
-        }
-
-        .connect-direct {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            font-size: clamp(16px, 2vw, 20px);
-            color: var(--navy);
+            margin-bottom: 14px;
             font-weight: 500;
         }
 
+        .connect-direct {
+            font-size: 14.5px;
+            color: var(--navy);
+            line-height: 1.55;
+            font-weight: 500;
+        }
+
+        .connect-direct p {
+            margin: 0;
+        }
+
         .connect-direct a {
+            color: var(--navy);
+            text-decoration: none;
             transition: color 0.2s ease;
         }
 
@@ -743,108 +766,100 @@
             color: var(--orange);
         }
 
+        .connect-social-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
         .connect-social-group {
             display: flex;
             align-items: center;
-            gap: 24px;
-            justify-content: flex-start;
+            gap: 16px;
         }
 
         .social-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: var(--shadow-subtle);
+            width: 44px;
+            height: 44px;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+            box-shadow: 0 4px 12px rgba(29, 44, 77, 0.08);
+            text-decoration: none;
         }
 
         .social-btn:hover {
-            transform: translateY(-4px) scale(1.08);
-            box-shadow: var(--shadow-elevated);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 18px rgba(29, 44, 77, 0.14);
         }
 
         .social-btn.btn-fb {
             background: #1877F2;
-            color: #FFFFFF;
+            border-radius: 50%;
+        }
+
+        .social-btn.btn-fb svg {
+            width: 22px;
+            height: 22px;
         }
 
         .social-btn.btn-ig {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            color: #FFFFFF;
-            border-radius: 20px;
+            border-radius: 11px;
         }
 
-        .social-btn svg {
-            width: 36px;
-            height: 36px;
-            fill: currentColor;
-        }
-
-        .connect-actions-extra {
-            margin-top: 36px;
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn-inquire {
-            background: var(--orange);
-            color: var(--white);
-            padding: 14px 28px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 4px;
-            transition: all 0.25s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-inquire:hover {
-            background: var(--navy);
-            transform: translateY(-2px);
-        }
-
-        .btn-phone {
-            border: 2px solid var(--navy);
-            color: var(--navy);
-            padding: 14px 28px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 4px;
-            transition: all 0.25s;
-        }
-
-        .btn-phone:hover {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        @media (max-width: 860px) {
-            .connect-split {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        .social-btn.btn-ig svg {
+            width: 24px;
+            height: 24px;
         }
 
         /* ─── COPYRIGHT BAR ────────────────────────────────────────── */
         .copyright-bar {
-            padding: 24px 0;
+            margin-top: 50px;
+            padding-top: 18px;
             border-top: 1px solid var(--line);
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--navy-muted);
+            opacity: 0.8;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 12px;
+        }
+
+        @media (max-width: 860px) {
+            .sec-connect {
+                padding: 48px 0 30px;
+            }
+
+            .connect-wrap {
+                padding: 0 20px;
+            }
+
+            .connect-split {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                margin-top: 24px;
+            }
+
+            .connect-company-name {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .connect-address,
+            .connect-direct {
+                font-size: 13.5px;
+            }
+
+            .copyright-bar {
+                margin-top: 36px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
         }
 
         /* ─── LIGHTBOX MODAL ───────────────────────────────────────── */
@@ -1344,8 +1359,8 @@
     <!-- ═════════════════════════════════════════════════════════════
          SECTION 5: CO CONNECT. (5.png)
          ═════════════════════════════════════════════════════════════ -->
-    <section class="sec-connect" id="connect">
-        <div class="wrap">
+    <footer class="sec-connect" id="connect">
+        <div class="wrap connect-wrap">
             
             <!-- Section Header with Dual Person Icon -->
             <div class="section-header-centered">
@@ -1375,13 +1390,8 @@
                     </p>
 
                     <div class="connect-direct">
-                        <div>Tel: <a href="tel:+66956562955">+66 95 656 2955</a></div>
-                        <div>E: <a href="mailto:contactcraigandco@gmail.com">contactcraigandco@gmail.com</a></div>
-                    </div>
-
-                    <div class="connect-actions-extra">
-                        <a href="contact.html" class="btn-inquire">Send an Inquiry ↗</a>
-                        <a href="tel:+66956562955" class="btn-phone">Call Direct</a>
+                        <p>Tel: <a href="tel:+66956562955">+66 95 656 2955</a></p>
+                        <p>E: <a href="mailto:contactcraigandco@gmail.com">contactcraigandco@gmail.com</a></p>
                     </div>
                 </div>
 
@@ -1389,17 +1399,19 @@
                 <div class="connect-social-wrapper">
                     <div class="connect-social-group">
                         
-                        <!-- Facebook Official SVG Button -->
+                        <!-- Facebook Official Button -->
                         <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn btn-fb" aria-label="Craig & Co. Facebook">
-                            <svg viewBox="0 0 24 24">
+                            <svg viewBox="0 0 24 24" fill="#FFFFFF">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
 
-                        <!-- Instagram Official SVG Button -->
+                        <!-- Instagram Official Button -->
                         <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn btn-ig" aria-label="Craig & Co. Instagram">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                             </svg>
                         </a>
 
@@ -1409,13 +1421,13 @@
             </div>
 
             <!-- Bottom Copyright Line -->
-            <div class="copyright-bar" style="margin-top:60px;">
+            <div class="copyright-bar">
                 <div>&copy; 2026 Craig &amp; Co Co., Ltd. All rights reserved.</div>
                 <div>Bangkok &bull; Thailand &bull; Global Activations</div>
             </div>
 
         </div>
-    </section>
+    </footer>
 
     <!-- ─── LIGHTBOX MODAL (FOR CO CREATORS GALLERY) ─────────────── -->
     <div id="creator-lightbox" role="dialog" aria-modal="true">
