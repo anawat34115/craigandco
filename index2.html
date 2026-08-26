@@ -58,9 +58,9 @@
         }
 
         .wrap {
-            max-width: 1240px;
+            max-width: 1740px;
             margin: 0 auto;
-            padding: 0 40px
+            padding: 0 44px
         }
 
         section {
@@ -87,16 +87,21 @@
         }
 
         .logo {
-            font-family: 'Fraunces', serif;
-            font-size: 22px;
-            letter-spacing: .01em;
-            color: var(--forest);
-            font-weight: 600
+            display: flex;
+            align-items: center;
+            text-decoration: none;
         }
 
-        .logo em {
-            font-style: italic;
-            color: var(--brass)
+        .nav-logo-img {
+            height: 62px;
+            width: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            transition: transform 0.25s ease;
+        }
+
+        .logo:hover .nav-logo-img {
+            transform: scale(1.04);
         }
 
         .navlinks {
@@ -732,7 +737,9 @@
 <body>
     <header>
         <nav class="wrap">
-            <a href="index.html" class="logo">Craig <em>&</em> Co.</a>
+            <a href="index.html" class="logo" aria-label="Craig &amp; Co. Home">
+                <img src="Website Design.png" alt="Craig &amp; Co." class="nav-logo-img">
+            </a>
             <div class="navlinks">
                 <div class="nav-dropdown">
                     <a href="index2.html" class="active nav-dropdown-trigger">
@@ -755,7 +762,11 @@
                         </a>
                         <a href="index4.html" class="dropdown-item">
                             <div class="opt-title">✦ Design 4: Co-Series Layout</div>
-                            <div class="opt-desc">Warm archetype aesthetic & sequential Co-structure</div>
+                            <div class="opt-desc">Warm archetype aesthetic &amp; sequential Co-structure</div>
+                        </a>
+                        <a href="index5.html" class="dropdown-item">
+                            <div class="opt-title">✦ Design 5: Bold Modern Dark Co-Series</div>
+                            <div class="opt-desc">Design 4 structure with Design 3 dark palette &amp; CI</div>
                         </a>
                     </div>
                 </div>

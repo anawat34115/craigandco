@@ -48,7 +48,7 @@
   }
   
   a { color:inherit; text-decoration:none; }
-  .wrap { max-width:1220px; margin:0 auto; padding:0 32px; }
+  .wrap { max-width:1740px; margin:0 auto; padding:0 44px; }
 
   /* Ripple motif */
   .ripple {
@@ -69,16 +69,21 @@
   }
   nav.wrap {
     display: flex; align-items: center; justify-content: space-between;
-    height: 78px;
+    height: 88px;
   }
   .logo {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 600; font-size: 20px; color: var(--navy);
-    display: flex; align-items: center; gap: 8px;
-    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
   }
-  .logo:hover { transform: scale(1.02); }
-  .logo span { color: var(--terracotta); }
+  .nav-logo-img {
+    height: 62px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: transform 0.25s ease;
+  }
+  .logo:hover .nav-logo-img { transform: scale(1.04); }
   .navlinks { display:flex; gap:36px; font-size:14px; font-weight:600; letter-spacing:0.02em; text-transform:uppercase; }
   .navlinks a { position:relative; padding:4px 0; color:var(--charcoal); transition:color .25s; }
   .navlinks a:hover { color:var(--terracotta); }
@@ -325,7 +330,9 @@
 <!-- HEADER & NAVIGATION -->
 <header id="navbar">
   <nav class="wrap">
-    <a href="index.html" class="logo">CRAIG <span>&</span> CO.</a>
+    <a href="index.html" class="logo" aria-label="Craig &amp; Co. Home">
+      <img src="Website Design.png" alt="Craig &amp; Co." class="nav-logo-img">
+    </a>
     <div class="navlinks">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>

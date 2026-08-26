@@ -4,35 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craig &amp; Co. — Bespoke Experience House Agency | Bangkok (Design 4 — Co-Series Layout)</title>
+    <title>Craig &amp; Co. — Bespoke Experience House Agency | Bangkok (Design 5 — Bold Modern Dark Co-Series)</title>
     <meta name="description"
         content="Craig &amp; Co. is a bespoke Experience House operating at the intersection of creative vision and meticulous execution, crafting moments that elevate brands and captivate audiences.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@600;700;800;900&display=swap"
         rel="stylesheet">
     <style>
-        /* ─── TOKENS & DESIGN SYSTEM ────────────────────────────────── */
+        /* ─── TOKENS & DESIGN SYSTEM (DESIGN 3 BOLD MODERN DARK CI) ─── */
         :root {
-            --bg-canvas: #E6E4D6;
-            --bg-card: #DFDDD0;
-            --bg-card-hover: #D7D4C5;
-            --navy: #1D2C4D;
-            --navy-deep: #141E36;
-            --navy-light: #2E4068;
-            --navy-muted: rgba(29, 44, 77, 0.78);
+            --bg-canvas: #1A1B2E;
+            --bg-card: #272A4A;
+            --bg-card-hover: #31355B;
+            --navy: #E5E3D2;
+            --navy-deep: #FFFFFF;
+            --navy-muted: rgba(229, 227, 210, 0.78);
             --orange: #F2651D;
             --orange-hover: #D95412;
-            --orange-light: #FEEFE6;
+            --orange-light: rgba(242, 101, 29, 0.18);
+            --electric-blue: #607FF3;
             --white: #FFFFFF;
-            --line: rgba(29, 44, 77, 0.12);
-            --line-strong: rgba(29, 44, 77, 0.22);
+            --line: rgba(229, 227, 210, 0.14);
+            --line-strong: rgba(229, 227, 210, 0.28);
             --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --shadow-subtle: 0 8px 24px rgba(29, 44, 77, 0.06);
-            --shadow-elevated: 0 16px 36px rgba(29, 44, 77, 0.12);
+            --radius-md: 14px;
+            --radius-lg: 24px;
+            --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+            --shadow-elevated: 0 20px 50px rgba(0, 0, 0, 0.55);
             --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -51,7 +51,7 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-canvas);
             color: var(--navy);
             line-height: 1.6;
@@ -64,11 +64,11 @@
         h3,
         h4,
         .font-heading {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Archivo', sans-serif;
             font-weight: 800;
             color: var(--navy);
             line-height: 1.15;
-            letter-spacing: -0.015em;
+            letter-spacing: -0.02em;
         }
 
         a {
@@ -102,9 +102,9 @@
             left: 0;
             right: 0;
             z-index: 200;
-            background: rgba(230, 228, 214, 0.94);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            background: rgba(26, 27, 46, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--line);
             transition: all 0.3s ease;
         }
@@ -123,10 +123,12 @@
         }
 
         .nav-logo-img {
-            height: 62px;
+            height: 58px;
             width: auto;
             object-fit: contain;
-            mix-blend-mode: multiply;
+            background: #FFFFFF;
+            padding: 5px 12px;
+            border-radius: 6px;
             transition: transform 0.25s ease;
         }
 
@@ -137,9 +139,9 @@
         .navlinks {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 34px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.04em;
             text-transform: uppercase;
         }
@@ -148,7 +150,7 @@
             position: relative;
             padding: 6px 0;
             color: var(--navy);
-            opacity: 0.8;
+            opacity: 0.75;
             transition: all 0.2s;
         }
 
@@ -159,20 +161,23 @@
         }
 
         .navcta {
-            background: var(--navy);
-            color: var(--white);
-            padding: 11px 22px;
+            background: var(--orange);
+            color: var(--bg-canvas);
+            padding: 12px 24px;
             font-size: 12.5px;
             font-weight: 700;
             letter-spacing: 0.04em;
             text-transform: uppercase;
-            border-radius: 4px;
+            border-radius: 100px;
             transition: all 0.25s;
+            box-shadow: 0 4px 14px rgba(242, 101, 29, 0.3);
         }
 
         .navcta:hover {
-            background: var(--orange);
-            transform: translateY(-1px);
+            background: var(--electric-blue);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(96, 127, 243, 0.4);
         }
 
         /* ─── DESIGN SWITCHER DROPDOWN ────────────────────────────── */
@@ -204,11 +209,11 @@
             position: absolute;
             top: 100%;
             left: -10px;
-            width: 280px;
-            background: #FFFFFF;
+            width: 290px;
+            background: #222342;
             border: 1px solid var(--line-strong);
-            border-radius: 8px;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+            border-radius: 12px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
             padding: 8px 0;
             opacity: 0;
             visibility: hidden;
@@ -229,35 +234,35 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #777788;
+            color: var(--electric-blue);
             padding: 8px 16px 4px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--line);
             margin-bottom: 4px;
         }
 
         .dropdown-item {
             display: block;
             padding: 10px 16px;
-            color: #1A1B2E;
+            color: var(--navy);
             transition: all 0.2s;
             border-left: 3px solid transparent;
             text-decoration: none;
         }
 
         .dropdown-item:hover {
-            background: #F4F5F9;
+            background: rgba(255, 255, 255, 0.06);
             border-left-color: var(--orange);
         }
 
         .dropdown-item.active {
-            background: rgba(242, 101, 29, 0.09);
+            background: rgba(242, 101, 29, 0.15);
             border-left-color: var(--orange);
         }
 
         .opt-title {
             font-size: 13px;
             font-weight: 700;
-            color: #2B3467;
+            color: var(--navy);
             margin-bottom: 2px;
             text-transform: none;
         }
@@ -268,7 +273,7 @@
 
         .opt-desc {
             font-size: 11px;
-            color: rgba(26, 27, 46, 0.65);
+            color: var(--navy-muted);
             line-height: 1.35;
             text-transform: none;
             letter-spacing: 0;
@@ -277,7 +282,7 @@
         /* ─── SHARED SECTION HEADER & ICON ─────────────────────────── */
         .section-header-centered {
             text-align: center;
-            margin-bottom: 44px;
+            margin-bottom: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -287,24 +292,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             transition: transform 0.3s ease;
         }
 
         .co-icon-wrapper:hover {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
 
         .co-svg-icon {
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
         }
 
         .section-main-title {
-            font-size: clamp(20px, 2.2vw, 26px);
-            font-weight: 800;
+            font-size: clamp(22px, 2.4vw, 30px);
+            font-weight: 900;
             letter-spacing: 0.04em;
             text-transform: uppercase;
+            font-family: 'Archivo', sans-serif;
         }
 
         .section-main-title .co-part {
@@ -318,54 +324,60 @@
 
         /* ─── SECTION 1: HERO & BESPOKE EXPERIENCE HOUSE ────────────── */
         .sec-hero {
-            padding-top: 108px;
-            padding-bottom: 80px;
+            padding-top: 120px;
+            padding-bottom: 90px;
         }
 
         .hero-banner-frame {
             width: 100%;
             height: 420px;
-            border-radius: 8px;
+            border-radius: 16px;
             overflow: hidden;
-            margin-bottom: 60px;
-            box-shadow: var(--shadow-subtle);
+            margin-bottom: 64px;
+            box-shadow: var(--shadow-elevated);
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            filter: grayscale(100%) contrast(110%);
+            border: 1px solid var(--line);
+            filter: grayscale(100%) contrast(125%) brightness(0.85);
             transition: filter 0.6s ease;
         }
 
         .hero-banner-frame:hover {
-            filter: grayscale(70%) contrast(120%);
+            filter: grayscale(60%) contrast(130%) brightness(0.95);
         }
 
         .hero-content-split {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
-            gap: 64px;
+            gap: 72px;
             align-items: start;
         }
 
         .hero-narrative h1.hero-house-title {
-            font-size: clamp(26px, 3.2vw, 36px);
-            font-weight: 800;
+            font-size: clamp(28px, 3.4vw, 42px);
+            font-weight: 900;
             margin-bottom: 24px;
             color: var(--navy);
+            font-family: 'Archivo', sans-serif;
+            text-transform: uppercase;
         }
 
         .hero-welcome-box {
             margin-bottom: 24px;
+            padding-left: 18px;
+            border-left: 3px solid var(--orange);
         }
 
         .hero-welcome-box h3 {
-            font-size: 18px;
-            font-weight: 800;
+            font-size: 19px;
+            font-weight: 700;
             color: var(--navy);
-            line-height: 1.35;
+            line-height: 1.4;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .hero-paragraphs {
@@ -373,7 +385,7 @@
             flex-direction: column;
             gap: 18px;
             font-size: 15px;
-            line-height: 1.65;
+            line-height: 1.7;
             color: var(--navy-muted);
         }
 
@@ -387,28 +399,32 @@
         }
 
         .hero-feature-card {
-            background: #BCD7F2;
-            border-radius: 0;
+            background: var(--bg-card);
+            border-radius: 12px;
             overflow: hidden;
             aspect-ratio: 16/10;
             width: 100%;
             position: relative;
             z-index: 2;
-            box-shadow: var(--shadow-subtle);
+            box-shadow: var(--shadow-elevated);
+            border: 2px solid var(--line-strong);
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: border-color 0.3s ease;
         }
 
         .hero-feature-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+            filter: brightness(0.9);
         }
 
         .hero-visual-card-wrap:hover .hero-feature-card img {
             transform: scale(1.05);
+            filter: brightness(1);
         }
 
         /* ── Composite Background Shape Element (from 1.png design) ── */
@@ -423,18 +439,20 @@
             text-decoration: none;
         }
 
-        /* Right dark navy block with giant white arrow ↗ */
+        /* Right dark bento block with giant white/orange arrow ↗ */
         .composite-arrow-block {
             position: absolute;
             top: 0;
             right: 0;
             width: 110px;
             bottom: 50px;
-            background: var(--navy);
+            background: #272A4A;
+            border: 2px solid var(--line-strong);
+            border-radius: 0 12px 12px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .composite-arrow-block svg {
@@ -445,13 +463,14 @@
 
         .hero-composite-bg:hover .composite-arrow-block {
             background: var(--orange);
+            border-color: var(--orange);
         }
 
         .hero-composite-bg:hover .composite-arrow-block svg {
             transform: translate(6px, -6px) scale(1.08);
         }
 
-        /* Bottom dark navy stem extending down from center */
+        /* Bottom dark bento stem extending down from center */
         .composite-stem-bottom {
             position: absolute;
             bottom: 0;
@@ -459,12 +478,16 @@
             transform: translateX(-50%);
             width: 50px;
             height: 55px;
-            background: var(--navy);
-            transition: background 0.3s ease;
+            background: #272A4A;
+            border: 2px solid var(--line-strong);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            transition: all 0.3s ease;
         }
 
         .hero-composite-bg:hover .composite-stem-bottom {
             background: var(--orange);
+            border-color: var(--orange);
         }
 
         @media (max-width: 960px) {
@@ -474,7 +497,7 @@
             }
 
             .hero-banner-frame {
-                height: 240px;
+                height: 260px;
                 margin-bottom: 40px;
                 background-attachment: scroll;
             }
@@ -503,7 +526,7 @@
 
         /* ─── SECTION 2: CO SOLUTIONS. (4 CARDS) ───────────────────── */
         .sec-solutions {
-            padding: 90px 0;
+            padding: 100px 0;
             border-top: 1px solid var(--line);
         }
 
@@ -514,55 +537,65 @@
         }
 
         .co-card {
+            background: var(--bg-card);
+            border: 2px solid var(--line);
+            border-radius: 16px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: transform var(--transition-smooth);
+            transition: all var(--transition-smooth);
         }
 
         .co-card:hover {
-            transform: translateY(-6px);
+            background: var(--bg-card-hover);
+            border-color: var(--orange);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-elevated);
         }
 
         .co-card-media {
             aspect-ratio: 16/10;
             width: 100%;
-            border-radius: 2px;
+            border-radius: 10px;
             overflow: hidden;
             margin-bottom: 22px;
             box-shadow: var(--shadow-subtle);
-            background: #ccc;
+            background: #222;
         }
 
         .co-card-media img {
             transition: transform 0.6s ease;
+            filter: brightness(0.9);
         }
 
         .co-card:hover .co-card-media img {
-            transform: scale(1.06);
+            transform: scale(1.08);
+            filter: brightness(1.05);
         }
 
         .co-card-title {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.02em;
             color: var(--navy);
             margin-bottom: 12px;
             line-height: 1.25;
-            min-height: 42px;
+            min-height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            font-family: 'Archivo', sans-serif;
         }
 
         .co-card-desc {
             font-size: 14px;
-            line-height: 1.55;
+            line-height: 1.6;
             color: var(--navy-muted);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             flex-grow: 1;
             text-align: center;
         }
@@ -573,17 +606,19 @@
             justify-content: center;
             gap: 8px;
             font-size: 13px;
-            font-weight: 600;
-            color: var(--navy);
+            font-weight: 700;
+            color: var(--electric-blue);
             transition: color 0.2s ease;
             margin-top: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
         .co-readmore-link .arrow-line {
             display: inline-block;
             transition: transform 0.3s ease;
             color: var(--orange);
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .co-card:hover .co-readmore-link {
@@ -613,7 +648,7 @@
 
         /* ─── SECTION 3: CO SERVICE. (5 CARDS) ─────────────────────── */
         .sec-service {
-            padding: 90px 0;
+            padding: 100px 0;
             border-top: 1px solid var(--line);
         }
 
@@ -623,18 +658,38 @@
             gap: 22px;
         }
 
+        .service-card {
+            background: var(--bg-card);
+            border: 2px solid var(--line);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all var(--transition-smooth);
+        }
+
+        .service-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--electric-blue);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-elevated);
+        }
+
         .service-card .co-card-media {
             aspect-ratio: 4/3;
+            border-radius: 10px;
         }
 
         .service-card .co-card-title {
-            font-size: 15px;
-            min-height: 40px;
+            font-size: 16px;
+            min-height: 42px;
         }
 
         .service-card .co-card-desc {
-            font-size: 13px;
-            line-height: 1.5;
+            font-size: 13.5px;
+            line-height: 1.55;
         }
 
         @media (max-width: 1150px) {
@@ -658,24 +713,30 @@
 
         /* ─── SECTION 4: CO CREATORS. (12 GALLERY GRID) ────────────── */
         .sec-creators {
-            padding: 90px 0;
+            padding: 100px 0;
             border-top: 1px solid var(--line);
         }
 
         .creators-gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 24px;
         }
 
         .creator-item {
             position: relative;
-            border-radius: 2px;
+            border-radius: 14px;
             overflow: hidden;
             aspect-ratio: 16/10;
-            background: #2B3467;
+            background: #272A4A;
             cursor: pointer;
             box-shadow: var(--shadow-subtle);
+            border: 2px solid var(--line);
+            transition: border-color 0.3s ease;
+        }
+
+        .creator-item:hover {
+            border-color: var(--orange);
         }
 
         .creator-item img {
@@ -690,11 +751,11 @@
         .creator-item-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(0deg, rgba(29, 44, 77, 0.9) 0%, rgba(29, 44, 77, 0.2) 60%, transparent 100%);
+            background: linear-gradient(0deg, rgba(26, 27, 46, 0.95) 0%, rgba(26, 27, 46, 0.3) 65%, transparent 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 16px;
+            padding: 20px;
             opacity: 0;
             transform: translateY(8px);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -711,14 +772,14 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--orange);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .creator-caption {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--white);
-            line-height: 1.25;
+            line-height: 1.3;
         }
 
         @media (max-width: 1024px) {
@@ -730,7 +791,7 @@
         @media (max-width: 720px) {
             .creators-gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 14px;
+                gap: 16px;
             }
         }
 
@@ -742,7 +803,7 @@
 
         /* ─── SECTION 5: CO CONNECT. (FOOTER CONTACT) ──────────────── */
         .sec-connect {
-            padding: 64px 0 36px;
+            padding: 80px 0 44px;
             border-top: 1px solid var(--line);
             background-color: var(--bg-canvas);
         }
@@ -757,36 +818,37 @@
             display: grid;
             grid-template-columns: 1.25fr 0.75fr;
             align-items: center;
-            margin-top: 36px;
-            gap: 40px;
+            margin-top: 40px;
+            gap: 48px;
         }
 
         .connect-info {
-            max-width: 540px;
+            max-width: 600px;
         }
 
         .connect-company-name {
-            font-size: 17px;
-            font-weight: 800;
+            font-size: 20px;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.02em;
             color: var(--navy);
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             line-height: 1.25;
+            font-family: 'Archivo', sans-serif;
         }
 
         .connect-address {
-            font-size: 14.5px;
-            color: var(--navy);
-            line-height: 1.5;
-            margin-bottom: 14px;
+            font-size: 15px;
+            color: var(--navy-muted);
+            line-height: 1.65;
+            margin-bottom: 16px;
             font-weight: 500;
         }
 
         .connect-direct {
-            font-size: 14.5px;
-            color: var(--navy);
-            line-height: 1.55;
+            font-size: 15px;
+            color: var(--navy-muted);
+            line-height: 1.65;
             font-weight: 500;
         }
 
@@ -813,23 +875,23 @@
         .connect-social-group {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 18px;
         }
 
         .social-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-            box-shadow: 0 4px 12px rgba(29, 44, 77, 0.08);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
             text-decoration: none;
         }
 
         .social-btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 18px rgba(29, 44, 77, 0.14);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
         }
 
         .social-btn.btn-fb {
@@ -838,13 +900,13 @@
         }
 
         .social-btn.btn-fb svg {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
         }
 
         .social-btn.btn-ig {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            border-radius: 11px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-radius: 50%;
         }
 
         .social-btn.btn-ig svg {
@@ -852,131 +914,75 @@
             height: 24px;
         }
 
-        /* ─── COPYRIGHT BAR ────────────────────────────────────────── */
         .copyright-bar {
-            margin-top: 50px;
-            padding-top: 18px;
+            margin-top: 56px;
+            padding-top: 24px;
             border-top: 1px solid var(--line);
-            font-size: 11.5px;
+            font-size: 13px;
             color: var(--navy-muted);
-            opacity: 0.8;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
+            text-align: center;
         }
 
         @media (max-width: 860px) {
-            .sec-connect {
-                padding: 48px 0 30px;
-            }
-
-            .connect-wrap {
-                padding: 0 20px;
-            }
-
             .connect-split {
                 grid-template-columns: 1fr;
-                gap: 28px;
-                margin-top: 24px;
-            }
-
-            .connect-company-name {
-                font-size: 16px;
-                margin-bottom: 12px;
-            }
-
-            .connect-address,
-            .connect-direct {
-                font-size: 13.5px;
-            }
-
-            .copyright-bar {
-                margin-top: 36px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 6px;
+                gap: 32px;
             }
         }
 
-        /* ─── LIGHTBOX MODAL ───────────────────────────────────────── */
-        #creator-lightbox {
-            display: none;
+        /* ─── LIGHTBOX MODAL ────────────────────────────────────────── */
+        .lightbox-modal {
             position: fixed;
             inset: 0;
-            z-index: 9999;
-            background: rgba(20, 30, 54, 0.95);
-            backdrop-filter: blur(12px);
+            background: rgba(10, 11, 20, 0.94);
+            backdrop-filter: blur(14px);
+            z-index: 1000;
+            display: flex;
             align-items: center;
             justify-content: center;
             padding: 30px;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
 
-        #creator-lightbox.open {
-            display: flex;
+        .lightbox-modal.active {
             opacity: 1;
+            visibility: visible;
         }
 
-        .lightbox-dialog {
-            max-width: 900px;
-            width: 100%;
-            background: var(--bg-canvas);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 32px 72px rgba(0, 0, 0, 0.5);
+        .lightbox-content {
             position: relative;
-            animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes zoomIn {
-            from {
-                transform: scale(0.92);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .lightbox-img-wrap {
-            max-height: 520px;
-            background: #000;
+            max-width: 1000px;
+            max-height: 85vh;
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--line-strong);
+            background: #111;
         }
 
-        .lightbox-img-wrap img {
+        .lightbox-content img {
             width: 100%;
-            height: auto;
-            max-height: 520px;
+            height: 100%;
+            max-height: 85vh;
             object-fit: contain;
-        }
-
-        .lightbox-info {
-            padding: 24px 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--line);
+            display: block;
         }
 
         .lightbox-close-btn {
             position: absolute;
-            top: 16px;
-            right: 16px;
-            width: 40px;
-            height: 40px;
-            background: var(--navy);
-            color: #fff;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
             border: none;
             transition: transform 0.2s, background 0.2s;
@@ -995,15 +1001,15 @@
     <!-- ─── HEADER / NAVBAR ──────────────────────────────────────── -->
     <header>
         <nav class="wrap">
-            <a href="index4.html" class="nav-brand" aria-label="Craig &amp; Co. Home">
+            <a href="index5.html" class="nav-brand" aria-label="Craig &amp; Co. Home">
                 <img src="Website Design.png" alt="Craig &amp; Co." class="nav-logo-img">
             </a>
 
             <div class="navlinks">
                 <div class="nav-dropdown">
-                    <a href="index4.html" class="active nav-dropdown-trigger">
+                    <a href="index5.html" class="active nav-dropdown-trigger">
                         Home <span style="font-size:9px;margin-left:2px;">▼</span>
-                        <span class="design-tag">Design 4</span>
+                        <span class="design-tag">Design 5</span>
                     </a>
                     <div class="dropdown-menu">
                         <div class="dropdown-header-title">🎨 Select Design Option:</div>
@@ -1019,11 +1025,11 @@
                             <div class="opt-title">✦ Design 3: Bold Modern Dark</div>
                             <div class="opt-desc">Bento box dark grid &amp; high-contrast style</div>
                         </a>
-                        <a href="index4.html" class="dropdown-item active">
+                        <a href="index4.html" class="dropdown-item">
                             <div class="opt-title">✦ Design 4: Co-Series Layout</div>
                             <div class="opt-desc">Warm archetype aesthetic &amp; sequential Co-structure</div>
                         </a>
-                        <a href="index5.html" class="dropdown-item">
+                        <a href="index5.html" class="dropdown-item active">
                             <div class="opt-title">✦ Design 5: Bold Modern Dark Co-Series</div>
                             <div class="opt-desc">Design 4 structure with Design 3 dark palette &amp; CI</div>
                         </a>
@@ -1040,7 +1046,7 @@
     </header>
 
     <!-- ═════════════════════════════════════════════════════════════
-         SECTION 1: HERO & BESPOKE EXPERIENCE HOUSE (1.png)
+         SECTION 1: HERO & BESPOKE EXPERIENCE HOUSE
          ═════════════════════════════════════════════════════════════ -->
     <section class="sec-hero">
         <div class="wrap">
@@ -1093,11 +1099,12 @@
                 </div>
 
             </div>
+
         </div>
     </section>
 
     <!-- ═════════════════════════════════════════════════════════════
-         SECTION 2: CO SOLUTIONS. (2.png)
+         SECTION 2: CO SOLUTIONS. (4 CARDS)
          ═════════════════════════════════════════════════════════════ -->
     <section class="sec-solutions" id="solutions">
         <div class="wrap">
@@ -1105,7 +1112,6 @@
             <!-- Section Header with Dual Person Icon -->
             <div class="section-header-centered">
                 <div class="co-icon-wrapper">
-                    <!-- SVG Twin-Person Icon matching Reference -->
                     <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
                         <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
@@ -1121,55 +1127,63 @@
             <!-- 4 Cards Grid -->
             <div class="solutions-grid">
                 
-                <!-- Card 1 -->
+                <!-- Card 1: Training & Consulting -->
                 <div class="co-card">
                     <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
-                            alt="Corporate Events" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+                            alt="Training &amp; Consulting" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">CORPORATE EVENTS</h3>
-                    <p class="co-card-desc">High impact events that communicate, inspire and engage.</p>
-                    <a href="services.html#pillar-events" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
-                    </a>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="co-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80"
-                            alt="Leadership Retreats" loading="lazy">
-                    </div>
-                    <h3 class="co-card-title">LEADERSHIP RETREATS</h3>
-                    <p class="co-card-desc">Strategic offsites that realign leaders and drive results</p>
+                    <h3 class="co-card-title">Training &amp; Consulting</h3>
+                    <p class="co-card-desc">
+                        Empowering organizations through strategic workshops, executive leadership retreats, mindset transformation, and team building.
+                    </p>
                     <a href="services.html#pillar-training" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
+                        Explore Pillar <span class="arrow-line">→</span>
                     </a>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 2: Operation & Management -->
                 <div class="co-card">
                     <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80"
-                            alt="Team Building Experience" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                            alt="Operation &amp; Management" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">TEAM BUILDING EXPERIENCE</h3>
-                    <p class="co-card-desc">Experiences that strengthen trust, communication and collaboration.</p>
-                    <a href="services.html#pillar-training" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
+                    <h3 class="co-card-title">Operation &amp; Management</h3>
+                    <p class="co-card-desc">
+                        End-to-end operational governance, vendor coordination, process optimization, and flawless project execution.
+                    </p>
+                    <a href="services.html#pillar-operations" class="co-readmore-link">
+                        Explore Pillar <span class="arrow-line">→</span>
                     </a>
                 </div>
 
-                <!-- Card 4 -->
+                <!-- Card 3: Travel & Leisure -->
+                <div class="co-card">
+                    <div class="co-card-media">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+                            alt="Travel &amp; Leisure" loading="lazy">
+                    </div>
+                    <h3 class="co-card-title">Travel &amp; Leisure</h3>
+                    <p class="co-card-desc">
+                        Curated corporate group travel, luxury C-suite retreats, VIP hospitality, and unforgettable destination experiences.
+                    </p>
+                    <a href="services.html#pillar-travel" class="co-readmore-link">
+                        Explore Pillar <span class="arrow-line">→</span>
+                    </a>
+                </div>
+
+                <!-- Card 4: Entertainment Events & Sports -->
                 <div class="co-card">
                     <div class="co-card-media">
                         <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
-                            alt="Brand Activations" loading="lazy">
+                            alt="Entertainment Events &amp; Sports" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">BRAND ACTIVATIONS</h3>
-                    <p class="co-card-desc">Cretivations that bring brands to life.</p>
+                    <h3 class="co-card-title">Entertainment Events &amp; Sports</h3>
+                    <p class="co-card-desc">
+                        High-impact gala celebrations, 5K fun runs, golf tournaments, brand activations, and concert productions.
+                    </p>
                     <a href="services.html#pillar-events" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
+                        Explore Pillar <span class="arrow-line">→</span>
                     </a>
                 </div>
 
@@ -1179,9 +1193,9 @@
     </section>
 
     <!-- ═════════════════════════════════════════════════════════════
-         SECTION 3: CO SERVICE. (3.png)
+         SECTION 3: CO SERVICE. (5 CARDS)
          ═════════════════════════════════════════════════════════════ -->
-    <section class="sec-service" id="services">
+    <section class="sec-service" id="service">
         <div class="wrap">
             
             <!-- Section Header with Dual Person Icon -->
@@ -1202,68 +1216,78 @@
             <!-- 5 Cards Grid -->
             <div class="service-grid-5">
                 
-                <!-- Service 1 -->
-                <div class="co-card service-card">
+                <!-- Service 1: Event Management -->
+                <div class="service-card">
                     <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80"
-                            alt="Experience Design" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
+                            alt="Event Management" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">EXPERIENCE DESIGN</h3>
-                    <p class="co-card-desc">We develop creative concepts and tailor-made experiences that reflect your brand identity, engage your audience, and achieve your business goals.</p>
+                    <h3 class="co-card-title">Event Management</h3>
+                    <p class="co-card-desc">
+                        Full-scale corporate event planning, stage design, AV production, and flawless on-site execution.
+                    </p>
                     <a href="services.html" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
+                        Details <span class="arrow-line">→</span>
                     </a>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="co-card service-card">
+                <!-- Service 2: Experiential Marketing -->
+                <div class="service-card">
                     <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80"
-                            alt="Venue Sourcing" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80"
+                            alt="Experiential Marketing" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">VENUE SOURCING</h3>
-                    <p class="co-card-desc">Finding the right venue is the foundation of every successful event. We carefully select locations that match your vision, audience, and budget.</p>
+                    <h3 class="co-card-title">Experiential Marketing</h3>
+                    <p class="co-card-desc">
+                        Immersive brand pop-ups, product launches, interactive booths, and consumer sensory touchpoints.
+                    </p>
                     <a href="services.html" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
+                        Details <span class="arrow-line">→</span>
                     </a>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="co-card service-card">
+                <!-- Service 3: Destination Management -->
+                <div class="service-card">
                     <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80"
-                            alt="Transportation" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80"
+                            alt="Destination Management" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">TRANSPORTATION</h3>
-                    <p class="co-card-desc">Reliable transportation solutions that ensure smooth logistics, punctual arrivals, and hassle-free movement for every participant.</p>
+                    <h3 class="co-card-title">Destination Management</h3>
+                    <p class="co-card-desc">
+                        Complete MICE &amp; luxury travel curation across Thailand's premier resort locations and cities.
+                    </p>
                     <a href="services.html" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
+                        Details <span class="arrow-line">→</span>
                     </a>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="co-card service-card">
+                <!-- Service 4: C-Suite Concierge -->
+                <div class="service-card">
                     <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=800&q=80"
-                            alt="Travel Management" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+                            alt="C-Suite Concierge" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">TRAVEL MANAGEMENT</h3>
-                    <p class="co-card-desc">Comprehensive travel planning including accommodation, transfers, itineraries, and guest coordination for a seamless experience.</p>
-                    <a href="services.html#pillar-travel" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
+                    <h3 class="co-card-title">C-Suite Concierge</h3>
+                    <p class="co-card-desc">
+                        High-touch executive hospitality, private soundbath retreats, and confidential protocol management.
+                    </p>
+                    <a href="services.html" class="co-readmore-link">
+                        Details <span class="arrow-line">→</span>
                     </a>
                 </div>
 
-                <!-- Service 5 -->
-                <div class="co-card service-card">
+                <!-- Service 5: Team Engagement -->
+                <div class="service-card">
                     <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
-                            alt="Photo & Video Production" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80"
+                            alt="Team Engagement" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">PHOTO &amp; VIDEO PRODUCTION</h3>
-                    <p class="co-card-desc">Capture every meaningful moment through professional photography and cinematic video production that tells your story beautifully.</p>
-                    <a href="portfolio.html" class="co-readmore-link">
-                        Read more <span class="arrow-line">──────&gt;</span>
+                    <h3 class="co-card-title">Team Engagement</h3>
+                    <p class="co-card-desc">
+                        Customized team bonding, outdoor adventure games, CSR tree planting, and somatic wellness workshops.
+                    </p>
+                    <a href="services.html" class="co-readmore-link">
+                        Details <span class="arrow-line">→</span>
                     </a>
                 </div>
 
@@ -1273,7 +1297,7 @@
     </section>
 
     <!-- ═════════════════════════════════════════════════════════════
-         SECTION 4: CO CREATORS. (4.png)
+         SECTION 4: CO CREATORS. (12 GALLERY GRID)
          ═════════════════════════════════════════════════════════════ -->
     <section class="sec-creators" id="creators">
         <div class="wrap">
@@ -1293,105 +1317,114 @@
                 </h2>
             </div>
 
-            <!-- 12-Item Gallery Grid (4x3 layout) -->
+            <!-- 12 Gallery Items Grid -->
             <div class="creators-gallery-grid">
                 
-                <!-- Row 1 -->
-                <div class="creator-item" data-title="Luxury Yacht Gathering" data-tag="Bespoke Leisure" data-img="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=600&q=80" alt="Luxury Yacht Gathering" loading="lazy">
+                <!-- 1 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80" alt="Soundbath Retreat" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Bespoke Leisure</span>
-                        <h4 class="creator-caption">Luxury Yacht Gathering</h4>
+                        <span class="creator-tag">WELLNESS RETREAT</span>
+                        <div class="creator-caption">Executive Soundbath &amp; Somatic Immersion</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Intimate Chef Experience" data-tag="VIP Hospitality" data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Intimate Chef Experience" loading="lazy">
+                <!-- 2 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80" alt="Farm Village Outing" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">VIP Hospitality</span>
-                        <h4 class="creator-caption">Intimate Chef Experience</h4>
+                        <span class="creator-tag">OUTDOOR CSR</span>
+                        <div class="creator-caption">Khaoyai Farm Village &amp; School Donation</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Sunset Marina Cruise" data-tag="Executive Travel" data-img="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80" alt="Sunset Marina Cruise" loading="lazy">
+                <!-- 3 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80" alt="Corporate 5K Fun Run" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Executive Travel</span>
-                        <h4 class="creator-caption">Sunset Marina Cruise</h4>
+                        <span class="creator-tag">SPORTS EVENT</span>
+                        <div class="creator-caption">Annual 5K Fun Run &amp; Sports Festival</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Signature Conversation" data-tag="Leadership Dialogue" data-img="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80" alt="Signature Conversation" loading="lazy">
+                <!-- 4 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Gala Dinner" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Leadership Dialogue</span>
-                        <h4 class="creator-caption">Signature Conversation</h4>
+                        <span class="creator-tag">GALA CELEBRATION</span>
+                        <div class="creator-caption">50th Anniversary Golden Gala Night</div>
                     </div>
                 </div>
 
-                <!-- Row 2 -->
-                <div class="creator-item" data-title="Executive Soundbath Immersion" data-tag="Wellness Retreat" data-img="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80" alt="Executive Soundbath" loading="lazy">
+                <!-- 5 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80" alt="Art Therapy Session" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Wellness Retreat</span>
-                        <h4 class="creator-caption">Executive Soundbath Immersion</h4>
+                        <span class="creator-tag">WORKSHOP</span>
+                        <div class="creator-caption">Somatic Art &amp; Communication Synergy</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Khaoyai Nature Retreat" data-tag="Team Experience" data-img="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80" alt="Khaoyai Nature Retreat" loading="lazy">
+                <!-- 6 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Coastal CSR Saplings" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Team Experience</span>
-                        <h4 class="creator-caption">Khaoyai Nature Retreat</h4>
+                        <span class="creator-tag">SUSTAINABILITY</span>
+                        <div class="creator-caption">Mangrove Reforestation Initiative</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Anniversary Gala Night" data-tag="Brand Activation" data-img="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Anniversary Gala Night" loading="lazy">
+                <!-- 7 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" alt="Championship Golf" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Brand Activation</span>
-                        <h4 class="creator-caption">Anniversary Gala Night</h4>
+                        <span class="creator-tag">VIP NETWORKING</span>
+                        <div class="creator-caption">Championship Corporate Golf Tournament</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Somatic Art Workshop" data-tag="Creative Expression" data-img="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80" alt="Somatic Art Workshop" loading="lazy">
+                <!-- 8 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Neon Party Night" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Creative Expression</span>
-                        <h4 class="creator-caption">Somatic Art Workshop</h4>
+                        <span class="creator-tag">COMPANY PARTY</span>
+                        <div class="creator-caption">Neon Retro Party &amp; DJ Spectacular</div>
                     </div>
                 </div>
 
-                <!-- Row 3 -->
-                <div class="creator-item" data-title="Neon Luminary Experience" data-tag="Creative Night" data-img="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Neon Luminary Experience" loading="lazy">
+                <!-- 9 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=600&q=80" alt="Outdoor Olympics" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Creative Night</span>
-                        <h4 class="creator-caption">Neon Luminary Experience</h4>
+                        <span class="creator-tag">TEAM BUILDING</span>
+                        <div class="creator-caption">Outdoor Tug-of-War &amp; Adventure Olympics</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Corporate Golf Invitational" data-tag="Executive Sports" data-img="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" alt="Corporate Golf Invitational" loading="lazy">
+                <!-- 10 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Rooftop Yoga" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Executive Sports</span>
-                        <h4 class="creator-caption">Corporate Golf Invitational</h4>
+                        <span class="creator-tag">C-SUITE LUXURY</span>
+                        <div class="creator-caption">Sunset Rooftop Yoga &amp; Sound Healing</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Mangrove Sanctuary CSR" data-tag="Sustainability" data-img="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Mangrove Sanctuary CSR" loading="lazy">
+                <!-- 11 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Winter Gala" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Sustainability</span>
-                        <h4 class="creator-caption">Mangrove Sanctuary CSR</h4>
+                        <span class="creator-tag">HOLIDAY GALA</span>
+                        <div class="creator-caption">Winter Wonderland Christmas Gala</div>
                     </div>
                 </div>
 
-                <div class="creator-item" data-title="Keynote Vision Summit" data-tag="Global Conference" data-img="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85">
-                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80" alt="Keynote Vision Summit" loading="lazy">
+                <!-- 12 -->
+                <div class="creator-item" data-full="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80" alt="Park Marathon" loading="lazy">
                     <div class="creator-item-overlay">
-                        <span class="creator-tag">Global Conference</span>
-                        <h4 class="creator-caption">Keynote Vision Summit</h4>
+                        <span class="creator-tag">COMMUNITY SPORTS</span>
+                        <div class="creator-caption">Charity Fun Run &amp; Park Marathon</div>
                     </div>
                 </div>
 
@@ -1401,7 +1434,7 @@
     </section>
 
     <!-- ═════════════════════════════════════════════════════════════
-         SECTION 5: CO CONNECT. (5.png)
+         SECTION 5: CO CONNECT.
          ═════════════════════════════════════════════════════════════ -->
     <footer class="sec-connect" id="connect">
         <div class="wrap connect-wrap">
@@ -1444,14 +1477,14 @@
                     <div class="connect-social-group">
                         
                         <!-- Facebook Official Button -->
-                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn btn-fb" aria-label="Craig & Co. Facebook">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn btn-fb" aria-label="Craig &amp; Co. Facebook">
                             <svg viewBox="0 0 24 24" fill="#FFFFFF">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
 
                         <!-- Instagram Official Button -->
-                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn btn-ig" aria-label="Craig & Co. Instagram">
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn btn-ig" aria-label="Craig &amp; Co. Instagram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -1467,70 +1500,54 @@
             <!-- Bottom Copyright Line -->
             <div class="copyright-bar">
                 <div>&copy; 2026 Craig &amp; Co Co., Ltd. All rights reserved.</div>
-                <div>Bangkok &bull; Thailand &bull; Global Activations</div>
             </div>
 
         </div>
     </footer>
 
-    <!-- ─── LIGHTBOX MODAL (FOR CO CREATORS GALLERY) ─────────────── -->
-    <div id="creator-lightbox" role="dialog" aria-modal="true">
-        <div class="lightbox-dialog">
-            <button class="lightbox-close-btn" id="lb-close" aria-label="Close Preview">&times;</button>
-            <div class="lightbox-img-wrap">
-                <img id="lb-img" src="" alt="Craig & Co Creator Work Preview">
-            </div>
-            <div class="lightbox-info">
-                <div>
-                    <div id="lb-tag" style="font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px;"></div>
-                    <h3 id="lb-title" style="font-size:18px;color:var(--navy);font-weight:700;"></h3>
-                </div>
-                <a href="contact.html" class="navcta" style="font-size:11.5px;padding:9px 18px;">Plan This Experience ↗</a>
-            </div>
+    <!-- ─── LIGHTBOX PREVIEW MODAL ────────────────────────────────── -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="lightbox-close-btn" id="lbCloseBtn" aria-label="Close Lightbox">✕</button>
+        <div class="lightbox-content">
+            <img id="lb-img" src="" alt="Craig &amp; Co Creator Work Preview">
         </div>
     </div>
 
-    <!-- ─── INTERACTIVE SCRIPTS ──────────────────────────────────── -->
+    <!-- ─── INTERACTIVE LIGHTBOX SCRIPT ──────────────────────────── -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const lightbox = document.getElementById('creator-lightbox');
+            const creatorItems = document.querySelectorAll('.creator-item');
+            const lightbox = document.getElementById('lightboxModal');
             const lbImg = document.getElementById('lb-img');
-            const lbTitle = document.getElementById('lb-title');
-            const lbTag = document.getElementById('lb-tag');
-            const lbClose = document.getElementById('lb-close');
+            const lbCloseBtn = document.getElementById('lbCloseBtn');
 
-            // Open lightbox for creator items
-            document.querySelectorAll('.creator-item').forEach(item => {
+            creatorItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    const imgUrl = item.getAttribute('data-img');
-                    const title = item.getAttribute('data-title');
-                    const tag = item.getAttribute('data-tag');
-
-                    lbImg.src = imgUrl;
-                    lbTitle.textContent = title;
-                    lbTag.textContent = tag;
-
-                    lightbox.classList.add('open');
-                    document.body.style.overflow = 'hidden';
+                    const fullSrc = item.getAttribute('data-full');
+                    if (fullSrc) {
+                        lbImg.src = fullSrc;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
                 });
             });
 
-            // Close lightbox
-            const closeLb = () => {
-                lightbox.classList.remove('open');
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
                 document.body.style.overflow = '';
             };
 
-            lbClose.addEventListener('click', closeLb);
+            lbCloseBtn.addEventListener('click', closeLightbox);
+
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) {
-                    closeLb();
+                    closeLightbox();
                 }
             });
 
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && lightbox.classList.contains('open')) {
-                    closeLb();
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
                 }
             });
         });
