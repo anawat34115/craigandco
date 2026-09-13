@@ -8,32 +8,43 @@
 
 <style>
   :root {
-    --serif: 'Minion Variable', serif;
-    --navy: #2B3467;
-    --navy-light: #5A6293;
-    --blue-accent: #0d6efd;
+    /* Design 5 Core Tokens */
+    --bg-canvas: #1A1B2E;
+    --bg-card: #272A4A;
+    --bg-card-hover: #31355B;
+    --navy-deep: #FFFFFF;
+    --navy-muted: rgba(229, 227, 210, 0.78);
+    --orange: #F2651D;
+    --orange-hover: #D95412;
+    --orange-light: rgba(242, 101, 29, 0.18);
+    --electric-blue: #607FF3;
+
+    /* Legacy Map */
+    --serif: 'Space Grotesk', sans-serif;
+    --navy: #FFFFFF;
+    --navy-light: #E5E3D2;
+    --blue-accent: #607FF3;
     --gold: #F2651D;
-    --gold-light: #F8C89A;
-    --orange: #ff5722;
-    --orange-light: #fff0eb;
-    --charcoal: #1A1B2E;
-    --grey-light: #64748b;
-    --bg-main: #f8fafc;
-    --card-bg: #ffffff;
-    --cream: #FFFFFF;
+    --gold-light: #D95412;
+    --orange-light: rgba(242, 101, 29, 0.18);
+    --charcoal: rgba(229, 227, 210, 0.78);
+    --grey-light: rgba(229, 227, 210, 0.5);
+    --bg-main: #1A1B2E;
+    --card-bg: #272A4A;
+    --cream: #1A1B2E;
     --terracotta: #F2651D;
-    --cream-2: #E9EBF6;
-    --line: rgba(43,52,103,0.12);
-    --line-light: rgba(249,249,247,0.15);
-    --shadow-sm: 0 4px 12px rgba(43,52,103,0.05);
-    --shadow-md: 0 12px 28px rgba(43,52,103,0.08);
-    --shadow-lg: 0 20px 48px rgba(43,52,103,0.14);
+    --cream-2: #272A4A;
+    --line: rgba(229, 227, 210, 0.14);
+    --line-light: rgba(229, 227, 210, 0.28);
+    --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 20px 50px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.75);
   }
   
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-main);
     color: var(--charcoal);
     line-height: 1.6;
@@ -41,9 +52,9 @@
   }
   
   h1, h2, h3, h4, h5, .display {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    color: var(--navy);
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    color: var(--navy-deep);
     letter-spacing: -0.01em;
   }
   
@@ -61,45 +72,65 @@
 
   /* NAV */
   header {
-    position: fixed; top:0; left:0; right:0; z-index:100;
-    background: rgba(249,249,247,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-    transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: rgba(26, 27, 46, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--line);
+            transition: all 0.3s ease;
   }
   nav.wrap {
     display: flex; align-items: center; justify-content: space-between;
     height: 88px;
   }
-  .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+  .nav-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
   }
   .nav-logo-img {
-    height: 62px;
-    width: auto;
-    object-fit: contain;
-    mix-blend-mode: multiply;
-    transition: transform 0.25s ease;
+            height: 58px;
+            width: auto;
+            object-fit: contain;
+            background: #FFFFFF;
+            padding: 5px 12px;
+            border-radius: 6px;
+            transition: transform 0.25s ease;
   }
-  .logo:hover .nav-logo-img { transform: scale(1.04); }
-  .navlinks { display:flex; gap:36px; font-size:14px; font-weight:600; letter-spacing:0.02em; text-transform:uppercase; }
-  .navlinks a { position:relative; padding:4px 0; color:var(--charcoal); transition:color .25s; }
-  .navlinks a:hover { color:var(--terracotta); }
-  .navlinks a.active { color:var(--terracotta); }
-  .navlinks a.active::after {
-    content:''; position:absolute; bottom:-2px; left:0; right:0; height:2px;
-    background:var(--terracotta); border-radius:2px;
+  .nav-brand:hover .nav-logo-img { transform: scale(1.04); }
+  .navlinks {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
   }
+  .navlinks a { position:relative; padding:6px 0; color:var(--navy); opacity:0.75; transition:all .2s; }
+  .navlinks a:hover, .navlinks a.active { opacity:1; color:var(--orange); }
   .navcta {
-    background: var(--navy); color: var(--cream);
-    padding: 12px 24px; border-radius: 2px; font-size: 13px; font-weight: 700;
-    letter-spacing: 0.03em; text-transform: uppercase;
-    transition: all .25s;
-    box-shadow: var(--shadow-sm);
+            background: var(--orange);
+            color: var(--bg-canvas);
+            padding: 12px 24px;
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border-radius: 100px;
+            transition: all 0.25s;
+            box-shadow: 0 4px 14px rgba(242, 101, 29, 0.3);
   }
-  .navcta:hover { background: var(--terracotta); color: var(--cream); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  .navcta:hover {
+            background: var(--electric-blue);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(96, 127, 243, 0.4);
+  }
   @media(max-width:860px){ .navlinks{display:none;} }
 
   /* SECTION 1: AGODA-STYLE CLEAN MODERN HEADER */
@@ -107,7 +138,7 @@
   .page-header {
     position: relative;
     padding: 160px 0 100px;
-    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+    background: var(--bg-canvas);
     overflow: hidden;
     border-bottom: 1px solid var(--line);
   }
@@ -154,16 +185,16 @@
     font-size: clamp(42px, 5.5vw, 64px);
     line-height: 1.15;
     margin-bottom: 24px;
-    color: var(--navy);
+    color: var(--navy-deep);
   }
   .page-header h1 em {
     font-style: italic;
-    color: var(--terracotta);
+    color: var(--orange);
     font-weight: 400;
   }
   .page-header .subheadline {
     font-size: clamp(17px, 2.2vw, 21px);
-    color: var(--charcoal);
+    color: var(--navy-muted);
     opacity: 0.85;
     line-height: 1.6;
     max-width: 680px;
@@ -178,7 +209,7 @@
     font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
     color: var(--orange); margin-bottom: 8px; display: block;
   }
-  .section-title { font-size: clamp(28px, 3.5vw, 40px); color: var(--navy); margin-bottom: 40px; line-height: 1.2; }
+  .section-title { font-size: clamp(28px, 3.5vw, 40px); color: var(--navy-deep); margin-bottom: 40px; line-height: 1.2; }
   
   .channels-grid {
     display: grid; grid-template-columns: 1fr 1.3fr; gap: 30px;
@@ -186,14 +217,14 @@
   @media(max-width: 900px) { .channels-grid { grid-template-columns: 1fr; } }
 
   .channel-card {
-    background: #fff; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 36px;
+    background: var(--bg-card); border: 1.5px solid rgba(229, 227, 210, 0.1); border-radius: 20px; padding: 36px;
     box-shadow: 0 10px 30px rgba(14,34,68,0.05); display: flex; flex-direction: column; justify-content: space-between;
     transition: all 0.35s ease; position: relative; overflow: hidden;
   }
-  .channel-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: #cbd5e1; }
-  .channel-card.navy-card { background: var(--navy); color: #fff; border-color: var(--navy); }
-  .channel-card.navy-card .card-title { color: #fff; }
-  .channel-card.navy-card .card-sub { color: rgba(255,255,255,0.8); }
+  .channel-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--orange); }
+  .channel-card.navy-card { background: var(--bg-card-hover); color: var(--navy-deep); border-color: rgba(229, 227, 210, 0.2); }
+  .channel-card.navy-card .card-title { color: var(--navy-deep); }
+  .channel-card.navy-card .card-sub { color: var(--navy-muted); }
 
   .card-icon {
     width: 60px; height: 60px; border-radius: 16px;
@@ -202,29 +233,29 @@
   }
   .navy-card .card-icon { background: rgba(255,183,3,0.15); color: #ffb703; }
   
-  .card-title { font-size: 24px; font-weight: 600; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-  .card-sub { font-size: 15px; color: var(--charcoal); opacity: 0.85; margin-bottom: 28px; line-height: 1.6; }
+  .card-title { font-size: 24px; font-weight: 600; color: var(--navy-deep); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .card-sub { font-size: 15px; color: var(--navy-muted); opacity: 0.85; margin-bottom: 28px; line-height: 1.6; }
   
   /* Email Display Box */
   .email-display {
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    background: #f1f5f9; padding: 18px 24px; border-radius: 12px;
-    border: 1.5px dashed #cbd5e1; font-size: 16px; font-weight: 600; color: var(--navy);
+    background: rgba(229, 227, 210, 0.05); padding: 18px 24px; border-radius: 12px;
+    border: 1.5px dashed rgba(229, 227, 210, 0.2); font-size: 16px; font-weight: 600; color: var(--navy-deep);
     transition: all 0.25s;
   }
-  .navy-card .email-display { background: rgba(255,255,255,0.08); border-color: rgba(255,183,3,0.4); color: #ffb703; }
-  .email-display:hover { background: #fff; border-color: var(--orange); transform: scale(1.02); }
-  .navy-card .email-display:hover { background: rgba(255,255,255,0.15); color: #fff; }
+  .navy-card .email-display { background: rgba(229, 227, 210, 0.08); border-color: var(--orange); color: var(--navy-deep); }
+  .email-display:hover { background: rgba(229, 227, 210, 0.1); border-color: var(--orange); transform: scale(1.02); }
+  .navy-card .email-display:hover { background: rgba(229, 227, 210, 0.15); color: var(--orange); }
 
   /* Coordinators List */
   .coordinators-list { display: flex; flex-direction: column; gap: 16px; }
   .coord-item {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 24px; background: #f8fafc; border-radius: 14px;
-    border: 1.5px solid #e2e8f0; transition: all 0.25s;
+    padding: 18px 24px; background: rgba(229, 227, 210, 0.03); border-radius: 14px;
+    border: 1.5px solid rgba(229, 227, 210, 0.1); transition: all 0.25s;
   }
-  .coord-item:hover { background: #fff; border-color: var(--navy); box-shadow: var(--shadow-sm); transform: translateX(6px); }
-  .coord-name { font-weight: 600; font-size: 16px; color: var(--navy); display: flex; align-items: center; gap: 10px; }
+  .coord-item:hover { background: rgba(229, 227, 210, 0.08); border-color: var(--orange); box-shadow: var(--shadow-sm); transform: translateX(6px); }
+  .coord-name { font-weight: 600; font-size: 16px; color: var(--navy-deep); display: flex; align-items: center; gap: 10px; }
   .coord-name::before { content:'🛡️'; font-size: 18px; }
   .coord-phone {
     font-size: 15px; font-weight: 600; color: var(--orange);
@@ -236,7 +267,7 @@
   /* SECTION 3: AGODA-STYLE CORPORATE RESERVATION ENGINE FORM */
   .form-section { padding: 40px 0 120px; }
   .form-container {
-    background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 56px;
+    background: var(--bg-card); border: 1px solid rgba(229, 227, 210, 0.1); border-radius: 24px; padding: 56px;
     box-shadow: 0 20px 50px rgba(14,34,68,0.08); position: relative; overflow: hidden;
   }
   .form-container::before {
@@ -246,18 +277,18 @@
   @media(max-width: 768px) { .form-container { padding: 32px 20px; } }
 
   .form-header { margin-bottom: 36px; max-width: 680px; }
-  .form-header h3 { font-size: 28px; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-  .form-header p { font-size: 15px; color: var(--grey-light); }
+  .form-header h3 { font-size: 28px; color: var(--navy-deep); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .form-header p { font-size: 15px; color: var(--navy-muted); }
 
   /* Agoda Step Indicator */
   .step-bar {
     display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap;
   }
   .step-pill {
-    background: #f1f5f9; color: var(--navy); font-size: 13px; font-weight: 600;
+    background: rgba(229, 227, 210, 0.08); color: var(--navy-deep); font-size: 13px; font-weight: 600;
     padding: 8px 16px; border-radius: 30px; display: inline-flex; align-items: center; gap: 6px;
   }
-  .step-pill.active { background: var(--navy); color: #fff; }
+  .step-pill.active { background: var(--orange); color: #fff; }
 
   form { display: flex; flex-direction: column; gap: 24px; }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -265,20 +296,20 @@
 
   .form-field { display: flex; flex-direction: column; gap: 8px; }
   .form-field label {
-    font-size: 14px; font-weight: 600; color: var(--navy);
+    font-size: 14px; font-weight: 600; color: var(--navy-deep);
     display: flex; align-items: center; justify-content: space-between;
   }
   .form-field label span { font-size: 12px; font-weight: 500; color: var(--orange); }
   
   .form-field input, .form-field select, .form-field textarea {
     width: 100%; padding: 14px 18px;
-    border: 1.5px solid #cbd5e1; border-radius: 12px;
-    background: #f8fafc;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: var(--charcoal);
+    border: 1.5px solid rgba(229, 227, 210, 0.2); border-radius: 12px;
+    background: rgba(229, 227, 210, 0.03);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; color: var(--navy-deep);
     transition: all 0.25s;
   }
   .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-    outline: none; border-color: var(--blue-accent); background: #fff;
+    outline: none; border-color: var(--orange); background: rgba(229, 227, 210, 0.08);
     box-shadow: 0 0 0 4px rgba(13,110,253,0.1);
   }
   .form-field textarea { resize: vertical; min-height: 130px; }
@@ -307,41 +338,200 @@
   }
   .success-modal.open { opacity: 1; pointer-events: auto; }
   .modal-box {
-    background: #fff; width: 100%; max-width: 520px;
+    background: var(--bg-card); width: 100%; max-width: 520px;
     border-radius: 20px; padding: 48px 40px; text-align: center;
-    box-shadow: var(--shadow-lg); border: 2px solid #ffb703;
+    box-shadow: var(--shadow-lg); border: 2px solid var(--orange);
     transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .success-modal.open .modal-box { transform: scale(1); }
-  .modal-icon { width: 76px; height: 76px; border-radius: 50%; background: #fef9e7; color: #ffb703; font-size: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
-  .modal-box h4 { font-size: 26px; color: var(--navy); margin-bottom: 12px; font-weight: 700; }
-  .modal-box p { font-size: 15px; color: var(--charcoal); opacity: 0.85; margin-bottom: 30px; line-height: 1.6; }
+  .modal-icon { width: 76px; height: 76px; border-radius: 50%; background: var(--orange-light); color: var(--orange); font-size: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .modal-box h4 { font-size: 26px; color: var(--navy-deep); margin-bottom: 12px; font-weight: 700; }
+  .modal-box p { font-size: 15px; color: var(--navy-muted); opacity: 0.85; margin-bottom: 30px; line-height: 1.6; }
 
-  /* FOOTER */
-  footer {
-    background: var(--navy); color: rgba(249,249,247,0.6);
-    padding: 36px 0; font-size: 13px; border-top: 1px solid rgba(249,249,247,0.1);
-  }
-  footer .fname { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--cream); font-weight: 600; font-size: 16px; }
+  /* ─── SECTION 5: CO CONNECT. (FOOTER CONTACT) ──────────────── */
+        .sec-connect {
+            padding: 80px 0 44px;
+            border-top: 1px solid var(--line);
+            background-color: var(--bg-canvas);
+        }
+
+        .connect-wrap {
+            max-width: 1740px;
+            margin: 0 auto;
+            padding: 0 44px;
+        }
+
+        .connect-split {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            align-items: center;
+            margin-top: 40px;
+            gap: 48px;
+        }
+
+        .connect-info {
+            max-width: 600px;
+        }
+
+        .connect-company-name {
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--navy);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .connect-address {
+            font-size: 15px;
+            color: var(--navy-muted);
+            line-height: 1.65;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .connect-direct {
+            font-size: 15px;
+            color: var(--navy-muted);
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        .connect-direct p {
+            margin: 0;
+        }
+
+        .connect-direct a {
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .connect-direct a:hover {
+            color: var(--orange);
+        }
+
+        .connect-social-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .connect-social-group {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-btn.btn-fb {
+            background: #1877F2;
+            border-radius: 50%;
+        }
+
+        .social-btn.btn-fb svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .social-btn.btn-ig {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-radius: 50%;
+        }
+
+        .social-btn.btn-ig svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .copyright-bar {
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-size: 13px;
+            color: var(--navy-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 860px) {
+            .connect-split {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+        
+        .section-header-centered {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .co-icon-wrapper {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+        }
+
+        .co-svg-icon {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .section-main-title {
+            font-size: clamp(36px, 4vw, 56px);
+            font-family: 'Archivo', sans-serif;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .co-part {
+            color: #FFFFFF;
+        }
+
+        .keyword-part {
+            color: var(--orange);
+        }
 </style>
 </head>
 <body>
 
 <!-- HEADER & NAVIGATION -->
 <header id="navbar">
-  <nav class="wrap">
-    <a href="index.html" class="logo" aria-label="Craig &amp; Co. Home">
-      <img src="Website Design.png" alt="Craig &amp; Co." class="nav-logo-img">
-    </a>
-    <div class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html" class="active">Contact</a>
-    </div>
-    <a class="navcta" href="contact.html">Get a Proposal</a>
-  </nav>
+    <nav class="wrap">
+        <a href="index.html" class="nav-brand" aria-label="Craig &amp; Co. Home">
+            <img src="Website Design.png" alt="Craig &amp; Co." class="nav-logo-img">
+        </a>
+        <div class="navlinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+        <a class="navcta" href="contact.html">Get a Proposal</a>
+    </nav>
 </header>
 
 <!-- SECTION 1: PAGE HEADER -->
@@ -485,13 +675,83 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; width:100%;">
-    <div class="fname">Craig &amp; Co.</div>
-    <div>© 2026 Craig &amp; Co. — Bespoke Experience House Agency</div>
-  </div>
-</footer>
+<!-- ═════════════════════════════════════════════════════════════
+         SECTION 5: CO CONNECT.
+         ═════════════════════════════════════════════════════════════ -->
+    <footer class="sec-connect" id="connect">
+        <div class="wrap connect-wrap">
+
+            <!-- Section Header with Dual Person Icon -->
+            <div class="section-header-centered">
+                <div class="co-icon-wrapper">
+                    <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h2 class="section-main-title">
+                    <span class="co-part">CO</span><span class="keyword-part">CONNECT.</span>
+                </h2>
+            </div>
+
+            <!-- Connect Split: Contact Information & Social Icons -->
+            <div class="connect-split">
+
+                <!-- Left Details -->
+                <div class="connect-info">
+                    <h3 class="connect-company-name">CRAIG &amp; CO CO., LTD</h3>
+
+                    <p class="connect-address">
+                        519/19 Dechatungka 1 Alley, Si Kan,<br>
+                        Don Mueang, Bangkok 10210, Thailand
+                    </p>
+
+                    <div class="connect-direct">
+                        <p>Tel: <a href="tel:+66956562955">+66 95 656 2955</a></p>
+                        <p>E: <a href="mailto:contactcraigandco@gmail.com">contactcraigandco@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <!-- Right Details: Official Social Buttons -->
+                <div class="connect-social-wrapper">
+                    <div class="connect-social-group">
+
+                        <!-- Facebook Official Button -->
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn btn-fb"
+                            aria-label="Craig &amp; Co. Facebook">
+                            <svg viewBox="0 0 24 24" fill="#FFFFFF">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+
+                        <!-- Instagram Official Button -->
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn btn-ig"
+                            aria-label="Craig &amp; Co. Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Line -->
+            <div class="copyright-bar">
+                <div>&copy; 2026 Craig &amp; Co Co., Ltd. All rights reserved.</div>
+            </div>
+
+        </div>
+    </footer>
 
 <!-- SUCCESS MODAL FOR DEMONSTRATION -->
 <div class="success-modal" id="successModal">

@@ -358,26 +358,36 @@
         }
 
         .hero-narrative h1.hero-house-title {
-            font-size: clamp(28px, 3.4vw, 42px);
+            font-size: clamp(40px, 5.5vw, 80px);
             font-weight: 900;
             margin-bottom: 24px;
             color: var(--navy);
             font-family: 'Archivo', sans-serif;
             text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: -0.02em;
         }
 
-        .hero-welcome-box {
-            margin-bottom: 24px;
-            padding-left: 18px;
-            border-left: 3px solid var(--orange);
+        .hero-narrative h1.hero-house-title .c {
+            color: var(--orange);
         }
 
-        .hero-welcome-box h3 {
-            font-size: 19px;
-            font-weight: 700;
+        .hero-narrative h1.hero-house-title .o {
+            -webkit-text-stroke: 2px var(--navy);
+            color: transparent;
+        }
+
+        .hero-narrative h2.hero-heading {
+            font-size: clamp(18px, 1.8vw, 24px);
+            font-weight: 900;
+            margin-bottom: 20px;
             color: var(--navy);
-            line-height: 1.4;
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Archivo', sans-serif;
+            line-height: 1.3;
+        }
+
+        .hero-narrative .text-orange {
+            color: var(--orange);
         }
 
         .hero-paragraphs {
@@ -393,8 +403,6 @@
             position: relative;
             display: flex;
             align-items: flex-start;
-            padding-right: 90px;
-            padding-bottom: 50px;
             width: 100%;
         }
 
@@ -412,6 +420,16 @@
             align-items: center;
             justify-content: center;
             transition: border-color 0.3s ease;
+        }
+
+        .hero-fixed-arrow {
+            position: fixed;
+            right: -2vw;
+            top: 12vh;
+            width: clamp(150px, 25vw, 400px);
+            z-index: 1;
+            pointer-events: none;
+            opacity: 1;
         }
 
         .hero-feature-card img {
@@ -503,8 +521,8 @@
             }
 
             .hero-visual-card-wrap {
-                padding-right: 60px;
-                padding-bottom: 40px;
+                padding-right: 0;
+                padding-bottom: 0;
             }
 
             .composite-arrow-block {
@@ -532,8 +550,91 @@
 
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 28px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px 28px;
+        }
+
+        .sol-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .sol-media {
+            width: 100%;
+            aspect-ratio: 16/10;
+            margin-bottom: 24px;
+            overflow: hidden;
+            background: #272A4A;
+        }
+
+        .sol-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .sol-card:hover .sol-media img {
+            transform: scale(1.03);
+        }
+
+        .sol-title {
+            color: var(--navy-deep);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+            font-family: 'Archivo', sans-serif;
+            margin-bottom: 16px;
+        }
+
+        .sol-desc {
+            color: var(--navy-deep);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.9;
+        }
+
+        .sol-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            text-transform: none;
+            font-weight: 500;
+            color: var(--navy-deep);
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .sol-link .arrow-line {
+            display: inline-block;
+            width: 40px;
+            height: 1px;
+            background-color: var(--orange);
+            position: relative;
+            transition: width 0.3s ease;
+        }
+
+        .sol-link .arrow-line::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -3.5px;
+            border: solid var(--orange);
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+        }
+
+        .sol-card:hover .sol-link .arrow-line {
+            width: 60px;
         }
 
         .co-card {
@@ -658,44 +759,93 @@
             gap: 22px;
         }
 
-        .service-card {
-            background: var(--bg-card);
-            border: 2px solid var(--line);
-            border-radius: 16px;
-            padding: 20px;
+        .srv-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: all var(--transition-smooth);
         }
 
-        .service-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--electric-blue);
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-elevated);
+        .srv-media {
+            width: 100%;
+            aspect-ratio: 4/5;
+            margin-bottom: 24px;
+            overflow: hidden;
+            background: #272A4A;
         }
 
-        .service-card .co-card-media {
-            aspect-ratio: 4/3;
-            border-radius: 10px;
+        .srv-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .srv-card:hover .srv-media img {
+            transform: scale(1.03);
         }
 
-        .service-card .co-card-title {
-            font-size: 16px;
-            min-height: 42px;
+        .srv-title {
+            color: var(--navy-deep);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+            font-family: 'Archivo', sans-serif;
+            margin-bottom: 16px;
         }
 
-        .service-card .co-card-desc {
+        .srv-desc {
+            color: var(--navy-deep);
             font-size: 13.5px;
-            line-height: 1.55;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.9;
+        }
+
+        .srv-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            text-transform: none;
+            font-weight: 500;
+            color: var(--navy-deep);
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .srv-link .arrow-line {
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background-color: var(--orange);
+            position: relative;
+            transition: width 0.3s ease;
+        }
+
+        .srv-link .arrow-line::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -3.5px;
+            border: solid var(--orange);
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+        }
+
+        .srv-card:hover .srv-link .arrow-line {
+            width: 50px;
         }
 
         @media (max-width: 1150px) {
             .service-grid-5 {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 28px 20px;
+                gap: 40px 20px;
             }
         }
 
@@ -1050,47 +1200,49 @@
          ═════════════════════════════════════════════════════════════ -->
     <section class="sec-hero">
         <div class="wrap">
-            
+
             <!-- Top Wide Monochrome Silhouette Crowd Banner (Fixed Parallax) -->
-            <div class="hero-banner-frame" role="img" aria-label="Craig &amp; Co. Bespoke Experience House Atmosphere"></div>
+            <div class="hero-banner-frame" role="img" aria-label="Craig &amp; Co. Bespoke Experience House Atmosphere">
+            </div>
 
             <!-- Lower Hero 2-Column Split -->
             <div class="hero-content-split">
-                
+
                 <!-- Left Column: Story & Positioning -->
                 <div class="hero-narrative">
-                    <h1 class="hero-house-title">Craig &amp; Co. Bespoke Experience House</h1>
-
-                    <div class="hero-welcome-box">
-                        <h3>Welcome to Craig &amp; Co.<br>Where Precision Meets Inspiration in the Heart of Experience Design</h3>
-                    </div>
+                    <h1 class="hero-house-title">EVENTS THAT<br><span class="c">HIT</span> <span
+                            class="o">DIFFERENT.</span></h1>
+                    <h2 class="hero-heading">Welcome to <span class="text-orange">Craig &amp; Co.</span></h2>
+                    <h2 class="hero-heading">Where Precision Meets Inspiration in the Heart of Experience Design</h2>
 
                     <div class="hero-paragraphs">
                         <p>
-                            Craig &amp; Co. is a bespoke Experience House operating at the intersection of creative vision and meticulous execution, crafting moments that elevate brands and captivate audiences.
+                            Craig &amp; Co. is a bespoke Experience House operating at the intersection of creative
+                            vision and meticulous execution, crafting moments that elevate brands and captivate
+                            audiences.
                         </p>
                         <p>
-                            Craig &amp; Co. is a premier experience design hub. Bold and intentional, we specialize in end-to-end event production, strategic brand activations, and immersive environments. Every concept is thoughtfully engineered to shift perspectives, provoke emotion, and leave a lasting impression long after the lights go down.
+                            Craig &amp; Co. is a premier experience design hub. Bold and intentional, we specialize in
+                            end-to-end event production, strategic brand activations, and immersive environments. Every
+                            concept is thoughtfully engineered to shift perspectives, provoke emotion, and leave a
+                            lasting impression long after the lights go down.
                         </p>
                         <p>
-                            Guests and clients can immerse themselves in seamlessly tailored journey design, where every sensory detail from spatial flow and atmospheric curation to unexpected signature moments is crafted to deeply engage and inspire.
+                            Guests and clients can immerse themselves in seamlessly tailored journey design, where every
+                            sensory detail from spatial flow and atmospheric curation to unexpected signature moments is
+                            crafted to deeply engage and inspire.
                         </p>
                         <p>
-                            Craig &amp; Co. is a trusted partner for global brands, visionary leaders, and exclusive gatherings seeking high-impact experience design, bespoke retreats, and unforgettable corporate activations.
+                            Craig &amp; Co. is a trusted partner for global brands, visionary leaders, and exclusive
+                            gatherings seeking high-impact experience design, bespoke retreats, and unforgettable
+                            corporate activations.
                         </p>
                     </div>
                 </div>
 
-                <!-- Right Column: Visual Feature Card with Background Composite Arrow Element (from 1.png) -->
+                <!-- Right Column: Visual Feature Card with Background Fixed Arrow Element -->
                 <div class="hero-visual-card-wrap">
-                    <a href="services.html" class="hero-composite-bg" aria-label="Explore Craig &amp; Co. Services">
-                        <div class="composite-arrow-block">
-                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 78L78 22M78 22H38M78 22V62" stroke="#FFFFFF" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
-                            </svg>
-                        </div>
-                        <div class="composite-stem-bottom"></div>
-                    </a>
+                    <img src="arrow-removebg-preview.png" class="hero-fixed-arrow" alt="Decorative Arrow">
 
                     <div class="hero-feature-card">
                         <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=80"
@@ -1104,86 +1256,64 @@
     </section>
 
     <!-- ═════════════════════════════════════════════════════════════
-         SECTION 2: CO SOLUTIONS. (4 CARDS)
+         SECTION 2: CO SOLUTIONS. (3 CARDS)
          ═════════════════════════════════════════════════════════════ -->
     <section class="sec-solutions" id="solutions">
         <div class="wrap">
-            
+
             <!-- Section Header with Dual Person Icon -->
             <div class="section-header-centered">
                 <div class="co-icon-wrapper">
                     <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
                     </svg>
                 </div>
                 <h2 class="section-main-title">
-                    <span class="co-part">CO</span><span class="keyword-part">SOLUTIONS.</span>
+                    <span class="co-part">CO</span> <span class="keyword-part">SOLUTIONS.</span>
                 </h2>
             </div>
 
-            <!-- 4 Cards Grid -->
+            <!-- 3 Cards Grid -->
             <div class="solutions-grid">
-                
-                <!-- Card 1: Training & Consulting -->
-                <div class="co-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
-                            alt="Training &amp; Consulting" loading="lazy">
+
+                <!-- Card 1 -->
+                <div class="sol-card">
+                    <div class="sol-media">
+                        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&w=800&q=80" alt="Corporate Events & Team Building" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">Training &amp; Consulting</h3>
-                    <p class="co-card-desc">
-                        Empowering organizations through strategic workshops, executive leadership retreats, mindset transformation, and team building.
-                    </p>
-                    <a href="services.html#pillar-training" class="co-readmore-link">
-                        Explore Pillar <span class="arrow-line">→</span>
+                    <h3 class="sol-title">CORPORATE<br>EVENTS &amp; TEAM BUILDING</h3>
+                    <p class="sol-desc">Impactful events that drive connection,<br>communication, and teamwork.</p>
+                    <a href="#" class="sol-link">
+                        Read more <span class="arrow-line"></span>
                     </a>
                 </div>
 
-                <!-- Card 2: Operation & Management -->
-                <div class="co-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
-                            alt="Operation &amp; Management" loading="lazy">
+                <!-- Card 2 -->
+                <div class="sol-card">
+                    <div class="sol-media">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Leadership Retreats" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">Operation &amp; Management</h3>
-                    <p class="co-card-desc">
-                        End-to-end operational governance, vendor coordination, process optimization, and flawless project execution.
-                    </p>
-                    <a href="services.html#pillar-operations" class="co-readmore-link">
-                        Explore Pillar <span class="arrow-line">→</span>
+                    <h3 class="sol-title">LEADERSHIP<br>RETREATS</h3>
+                    <p class="sol-desc">Strategic offsites that realign leaders<br>and drive results</p>
+                    <a href="#" class="sol-link">
+                        Read more <span class="arrow-line"></span>
                     </a>
                 </div>
 
-                <!-- Card 3: Travel & Leisure -->
-                <div class="co-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
-                            alt="Travel &amp; Leisure" loading="lazy">
+                <!-- Card 3 -->
+                <div class="sol-card">
+                    <div class="sol-media">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Brand Activations" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">Travel &amp; Leisure</h3>
-                    <p class="co-card-desc">
-                        Curated corporate group travel, luxury C-suite retreats, VIP hospitality, and unforgettable destination experiences.
-                    </p>
-                    <a href="services.html#pillar-travel" class="co-readmore-link">
-                        Explore Pillar <span class="arrow-line">→</span>
-                    </a>
-                </div>
-
-                <!-- Card 4: Entertainment Events & Sports -->
-                <div class="co-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
-                            alt="Entertainment Events &amp; Sports" loading="lazy">
-                    </div>
-                    <h3 class="co-card-title">Entertainment Events &amp; Sports</h3>
-                    <p class="co-card-desc">
-                        High-impact gala celebrations, 5K fun runs, golf tournaments, brand activations, and concert productions.
-                    </p>
-                    <a href="services.html#pillar-events" class="co-readmore-link">
-                        Explore Pillar <span class="arrow-line">→</span>
+                    <h3 class="sol-title">BRAND<br>ACTIVATIONS</h3>
+                    <p class="sol-desc">Creative activations that bring brands to life.</p>
+                    <a href="#" class="sol-link">
+                        Read more <span class="arrow-line"></span>
                     </a>
                 </div>
 
@@ -1197,97 +1327,84 @@
          ═════════════════════════════════════════════════════════════ -->
     <section class="sec-service" id="service">
         <div class="wrap">
-            
+
             <!-- Section Header with Dual Person Icon -->
             <div class="section-header-centered">
                 <div class="co-icon-wrapper">
                     <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
                     </svg>
                 </div>
                 <h2 class="section-main-title">
-                    <span class="co-part">CO</span><span class="keyword-part">SERVICE.</span>
+                    <span class="co-part">CO</span> <span class="keyword-part">SERVICE.</span>
                 </h2>
             </div>
 
             <!-- 5 Cards Grid -->
             <div class="service-grid-5">
-                
-                <!-- Service 1: Event Management -->
-                <div class="service-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
-                            alt="Event Management" loading="lazy">
+
+                <!-- Card 1 -->
+                <div class="srv-card">
+                    <div class="srv-media">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Experience Design" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">Event Management</h3>
-                    <p class="co-card-desc">
-                        Full-scale corporate event planning, stage design, AV production, and flawless on-site execution.
-                    </p>
-                    <a href="services.html" class="co-readmore-link">
-                        Details <span class="arrow-line">→</span>
+                    <h3 class="srv-title">EXPERIENCE<br>DESIGN</h3>
+                    <p class="srv-desc">We develop creative concepts and tailor-made experiences that reflect your brand identity, engage your audience, and achieve your business goals.</p>
+                    <a href="#" class="srv-link">
+                        Read more <span class="arrow-line"></span>
                     </a>
                 </div>
 
-                <!-- Service 2: Experiential Marketing -->
-                <div class="service-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80"
-                            alt="Experiential Marketing" loading="lazy">
+                <!-- Card 2 -->
+                <div class="srv-card">
+                    <div class="srv-media">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Venue Sourcing" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">Experiential Marketing</h3>
-                    <p class="co-card-desc">
-                        Immersive brand pop-ups, product launches, interactive booths, and consumer sensory touchpoints.
-                    </p>
-                    <a href="services.html" class="co-readmore-link">
-                        Details <span class="arrow-line">→</span>
+                    <h3 class="srv-title">VENUE<br>SOURCING</h3>
+                    <p class="srv-desc">Finding the right venue is the foundation of every successful event. We carefully select locations that match your vision, audience, and budget.</p>
+                    <a href="#" class="srv-link">
+                        Read more <span class="arrow-line"></span>
                     </a>
                 </div>
 
-                <!-- Service 3: Destination Management -->
-                <div class="service-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80"
-                            alt="Destination Management" loading="lazy">
+                <!-- Card 3 -->
+                <div class="srv-card">
+                    <div class="srv-media">
+                        <img src="https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?auto=format&fit=crop&w=800&q=80" alt="Transportation" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">Destination Management</h3>
-                    <p class="co-card-desc">
-                        Complete MICE &amp; luxury travel curation across Thailand's premier resort locations and cities.
-                    </p>
-                    <a href="services.html" class="co-readmore-link">
-                        Details <span class="arrow-line">→</span>
+                    <h3 class="srv-title">TRANSPORTATION</h3>
+                    <p class="srv-desc">Reliable transportation solutions that ensure smooth logistics, punctual arrivals, and hassle-free movement for every participant.</p>
+                    <a href="#" class="srv-link">
+                        Read more <span class="arrow-line"></span>
                     </a>
                 </div>
 
-                <!-- Service 4: C-Suite Concierge -->
-                <div class="service-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
-                            alt="C-Suite Concierge" loading="lazy">
+                <!-- Card 4 -->
+                <div class="srv-card">
+                    <div class="srv-media">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Travel Management" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">C-Suite Concierge</h3>
-                    <p class="co-card-desc">
-                        High-touch executive hospitality, private soundbath retreats, and confidential protocol management.
-                    </p>
-                    <a href="services.html" class="co-readmore-link">
-                        Details <span class="arrow-line">→</span>
+                    <h3 class="srv-title">TRAVEL<br>MANAGEMENT</h3>
+                    <p class="srv-desc">Comprehensive travel planning including accommodation, transfers, itineraries, and guest coordination for a seamless experience.</p>
+                    <a href="#" class="srv-link">
+                        Read more <span class="arrow-line"></span>
                     </a>
                 </div>
 
-                <!-- Service 5: Team Engagement -->
-                <div class="service-card">
-                    <div class="co-card-media">
-                        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80"
-                            alt="Team Engagement" loading="lazy">
+                <!-- Card 5 -->
+                <div class="srv-card">
+                    <div class="srv-media">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Photo & Video Production" loading="lazy">
                     </div>
-                    <h3 class="co-card-title">Team Engagement</h3>
-                    <p class="co-card-desc">
-                        Customized team bonding, outdoor adventure games, CSR tree planting, and somatic wellness workshops.
-                    </p>
-                    <a href="services.html" class="co-readmore-link">
-                        Details <span class="arrow-line">→</span>
+                    <h3 class="srv-title">PHOTO &amp; VIDEO<br>PRODUCTION</h3>
+                    <p class="srv-desc">Capture every meaningful moment through professional photography and cinematic video production that tells your story beautifully.</p>
+                    <a href="#" class="srv-link">
+                        Read more <span class="arrow-line"></span>
                     </a>
                 </div>
 
@@ -1301,15 +1418,17 @@
          ═════════════════════════════════════════════════════════════ -->
     <section class="sec-creators" id="creators">
         <div class="wrap">
-            
+
             <!-- Section Header with Dual Person Icon -->
             <div class="section-header-centered">
                 <div class="co-icon-wrapper">
                     <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
                     </svg>
                 </div>
                 <h2 class="section-main-title">
@@ -1319,10 +1438,12 @@
 
             <!-- 12 Gallery Items Grid -->
             <div class="creators-gallery-grid">
-                
+
                 <!-- 1 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80" alt="Soundbath Retreat" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80"
+                        alt="Soundbath Retreat" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">WELLNESS RETREAT</span>
                         <div class="creator-caption">Executive Soundbath &amp; Somatic Immersion</div>
@@ -1330,8 +1451,10 @@
                 </div>
 
                 <!-- 2 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80" alt="Farm Village Outing" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80"
+                        alt="Farm Village Outing" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">OUTDOOR CSR</span>
                         <div class="creator-caption">Khaoyai Farm Village &amp; School Donation</div>
@@ -1339,8 +1462,10 @@
                 </div>
 
                 <!-- 3 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80" alt="Corporate 5K Fun Run" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80"
+                        alt="Corporate 5K Fun Run" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">SPORTS EVENT</span>
                         <div class="creator-caption">Annual 5K Fun Run &amp; Sports Festival</div>
@@ -1348,8 +1473,10 @@
                 </div>
 
                 <!-- 4 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Gala Dinner" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80"
+                        alt="Gala Dinner" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">GALA CELEBRATION</span>
                         <div class="creator-caption">50th Anniversary Golden Gala Night</div>
@@ -1357,8 +1484,10 @@
                 </div>
 
                 <!-- 5 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80" alt="Art Therapy Session" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80"
+                        alt="Art Therapy Session" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">WORKSHOP</span>
                         <div class="creator-caption">Somatic Art &amp; Communication Synergy</div>
@@ -1366,8 +1495,10 @@
                 </div>
 
                 <!-- 6 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Coastal CSR Saplings" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
+                        alt="Coastal CSR Saplings" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">SUSTAINABILITY</span>
                         <div class="creator-caption">Mangrove Reforestation Initiative</div>
@@ -1375,8 +1506,10 @@
                 </div>
 
                 <!-- 7 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" alt="Championship Golf" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80"
+                        alt="Championship Golf" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">VIP NETWORKING</span>
                         <div class="creator-caption">Championship Corporate Golf Tournament</div>
@@ -1384,8 +1517,10 @@
                 </div>
 
                 <!-- 8 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Neon Party Night" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80"
+                        alt="Neon Party Night" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">COMPANY PARTY</span>
                         <div class="creator-caption">Neon Retro Party &amp; DJ Spectacular</div>
@@ -1393,8 +1528,10 @@
                 </div>
 
                 <!-- 9 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=600&q=80" alt="Outdoor Olympics" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=600&q=80"
+                        alt="Outdoor Olympics" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">TEAM BUILDING</span>
                         <div class="creator-caption">Outdoor Tug-of-War &amp; Adventure Olympics</div>
@@ -1402,8 +1539,10 @@
                 </div>
 
                 <!-- 10 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Rooftop Yoga" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80"
+                        alt="Rooftop Yoga" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">C-SUITE LUXURY</span>
                         <div class="creator-caption">Sunset Rooftop Yoga &amp; Sound Healing</div>
@@ -1411,8 +1550,10 @@
                 </div>
 
                 <!-- 11 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Winter Gala" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80"
+                        alt="Winter Gala" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">HOLIDAY GALA</span>
                         <div class="creator-caption">Winter Wonderland Christmas Gala</div>
@@ -1420,8 +1561,10 @@
                 </div>
 
                 <!-- 12 -->
-                <div class="creator-item" data-full="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80" alt="Park Marathon" loading="lazy">
+                <div class="creator-item"
+                    data-full="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80"
+                        alt="Park Marathon" loading="lazy">
                     <div class="creator-item-overlay">
                         <span class="creator-tag">COMMUNITY SPORTS</span>
                         <div class="creator-caption">Charity Fun Run &amp; Park Marathon</div>
@@ -1438,15 +1581,17 @@
          ═════════════════════════════════════════════════════════════ -->
     <footer class="sec-connect" id="connect">
         <div class="wrap connect-wrap">
-            
+
             <!-- Section Header with Dual Person Icon -->
             <div class="section-header-centered">
                 <div class="co-icon-wrapper">
                     <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
-                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round"/>
+                        <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                        <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
+                        <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5"
+                            stroke-linecap="round" />
                     </svg>
                 </div>
                 <h2 class="section-main-title">
@@ -1456,11 +1601,11 @@
 
             <!-- Connect Split: Contact Information & Social Icons -->
             <div class="connect-split">
-                
+
                 <!-- Left Details -->
                 <div class="connect-info">
                     <h3 class="connect-company-name">CRAIG &amp; CO CO., LTD</h3>
-                    
+
                     <p class="connect-address">
                         519/19 Dechatungka 1 Alley, Si Kan,<br>
                         Don Mueang, Bangkok 10210, Thailand
@@ -1475,17 +1620,21 @@
                 <!-- Right Details: Official Social Buttons -->
                 <div class="connect-social-wrapper">
                     <div class="connect-social-group">
-                        
+
                         <!-- Facebook Official Button -->
-                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn btn-fb" aria-label="Craig &amp; Co. Facebook">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn btn-fb"
+                            aria-label="Craig &amp; Co. Facebook">
                             <svg viewBox="0 0 24 24" fill="#FFFFFF">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                             </svg>
                         </a>
 
                         <!-- Instagram Official Button -->
-                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn btn-ig" aria-label="Craig &amp; Co. Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn btn-ig"
+                            aria-label="Craig &amp; Co. Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
