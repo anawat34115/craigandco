@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Core Services — Craig & Co. | Bespoke Experience House Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -689,6 +691,477 @@
         .keyword-part {
             color: var(--orange);
         }
+
+        /* ─── SECTION 2: CO SERVICE. (5 HERO PORTRAIT CARDS WITH HOVER REVEAL) ─── */
+        .sec-solutions {
+            padding: 100px 0 120px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            background: var(--bg-canvas);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            align-items: stretch;
+        }
+
+        .sol-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 540px;
+            height: clamp(520px, 45vw, 620px);
+            background: #121426;
+            border: 1px solid rgba(229, 227, 210, 0.14);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease;
+            outline: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .sol-card:hover,
+        .sol-card:focus-visible,
+        .sol-card.active {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+            border-color: rgba(242, 101, 29, 0.5);
+        }
+
+        /* Full Height Background Image */
+        .sol-media {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            z-index: 1;
+            background: #161933;
+        }
+
+        .sol-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+        }
+
+        .sol-card:hover .sol-media img,
+        .sol-card:focus-visible .sol-media img,
+        .sol-card.active .sol-media img {
+            transform: scale(1.08);
+            filter: brightness(0.75) contrast(1.1);
+        }
+
+        /* Gradient Overlay for Text Readability */
+        .sol-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background: linear-gradient(
+                180deg, 
+                rgba(16, 18, 38, 0.5) 0%, 
+                rgba(16, 18, 38, 0.05) 25%, 
+                rgba(16, 18, 38, 0.45) 50%, 
+                rgba(16, 18, 38, 0.92) 75%, 
+                rgba(16, 18, 38, 0.99) 100%
+            );
+            transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sol-card:hover .sol-overlay,
+        .sol-card:focus-visible .sol-overlay,
+        .sol-card.active .sol-overlay {
+            background: linear-gradient(
+                180deg, 
+                rgba(16, 18, 38, 0.7) 0%, 
+                rgba(16, 18, 38, 0.3) 20%, 
+                rgba(16, 18, 38, 0.75) 45%, 
+                rgba(16, 18, 38, 0.97) 70%, 
+                rgba(16, 18, 38, 1) 100%
+            );
+        }
+
+        /* Top Icon */
+        .sol-top-icon {
+            position: absolute;
+            top: 22px;
+            left: 20px;
+            z-index: 3;
+            width: 32px;
+            height: 32px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
+            transition: transform 0.4s ease, color 0.4s ease;
+        }
+
+        .sol-top-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sol-card:hover .sol-top-icon,
+        .sol-card:focus-visible .sol-top-icon,
+        .sol-card.active .sol-top-icon {
+            transform: translateY(-2px) scale(1.08);
+            color: var(--orange);
+        }
+
+        /* Circular Navigation Badge (< >) */
+        .sol-ref-badge {
+            position: absolute;
+            top: 22px;
+            right: 20px;
+            z-index: 3;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(22, 25, 48, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+            opacity: 0.85;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sol-ref-badge svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .sol-card:hover .sol-ref-badge,
+        .sol-card:focus-visible .sol-ref-badge,
+        .sol-card.active .sol-ref-badge {
+            opacity: 1;
+            transform: scale(1.1);
+            background: var(--orange);
+            border-color: var(--orange);
+            box-shadow: 0 6px 20px rgba(242, 101, 29, 0.5);
+        }
+
+        /* Bottom Content Area */
+        .sol-content {
+            position: relative;
+            z-index: 3;
+            padding: 24px 18px;
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .sol-card-num {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Bold Orange Title */
+        .sol-title {
+            color: var(--orange);
+            font-size: clamp(15.5px, 1.22vw, 18.5px);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.25;
+            font-family: 'Archivo', sans-serif;
+            margin-bottom: 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+                        margin-bottom 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sol-card:hover .sol-title,
+        .sol-card:focus-visible .sol-title,
+        .sol-card.active .sol-title {
+            margin-bottom: 12px;
+        }
+
+        /* Drawer for Hover Description */
+        .sol-desc-drawer {
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(18px);
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                        opacity 0.4s ease, 
+                        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sol-card:hover .sol-desc-drawer,
+        .sol-card:focus-visible .sol-desc-drawer,
+        .sol-card.active .sol-desc-drawer {
+            max-height: 320px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sol-sublist {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .sol-sublist li {
+            color: rgba(245, 245, 245, 0.92);
+            font-size: 12px;
+            line-height: 1.35;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            display: flex;
+            align-items: flex-start;
+            gap: 7px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .sol-sublist li::before {
+            content: '•';
+            color: var(--orange);
+            font-size: 14px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .sol-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .sol-link .arrow-line {
+            display: inline-block;
+            width: 32px;
+            height: 1.5px;
+            background-color: var(--orange);
+            position: relative;
+            transition: width 0.35s ease, background-color 0.3s ease;
+        }
+
+        .sol-link .arrow-line::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -3px;
+            border: solid var(--orange);
+            border-width: 0 1.5px 1.5px 0;
+            display: inline-block;
+            padding: 2.5px;
+            transform: rotate(-45deg);
+            transition: border-color 0.3s ease;
+        }
+
+        .sol-card:hover .sol-link:hover {
+            color: var(--orange);
+        }
+
+        .sol-card:hover .sol-link:hover .arrow-line {
+            width: 44px;
+        }
+
+        @media (max-width: 1200px) {
+            .solutions-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .sol-card {
+                height: 540px;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .solutions-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+            }
+            .sol-card {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .solutions-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .sol-card {
+                height: 480px;
+            }
+            .sol-content {
+                padding: 24px 20px;
+            }
+        }
+
+
+        /* ─── SECTION: CO EVENT. (5-STAGE EVENT FRAMEWORK) ─── */
+        .sec-event {
+            padding: 120px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            background: #141628;
+        }
+
+        .event-grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            align-items: stretch;
+            margin-top: 50px;
+        }
+
+        .event-step-card {
+            background: #1B1D35;
+            border: 1px solid rgba(229, 227, 210, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.4s ease;
+        }
+
+        .event-step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65);
+            border-color: rgba(242, 101, 29, 0.45);
+        }
+
+        .event-card-media {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background: #121426;
+        }
+
+        .event-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+        }
+
+        .event-step-card:hover .event-card-media img {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        .event-step-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 2;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(22, 25, 48, 0.88);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #FFFFFF;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .event-step-card:hover .event-step-badge {
+            background: var(--orange);
+            border-color: var(--orange);
+            box-shadow: 0 4px 12px rgba(242, 101, 29, 0.4);
+        }
+
+        .event-card-body {
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .event-step-title {
+            color: var(--orange);
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-family: 'Archivo', sans-serif;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            transition: color 0.3s ease;
+        }
+
+        .event-step-desc {
+            color: rgba(229, 227, 210, 0.78);
+            font-size: 13.5px;
+            line-height: 1.55;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .event-grid-5 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .event-grid-5 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .event-grid-5 {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .event-card-media {
+                height: 200px;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -723,405 +1196,294 @@
   </div>
 </section>
 
+
+<!-- ═════════════════════════════════════════════════════════════
+     SECTION: CO SERVICE. (5 TALL CARDS WITH HOVER REVEAL)
+     ═════════════════════════════════════════════════════════════ -->
+<section class="sec-solutions" id="service">
+    <div class="wrap">
+
+        <!-- Section Header with Dual Person Icon -->
+        <div class="section-header-centered">
+            <div class="co-icon-wrapper">
+                <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="23" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                    <circle cx="41" cy="18" r="6" stroke="#F2651D" stroke-width="4.5" stroke-linecap="round" />
+                    <path d="M12 48C12 36.5 17 31 23 31C29 31 34 36.5 34 48" stroke="#F2651D" stroke-width="4.5"
+                        stroke-linecap="round" />
+                    <path d="M30 48C30 36.5 35 31 41 31C47 31 52 36.5 52 48" stroke="#F2651D" stroke-width="4.5"
+                        stroke-linecap="round" />
+                </svg>
+            </div>
+            <h2 class="section-main-title">
+                <span class="co-part">CO</span> <span class="keyword-part">SERVICE.</span>
+            </h2>
+        </div>
+
+        <!-- 5 Tall Portrait Cards with Hover Reveal Description (Ref Design) -->
+        <div class="solutions-grid">
+
+            <!-- Card 1: Experience & Event Design -->
+            <div class="sol-card" tabindex="0">
+                <div class="sol-media">
+                    <img src="service_card_1.png" alt="Experience &amp; Event Design" loading="lazy">
+                </div>
+                <div class="sol-overlay"></div>
+
+                <!-- Top-Left Icon (Isometric Creative Layers) -->
+                <div class="sol-top-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="16 2 2 9 16 16 30 9 16 2" />
+                        <polyline points="2 16 16 23 30 16" />
+                        <polyline points="2 23 16 30 30 23" />
+                    </svg>
+                </div>
+
+                <!-- Top-Right Ref Badge (< >) -->
+                <div class="sol-ref-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 7 4 12 9 17" />
+                        <polyline points="15 7 20 12 15 17" />
+                    </svg>
+                </div>
+
+                <!-- Bottom Content with Hover Reveal -->
+                <div class="sol-content">
+                    <div class="sol-card-num">01 // SERVICE</div>
+                    <h3 class="sol-title">
+                        EXPERIENCE &amp; EVENT DESIGN
+                    </h3>
+                    <div class="sol-desc-drawer">
+                        <ul class="sol-sublist">
+                            <li>Event Concept &amp; Design</li>
+                            <li>Event Management</li>
+                            <li>Conference</li>
+                            <li>Corporate activities</li>
+                            <li>Team Building</li>
+                            <li>Corporate Gift &amp; Merchandise</li>
+                        </ul>
+                        <a href="#pillar-event-design" class="sol-link">
+                            Explore Details <span class="arrow-line"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Venue Sourcing -->
+            <div class="sol-card" tabindex="0">
+                <div class="sol-media">
+                    <img src="service_card_2.png" alt="Venue Sourcing" loading="lazy">
+                </div>
+                <div class="sol-overlay"></div>
+
+                <!-- Top-Left Icon (Venue & Hotel Architecture) -->
+                <div class="sol-top-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 28V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v22" />
+                        <path d="M20 12h6a2 2 0 0 1 2 2v14" />
+                        <line x1="2" y1="28" x2="30" y2="28" />
+                        <rect x="8" y="8" width="4" height="4" />
+                        <rect x="8" y="15" width="4" height="4" />
+                        <rect x="8" y="22" width="4" height="4" />
+                        <rect x="23" y="16" width="3" height="3" />
+                        <rect x="23" y="22" width="3" height="3" />
+                    </svg>
+                </div>
+
+                <!-- Top-Right Ref Badge (< >) -->
+                <div class="sol-ref-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 7 4 12 9 17" />
+                        <polyline points="15 7 20 12 15 17" />
+                    </svg>
+                </div>
+
+                <!-- Bottom Content with Hover Reveal -->
+                <div class="sol-content">
+                    <div class="sol-card-num">02 // SERVICE</div>
+                    <h3 class="sol-title">
+                        VENUE SOURCING
+                    </h3>
+                    <div class="sol-desc-drawer">
+                        <ul class="sol-sublist">
+                            <li>Hotel Sourcing</li>
+                            <li>Meeting &amp; Conference venues</li>
+                            <li>Site Inspection</li>
+                            <li>Contract Negotiation</li>
+                            <li>Venue Coordination</li>
+                        </ul>
+                        <a href="#pillar-venue" class="sol-link">
+                            Explore Details <span class="arrow-line"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Transportation -->
+            <div class="sol-card" tabindex="0">
+                <div class="sol-media">
+                    <img src="service_card_3.png" alt="Transportation" loading="lazy">
+                </div>
+                <div class="sol-overlay"></div>
+
+                <!-- Top-Left Icon (Executive Fleet) -->
+                <div class="sol-top-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 17L8 8H24L27 17M5 17H27M5 17V24H27V17" />
+                        <circle cx="9" cy="24" r="3" />
+                        <circle cx="23" cy="24" r="3" />
+                        <line x1="12" y1="17" x2="20" y2="17" />
+                    </svg>
+                </div>
+
+                <!-- Top-Right Ref Badge (< >) -->
+                <div class="sol-ref-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 7 4 12 9 17" />
+                        <polyline points="15 7 20 12 15 17" />
+                    </svg>
+                </div>
+
+                <!-- Bottom Content with Hover Reveal -->
+                <div class="sol-content">
+                    <div class="sol-card-num">03 // SERVICE</div>
+                    <h3 class="sol-title">
+                        TRANSPORTATION
+                    </h3>
+                    <div class="sol-desc-drawer">
+                        <ul class="sol-sublist">
+                            <li>Limousine Service</li>
+                            <li>Private Car</li>
+                            <li>Executive Van</li>
+                            <li>Coach / Bus</li>
+                            <li>Airport Transfers</li>
+                        </ul>
+                        <a href="#pillar-transport" class="sol-link">
+                            Explore Details <span class="arrow-line"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Travel Management -->
+            <div class="sol-card" tabindex="0">
+                <div class="sol-media">
+                    <img src="service_card_4.png" alt="Travel Management" loading="lazy">
+                </div>
+                <div class="sol-overlay"></div>
+
+                <!-- Top-Left Icon (Globe & Flight Logistics) -->
+                <div class="sol-top-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="16" cy="16" r="12" />
+                        <path d="M4 16H28M16 4C19 8 20.5 12 20.5 16C20.5 20 19 24 16 28C13 24 11.5 20 11.5 16C11.5 12 13 8 16 4Z" />
+                    </svg>
+                </div>
+
+                <!-- Top-Right Ref Badge (< >) -->
+                <div class="sol-ref-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 7 4 12 9 17" />
+                        <polyline points="15 7 20 12 15 17" />
+                    </svg>
+                </div>
+
+                <!-- Bottom Content with Hover Reveal -->
+                <div class="sol-content">
+                    <div class="sol-card-num">04 // SERVICE</div>
+                    <h3 class="sol-title">
+                        TRAVEL MANAGEMENT
+                    </h3>
+                    <div class="sol-desc-drawer">
+                        <ul class="sol-sublist">
+                            <li>Flight Reservation</li>
+                            <li>Hotel Reservation</li>
+                            <li>Customized Travel itinerary</li>
+                            <li>Visa application Service</li>
+                            <li>Travel Insurance</li>
+                        </ul>
+                        <a href="#pillar-travel" class="sol-link">
+                            Explore Details <span class="arrow-line"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Hospitality & Concierge Service -->
+            <div class="sol-card" tabindex="0">
+                <div class="sol-media">
+                    <img src="service_card_5.png" alt="Hospitality &amp; Concierge Service" loading="lazy">
+                </div>
+                <div class="sol-overlay"></div>
+
+                <!-- Top-Left Icon (Camera / Visual Production) -->
+                <div class="sol-top-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M28 24V11a2 2 0 0 0-2-2h-4l-2-3H12L10 9H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2z" />
+                        <circle cx="16" cy="17" r="5" />
+                    </svg>
+                </div>
+
+                <!-- Top-Right Ref Badge (< >) -->
+                <div class="sol-ref-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 7 4 12 9 17" />
+                        <polyline points="15 7 20 12 15 17" />
+                    </svg>
+                </div>
+
+                <!-- Bottom Content with Hover Reveal -->
+                <div class="sol-content">
+                    <div class="sol-card-num">05 // SERVICE</div>
+                    <h3 class="sol-title">
+                        HOSPITALITY &amp; CONCIERGE
+                    </h3>
+                    <div class="sol-desc-drawer">
+                        <ul class="sol-sublist">
+                            <li>Event Photography</li>
+                            <li>Event Videography</li>
+                            <li>Drone Photography &amp; Videography</li>
+                            <li>Highlight Video Production</li>
+                        </ul>
+                        <a href="#pillar-hospitality" class="sol-link">
+                            Explore Details <span class="arrow-line"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 <!-- QUICK JUMP PILLAR NAVIGATION -->
 <div class="quick-nav">
   <div class="wrap">
     <div class="quick-nav-list">
-      <a href="#pillar-training" class="quick-tab active"><span>01.</span> Training &amp; Consulting</a>
-      <a href="#pillar-operations" class="quick-tab"><span>02.</span> Operation &amp; Management</a>
-      <a href="#pillar-travel" class="quick-tab"><span>03.</span> Travel &amp; Leisure</a>
-      <a href="#pillar-events" class="quick-tab"><span>04.</span> Entertainment &amp; Sports</a>
+      <a href="#service" class="quick-tab"><span>00.</span> Co Service</a>
+      <a href="#pillar-event-design" class="quick-tab active"><span>01.</span> Experience &amp; Event Design</a>
+      <a href="#pillar-venue" class="quick-tab"><span>02.</span> Venue Sourcing</a>
+      <a href="#pillar-transport" class="quick-tab"><span>03.</span> Transportation</a>
+      <a href="#pillar-travel" class="quick-tab"><span>04.</span> Travel Management</a>
+      <a href="#pillar-hospitality" class="quick-tab"><span>05.</span> Hospitality &amp; Concierge</a>
+      <a href="#co-event" class="quick-tab"><span>06.</span> Co Event</a>
     </div>
   </div>
 </div>
 
-<!-- SECTION 2: SERVICE PILLAR 1 - TRAINING & CONSULTING (TEXT LEFT / MOCKUP RIGHT) -->
-<section class="service-pillar" id="pillar-training">
+<!-- ═════════════════════════════════════════════════════════════
+     SECTION 2: SERVICE PILLAR 1 - EXPERIENCE & EVENT DESIGN
+     (TEXT LEFT / MOCKUP RIGHT)
+     ═════════════════════════════════════════════════════════════ -->
+<section class="service-pillar" id="pillar-event-design">
   <div class="wrap">
     <div class="pillar-grid">
       <div class="pillar-text">
         <div class="pillar-header">
           <div class="pillar-num">01</div>
-          <h2 class="pillar-title">Training &amp; Consulting</h2>
-          <p class="pillar-desc">Customized learning frameworks, immersive retreats, and interactive workshops designed to unlock human potential, foster executive leadership, and elevate team performance.</p>
-        </div>
-
-        <div class="service-items-list">
-          
-          <div class="service-item-card active">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">L&amp;M</span> Leadership &amp; Management</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Building strong managerial capabilities and strategic direction. We equip leaders with actionable problem-solving frameworks, executive presence, and modern decision-making methodologies.
-              <div><a href="contact.html" class="item-cta">Inquire About Leadership Training &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">M&amp;G</span> Mindset &amp; Personal Growth</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Fostering resilience, self-reflection, and personal development. Guided experiential sessions that cultivate emotional agility, purpose alignment, and sustainable personal high-performance.
-              <div><a href="contact.html" class="item-cta">Inquire About Mindset Programs &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">TB</span> Team Building &amp; Collaboration</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Enhancing unity, trust, and cooperative dynamics within teams. High-energy gamified challenges and structured cross-departmental exercises that transform siloed groups into synergistic teams.
-              <div><a href="contact.html" class="item-cta">Inquire About Team Building &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">C&amp;I</span> Communication &amp; Influence</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Developing effective dialogue and persuasive leadership through art and interaction. Innovative workshops using artistic mediums to enhance active listening, clarity, and empathetic influence.
-              <div><a href="contact.html" class="item-cta">Inquire About Communication Modules &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">CX</span> Customer Experience &amp; Business Strategy</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Aligning internal performance with external brand value. We train front-line teams and executives on customer journey mapping, service excellence, and commercial brand representation.
-              <div><a href="contact.html" class="item-cta">Inquire About CX Strategy &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">W&amp;P</span> Wellness &amp; Performance</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Integrating stress reduction, emotional release, and soundbath sessions. Holistic workplace programs addressing energy management, mental clarity, and somatic burnout prevention.
-              <div><a href="contact.html" class="item-cta">Inquire About Corporate Wellness &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">NET</span> Corporate Networking (Golf / Activities)</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Curating executive networking opportunities and relationship-building events. Purposeful recreational formats designed to strengthen C-suite relationships and client partnerships.
-              <div><a href="contact.html" class="item-cta">Inquire About Executive Networking &rarr;</a></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Mockup Right -->
-      <div class="pillar-visual">
-        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
-        <div class="mockup-card">
-          <div class="mockup-header">
-            <div class="mockup-dots"><span></span><span></span><span></span></div>
-            <div class="mockup-tag">Academy Module // TC-01</div>
-          </div>
-          <div class="mockup-body">
-            <h3>Executive Training Matrix</h3>
-            <p>Interactive workshop and team training environments curated for leadership excellence and emotional resilience.</p>
-            <div class="mockup-list">
-              <div class="mockup-row"><span>Leadership &amp; Mindset Synergy</span> <span class="badge">98% Impact</span></div>
-              <div class="mockup-row"><span>Soundbath &amp; Somatic Wellness</span> <span class="badge">Holistic</span></div>
-              <div class="mockup-row"><span>Cross-Functional Collaboration</span> <span class="badge-terra">Synergy</span></div>
-            </div>
-          </div>
-          <div class="visual-badge">
-            <div class="visual-badge-text"><h5>Workshop &amp; Training Environments</h5><span>Human-Centered Development</span></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 3: SERVICE PILLAR 2 - OPERATION & MANAGEMENT (ALTERNATING: MOCKUP LEFT / TEXT RIGHT) -->
-<section class="service-pillar" id="pillar-operations">
-  <div class="wrap">
-    <div class="pillar-grid reverse">
-      
-      <!-- Mockup Left -->
-      <div class="pillar-visual theme-ops">
-        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
-        <div class="mockup-card">
-          <div class="mockup-header">
-            <div class="mockup-dots"><span></span><span></span><span></span></div>
-            <div class="mockup-tag">Operations Hub // OM-02</div>
-          </div>
-          <div class="mockup-body">
-            <h3>Flawless Execution Roadmap</h3>
-            <p>Showcasing professional execution, vendor coordination, and procurement mastery for complex corporate initiatives.</p>
-            <div class="mockup-grid-2">
-              <div class="mockup-stat-box"><strong>100%</strong><span>Process Optimization</span></div>
-              <div class="mockup-stat-box"><strong>Vetted</strong><span>Partner Network</span></div>
-            </div>
-            <div class="mockup-row" style="margin-top:10px;"><span>Procurement &amp; Strategic Alliances</span> <span class="badge">End-to-End</span></div>
-          </div>
-          <div class="visual-badge">
-            <div class="visual-badge-text"><h5>Professional Execution &amp; Strategy</h5><span>Operational Excellence</span></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#ffab91;box-shadow:0 0 10px #ffab91;"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Text Right -->
-      <div class="pillar-text">
-        <div class="pillar-header">
-          <div class="pillar-num">02</div>
-          <h2 class="pillar-title">Operation &amp; Management</h2>
-          <p class="pillar-desc">Rigorous project governance, streamlined process workflows, and dependable vendor coordination that ensure seamless end-to-end execution for any corporate requirement.</p>
-        </div>
-
-        <div class="service-items-list">
-          
-          <div class="service-item-card active">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">PM</span> Project Management</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Overseeing corporate initiatives from concept to delivery. Dedicated project directors manage timelines, resource allocation, budget compliance, and milestone verification.
-              <div><a href="contact.html" class="item-cta">Inquire About Project Management &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">OPT</span> Process Optimization</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Streamlining workflows for maximum efficiency and productivity. We audit existing corporate event and procurement processes to eliminate friction and reduce operational overhead.
-              <div><a href="contact.html" class="item-cta">Inquire About Process Optimization &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">VPM</span> Vendor &amp; Partner Management</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Coordinating reliable third-party suppliers and stakeholders. We leverage our extensive curated network of premium venues, technical teams, and hospitality partners across Thailand.
-              <div><a href="contact.html" class="item-cta">Inquire About Vendor Management &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">OPS</span> Event &amp; Experience Operations</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Flawless on-site execution for all scales of corporate gatherings. Our experienced on-site managers handle logistics, stage direction, guest flow, and contingency management.
-              <div><a href="contact.html" class="item-cta">Inquire About Event Operations &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">SP</span> Strategic Partnerships</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Building alliances that add long-term value to business goals. We facilitate high-level co-branding opportunities, institutional collaborations, and cross-sector corporate synergies.
-              <div><a href="contact.html" class="item-cta">Inquire About Strategic Alliances &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">PROC</span> Corporate Procurement Services</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Sourcing high-quality materials and essentials for corporate needs. From customized executive gifting and branded collateral to specialized technical equipment and event installations.
-              <div><a href="contact.html" class="item-cta">Inquire About Procurement Services &rarr;</a></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 4: SERVICE PILLAR 3 - TRAVEL & LEISURE (TEXT LEFT / MOCKUP RIGHT) -->
-<section class="service-pillar" id="pillar-travel">
-  <div class="wrap">
-    <div class="pillar-grid">
-      <div class="pillar-text">
-        <div class="pillar-header">
-          <div class="pillar-num">03</div>
-          <h2 class="pillar-title">Travel &amp; Leisure</h2>
-          <p class="pillar-desc">Bespoke group itineraries, executive retreats, and luxury destination management across Thailand and key international locations, delivered with high-touch VIP hospitality.</p>
-        </div>
-
-        <div class="service-items-list">
-          
-          <div class="service-item-card active">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">BTP</span> Bespoke Travel Planning</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Customized group itineraries tailored to corporate objectives. We design end-to-end travel schedules balancing productive corporate sessions with cultural exploration and relaxation.
-              <div><a href="contact.html" class="item-cta">Inquire About Travel Planning &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">LUX</span> Luxury Travel Experiences</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Premium hospitality and exclusive destination management. Access to private resorts, chartered yacht excursions, fine dining buyouts, and VIP cultural immersions.
-              <div><a href="contact.html" class="item-cta">Inquire About Luxury Travel &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">RET</span> Corporate Retreats</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Immersive getaways designed for team bonding and strategic alignment. Purposeful multi-day retreats in serene destinations that rejuvenate staff and align company vision.
-              <div><a href="contact.html" class="item-cta">Inquire About Corporate Retreats &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">GOLF</span> Golf Travel Experiences</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Specialized itineraries for corporate golf enthusiasts and executives. Seamless booking at championship courses, luxury clubhouse hospitality, and private tournament coordination.
-              <div><a href="contact.html" class="item-cta">Inquire About Golf Travel &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">LEIS</span> Leisure Activities</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Engaging group excursions and recreational programs. From private island catamaran trips and eco-adventures to farm village days and wellness spa integrations.
-              <div><a href="contact.html" class="item-cta">Inquire About Leisure Activities &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">VIP</span> VIP Travel Services</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              High-touch concierge and elite support for senior executives. Airport fast-track transfers, private security coordination, luxury chauffeur fleets, and 24/7 dedicated handler support.
-              <div><a href="contact.html" class="item-cta">Inquire About VIP Concierge &rarr;</a></div>
-            </div>
-          </div>
-
-          <div class="service-item-card">
-            <div class="item-top">
-              <div class="item-title"><span class="item-icon">VISA</span> Visa &amp; Work Permit</div>
-              <span class="item-toggle">+</span>
-            </div>
-            <div class="item-content">
-              Administrative support and hassle-free documentation management. We handle corporate group visa processing, work permit facilitation, and immigration liaison for smooth international travel.
-              <div><a href="contact.html" class="item-cta">Inquire About Visa Support &rarr;</a></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Mockup Right -->
-      <div class="pillar-visual theme-travel">
-        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
-        <div class="mockup-card">
-          <div class="mockup-header">
-            <div class="mockup-dots"><span></span><span></span><span></span></div>
-            <div class="mockup-tag">Bespoke Travel // TL-03</div>
-          </div>
-          <div class="mockup-body">
-            <h3>Luxury Retreat Concierge</h3>
-            <p>Highlighting luxury travel, exclusive resort management, and executive getaways across Thailand &amp; global hubs.</p>
-            <div class="mockup-list">
-              <div class="mockup-row"><span>Phuket &amp; Samui Executive Retreats</span> <span class="badge">VIP Access</span></div>
-              <div class="mockup-row"><span>Championship Golf Itineraries</span> <span class="badge">Curated</span></div>
-              <div class="mockup-row"><span>Visa &amp; Fast-Track Concierge</span> <span class="badge-terra">Seamless</span></div>
-            </div>
-          </div>
-          <div class="visual-badge">
-            <div class="visual-badge-text"><h5>Luxury Travel &amp; Corporate Retreats</h5><span>Destination Management</span></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 5: SERVICE PILLAR 4 - ENTERTAINMENT EVENTS & SPORTS (ALTERNATING: MOCKUP LEFT / TEXT RIGHT) -->
-<section class="service-pillar" id="pillar-events">
-  <div class="wrap">
-    <div class="pillar-grid reverse">
-      
-      <!-- Mockup Left -->
-      <div class="pillar-visual theme-events">
-        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
-        <div class="mockup-card">
-          <div class="mockup-header">
-            <div class="mockup-dots"><span></span><span></span><span></span></div>
-            <div class="mockup-tag">Entertainment Stage // EE-04</div>
-          </div>
-          <div class="mockup-body">
-            <h3>Gala &amp; Sports Activation</h3>
-            <p>Featuring dynamic party settings, top-tier artist booking, and high-energy sports &amp; brand activations.</p>
-            <div class="mockup-grid-2">
-              <div class="mockup-stat-box"><strong>VIP</strong><span>Absolute Discretion</span></div>
-              <div class="mockup-stat-box"><strong>A-List</strong><span>Artist Booking</span></div>
-            </div>
-            <div class="mockup-row" style="margin-top:10px;"><span>Golf Tournaments &amp; Brand Activations</span> <span class="badge">High-Impact</span></div>
-          </div>
-          <div class="visual-badge">
-            <div class="visual-badge-text"><h5>Dynamic Celebrations &amp; Sports</h5><span>Creative Direction &amp; Events</span></div>
-            <div style="width:10px;height:10px;border-radius:50%;background:#ffab91;box-shadow:0 0 10px #ffab91;"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Text Right -->
-      <div class="pillar-text">
-        <div class="pillar-header">
-          <div class="pillar-num">04</div>
-          <h2 class="pillar-title">Entertainment Events &amp; Sports</h2>
-          <p class="pillar-desc">Creative event design, high-energy celebrations, elite artist procurement, and sports activations that create unforgettable brand touchpoints and team cohesion.</p>
+          <h2 class="pillar-title">Experience &amp; Event Design</h2>
+          <p class="pillar-desc">Comprehensive event conceptualization, run-of-show orchestration, and collaborative corporate milestones designed to inspire teams, spark authentic connection, and reinforce brand prestige.</p>
         </div>
 
         <div class="service-items-list">
@@ -1132,63 +1494,190 @@
               <span class="item-toggle">+</span>
             </div>
             <div class="item-content">
-              Creative direction tailored to brand identity. We craft immersive storytelling, scenic stage architecture, lighting design, and thematic environments that captivate attendees from entry to exit.
-              <div><a href="contact.html" class="item-cta">Inquire About Event Concept &rarr;</a></div>
+              Transforming corporate vision into high-impact thematic realities. We craft bespoke scenography, spatial storytelling, stage architecture, ambient lighting, and sensory guest journeys tailored to your brand identity.
+              <div><a href="contact.html" class="item-cta">Inquire About Event Concept &amp; Design &rarr;</a></div>
             </div>
           </div>
 
           <div class="service-item-card">
             <div class="item-top">
-              <div class="item-title"><span class="item-icon">CORP</span> Corporate Events</div>
+              <div class="item-title"><span class="item-icon">EM</span> Event Management</div>
               <span class="item-toggle">+</span>
             </div>
             <div class="item-content">
-              Company outings, staff parties, and annual celebrations. Comprehensive production for gala dinners, milestone anniversaries, awards nights, and company-wide festivals.
-              <div><a href="contact.html" class="item-cta">Inquire About Corporate Events &rarr;</a></div>
+              Meticulous end-to-end event execution from blueprint to final teardown. Dedicated technical stage directors, minute-by-minute run-of-show choreography, backstage logistics, and proactive contingency management.
+              <div><a href="contact.html" class="item-cta">Inquire About Event Management &rarr;</a></div>
             </div>
           </div>
 
           <div class="service-item-card">
             <div class="item-top">
-              <div class="item-title"><span class="item-icon">PVT</span> Private &amp; VIP Events</div>
+              <div class="item-title"><span class="item-icon">CONF</span> Conference</div>
               <span class="item-toggle">+</span>
             </div>
             <div class="item-content">
-              Exclusive gatherings managed with absolute discretion. High-end private celebrations, executive dinners, and VIP receptions executed with uncompromising privacy and security.
-              <div><a href="contact.html" class="item-cta">Inquire About VIP Events &rarr;</a></div>
+              Flawless corporate summits, thought-leadership forums, and annual assemblies. Complete stage engineering, broadcast audio-visuals, keynote speaker coordination, hybrid live-streaming, and interactive audience polling.
+              <div><a href="contact.html" class="item-cta">Inquire About Conference Production &rarr;</a></div>
             </div>
           </div>
 
           <div class="service-item-card">
             <div class="item-top">
-              <div class="item-title"><span class="item-icon">ENT</span> Entertainment Booking</div>
+              <div class="item-title"><span class="item-icon">ACT</span> Corporate Activities</div>
               <span class="item-toggle">+</span>
             </div>
             <div class="item-content">
-              Sourcing top-tier performers, artists, and speakers. We manage contracts, technical riders, and stage hospitality for celebrity musicians, keynote speakers, DJs, and live performers.
-              <div><a href="contact.html" class="item-cta">Inquire About Entertainment Booking &rarr;</a></div>
+              Curated staff celebrations, gala dinners, annual parties, and milestone anniversaries. We create joyful, engaging atmospheres that celebrate employee achievement, foster community, and invigorate workplace culture.
+              <div><a href="contact.html" class="item-cta">Inquire About Corporate Activities &rarr;</a></div>
             </div>
           </div>
 
           <div class="service-item-card">
             <div class="item-top">
-              <div class="item-title"><span class="item-icon">ACT</span> Brand Activation</div>
+              <div class="item-title"><span class="item-icon">TB</span> Team Building</div>
               <span class="item-toggle">+</span>
             </div>
             <div class="item-content">
-              Immersive experiences that drive customer and employee engagement. Interactive pop-up installations, product launches, sponsorship activations, and experiential marketing campaigns.
-              <div><a href="contact.html" class="item-cta">Inquire About Brand Activation &rarr;</a></div>
+              Dynamic collaborative challenges and gamified workshops. Purposefully designed outdoor and indoor experiential programs that dissolve departmental silos, cultivate trust, and elevate high-performing team dynamics.
+              <div><a href="contact.html" class="item-cta">Inquire About Team Building &rarr;</a></div>
             </div>
           </div>
 
           <div class="service-item-card">
             <div class="item-top">
-              <div class="item-title"><span class="item-icon">SPRT</span> Golf Business &amp; Golf Leisure</div>
+              <div class="item-title"><span class="item-icon">GIFT</span> Corporate Gift &amp; Merchandise</div>
               <span class="item-toggle">+</span>
             </div>
             <div class="item-content">
-              Managing corporate tournaments and golf-centric lifestyle events. Complete tournament management including scoring systems, branded tee gifts, VIP hospitality, and sponsor integrations.
-              <div><a href="contact.html" class="item-cta">Inquire About Golf Events &rarr;</a></div>
+              High-end customized corporate gifting, VIP welcome boxes, and commemorative branded merchandise. Thoughtfully sourced materials and bespoke artisanal packaging that leave an enduring prestige impression.
+              <div><a href="contact.html" class="item-cta">Inquire About Corporate Gifting &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mockup Right -->
+      <div class="pillar-visual theme-event-design">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Event Design Hub // ED-01</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Experiential Event Matrix</h3>
+            <p>Full-spectrum creative direction, run-of-show choreography, and team synergy environments engineered for lasting impact.</p>
+            <div class="mockup-list">
+              <div class="mockup-row"><span>Custom Scenography &amp; Stagecraft</span> <span class="badge">100% Bespoke</span></div>
+              <div class="mockup-row"><span>Conferences &amp; Summit Production</span> <span class="badge">End-to-End</span></div>
+              <div class="mockup-row"><span>Gamified Team Building Challenges</span> <span class="badge-terra">Synergy</span></div>
+            </div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>Concept, Staging &amp; Culture</h5><span>Experiential Architecture</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════════════
+     SECTION 3: SERVICE PILLAR 2 - VENUE SOURCING
+     (ALTERNATING: MOCKUP LEFT / TEXT RIGHT)
+     ═════════════════════════════════════════════════════════════ -->
+<section class="service-pillar" id="pillar-venue">
+  <div class="wrap">
+    <div class="pillar-grid reverse">
+      
+      <!-- Mockup Left -->
+      <div class="pillar-visual theme-venue">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Venue Intelligence // VS-02</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Strategic Location Portfolio</h3>
+            <p>Access to premier five-star hotel ballrooms, boutique heritage sanctuaries, and high-capacity convention facilities across Thailand.</p>
+            <div class="mockup-grid-2">
+              <div class="mockup-stat-box"><strong>500+</strong><span>Vetted Venues</span></div>
+              <div class="mockup-stat-box"><strong>VIP</strong><span>Contract Terms</span></div>
+            </div>
+            <div class="mockup-row" style="margin-top:10px;"><span>Site Inspections &amp; Space Audits</span> <span class="badge">Comprehensive</span></div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>Curated Properties &amp; Estates</h5><span>Destination Mastery</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#ffab91;box-shadow:0 0 10px #ffab91;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Right -->
+      <div class="pillar-text">
+        <div class="pillar-header">
+          <div class="pillar-num">02</div>
+          <h2 class="pillar-title">Venue Sourcing</h2>
+          <p class="pillar-desc">Securing the optimal setting for your gathering. We leverage deep hospitality relationships and commercial leverage to locate, evaluate, negotiate, and coordinate flawless event spaces.</p>
+        </div>
+
+        <div class="service-items-list">
+          
+          <div class="service-item-card active">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">HTL</span> Hotel Sourcing</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Curating luxury 5-star hotels and private boutique retreats across Bangkok, Phuket, Samui, Chiang Mai, and regional hubs, matching your corporate profile with unmatched guest comfort and VIP hospitality.
+              <div><a href="contact.html" class="item-cta">Inquire About Hotel Sourcing &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">MCV</span> Meeting &amp; Conference Venues</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Securing high-capacity pillarless ballrooms, auditorium spaces, and modular breakout rooms equipped with acoustic clarity, gigabit connectivity, and versatile seating formats.
+              <div><a href="contact.html" class="item-cta">Inquire About Conference Venues &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">SITE</span> Site Inspection</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Rigorous on-site audits examining attendee traffic flows, loading dock access, ceiling heights, electrical capacities, catering standards, and safety compliances before contract signing.
+              <div><a href="contact.html" class="item-cta">Schedule a Site Inspection &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">NEG</span> Contract Negotiation</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Maximizing your corporate budget. We secure competitive corporate room rates, complimentary suite upgrades, waived function space fees, and favorable cancellation/attrition terms.
+              <div><a href="contact.html" class="item-cta">Inquire About Negotiation Services &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">VCR</span> Venue Coordination</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Direct day-to-day liaison with hotel general managers, banquet chiefs, and engineering teams to ensure timely room turnover, tailored banquet menus, and seamless load-in/load-out execution.
+              <div><a href="contact.html" class="item-cta">Inquire About Venue Coordination &rarr;</a></div>
             </div>
           </div>
 
@@ -1199,11 +1688,394 @@
   </div>
 </section>
 
+<!-- ═════════════════════════════════════════════════════════════
+     SECTION 4: SERVICE PILLAR 3 - TRANSPORTATION
+     (TEXT LEFT / MOCKUP RIGHT)
+     ═════════════════════════════════════════════════════════════ -->
+<section class="service-pillar" id="pillar-transport">
+  <div class="wrap">
+    <div class="pillar-grid">
+      <div class="pillar-text">
+        <div class="pillar-header">
+          <div class="pillar-num">03</div>
+          <h2 class="pillar-title">Transportation</h2>
+          <p class="pillar-desc">Punctual, luxurious, and synchronized fleet logistics ensuring safe, comfortable, and dignified mobility for executives, VIP dignitaries, and large attendee delegations.</p>
+        </div>
+
+        <div class="service-items-list">
+          
+          <div class="service-item-card active">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">LIMO</span> Limousine Service</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Chauffeured premium luxury sedans (Mercedes-Benz S-Class, BMW 7-Series) dedicated to C-suite leaders, keynote speakers, and VIPs, featuring vetted English-speaking chauffeurs and executive amenities.
+              <div><a href="contact.html" class="item-cta">Inquire About Limousine Services &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">PCAR</span> Private Car</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Discrete, on-demand executive sedans and premium SUVs available on standby throughout your event schedule for flexible executive errands, client pick-ups, and point-to-point transfers.
+              <div><a href="contact.html" class="item-cta">Inquire About Private Cars &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">VAN</span> Executive Van</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Luxury Toyota Alphard, Majesty, and customized VIP high-roof vans featuring plush reclining captain seats, onboard Wi-Fi, refreshments, and ample luggage volume for executive teams.
+              <div><a href="contact.html" class="item-cta">Inquire About Executive Vans &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">BUS</span> Coach / Bus</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Pristine 30–50 passenger modern touring coaches equipped with high-efficiency climate control, ergonomic seating, GPS tracking, and seasoned safety-certified drivers for mass group transfers.
+              <div><a href="contact.html" class="item-cta">Inquire About Coach Charters &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">AIR</span> Airport Transfers</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Turnkey airport arrival and departure management. Personalized meet-and-greet greeting boards, baggage assistance, flight monitoring, and synchronized dispatch ensuring zero wait time at Suvarnabhumi and Don Mueang.
+              <div><a href="contact.html" class="item-cta">Inquire About Airport Transfers &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mockup Right -->
+      <div class="pillar-visual theme-transport">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Fleet Logistics // TR-03</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Executive Mobility Control</h3>
+            <p>Live-monitored luxury fleet operations providing synchronized transit manifests, VIP tarmac escorts, and zero-delay transfers.</p>
+            <div class="mockup-list">
+              <div class="mockup-row"><span>Chauffeured VIP Limousine Fleet</span> <span class="badge">S-Class / Alphard</span></div>
+              <div class="mockup-row"><span>Synchronized Airport Transfers</span> <span class="badge">Zero Delay</span></div>
+              <div class="mockup-row"><span>GPS-Monitored Luxury Coaches</span> <span class="badge-terra">High Capacity</span></div>
+            </div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>VIP Chauffeured Fleets &amp; Coaches</h5><span>Mobility Logistics</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════════════
+     SECTION 5: SERVICE PILLAR 4 - TRAVEL MANAGEMENT
+     (ALTERNATING: MOCKUP LEFT / TEXT RIGHT)
+     ═════════════════════════════════════════════════════════════ -->
+<section class="service-pillar" id="pillar-travel">
+  <div class="wrap">
+    <div class="pillar-grid reverse">
+      
+      <!-- Mockup Left -->
+      <div class="pillar-visual theme-travel">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Corporate Travel // TM-04</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Corporate Travel Ecosystem</h3>
+            <p>End-to-end corporate travel coordination delivering flight bookings, luxury room blocks, custom retreat itineraries, and total compliance.</p>
+            <div class="mockup-grid-2">
+              <div class="mockup-stat-box"><strong>100%</strong><span>Flight &amp; Visa Care</span></div>
+              <div class="mockup-stat-box"><strong>24/7</strong><span>Concierge Care</span></div>
+            </div>
+            <div class="mockup-row" style="margin-top:10px;"><span>Custom Curated Itineraries &amp; Insurance</span> <span class="badge">Seamless</span></div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>Corporate Flights &amp; Group Travel</h5><span>Travel Management</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#ffab91;box-shadow:0 0 10px #ffab91;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Right -->
+      <div class="pillar-text">
+        <div class="pillar-header">
+          <div class="pillar-num">04</div>
+          <h2 class="pillar-title">Travel Management</h2>
+          <p class="pillar-desc">Comprehensive travel administration that takes the complexity out of corporate mobility. We oversee ticketing, luxury accommodation, tailored itineraries, visa processing, and travel insurance.</p>
+        </div>
+
+        <div class="service-items-list">
+          
+          <div class="service-item-card active">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">FLT</span> Flight Reservation</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Domestic and international group flight ticketing, corporate fare negotiations, group seat blocks, flexible ticket conditions, and 24/7 flight monitoring with rapid rebooking assistance.
+              <div><a href="contact.html" class="item-cta">Inquire About Flight Reservations &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">HTL</span> Hotel Reservation</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Seamless room block reservations, individual and group billing management, rooming list coordination, VIP check-in desks, and dedicated on-property room allocations.
+              <div><a href="contact.html" class="item-cta">Inquire About Hotel Reservations &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">ITIN</span> Customized Travel Itinerary</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Bespoke multi-day corporate travel programs balancing strategic business sessions with exclusive local cultural experiences, private island yacht excursions, and premium culinary dining journeys.
+              <div><a href="contact.html" class="item-cta">Request a Custom Itinerary &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">VISA</span> Visa Application Service</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Hassle-free corporate visa support. We assist with required consulate documentation, invitation letters, fast-track embassy appointments, and entry regulation compliance for all international delegates.
+              <div><a href="contact.html" class="item-cta">Inquire About Visa Services &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">INS</span> Travel Insurance</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Comprehensive group and executive corporate travel protection policies providing extensive coverage for medical emergencies, travel delays, luggage safety, and business trip interruptions.
+              <div><a href="contact.html" class="item-cta">Inquire About Travel Insurance &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════════════
+     SECTION 6: SERVICE PILLAR 5 - HOSPITALITY & CONCIERGE SERVICE
+     (TEXT LEFT / MOCKUP RIGHT)
+     ═════════════════════════════════════════════════════════════ -->
+<section class="service-pillar" id="pillar-hospitality">
+  <div class="wrap">
+    <div class="pillar-grid">
+      <div class="pillar-text">
+        <div class="pillar-header">
+          <div class="pillar-num">05</div>
+          <h2 class="pillar-title">Hospitality &amp; Concierge Service</h2>
+          <p class="pillar-desc">Elevating event prestige through high-touch VIP hospitality and world-class visual storytelling. We capture the authentic energy, keynote highlights, and emotional resonance of your corporate gathering.</p>
+        </div>
+
+        <div class="service-items-list">
+          
+          <div class="service-item-card active">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">PHOTO</span> Event Photography</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Master commercial photographers capturing high-resolution candid interactions, keynote speeches, VIP red carpet portraits, stage ceremonies, and atmospheric brand details with rapid preview gallery delivery.
+              <div><a href="contact.html" class="item-cta">Inquire About Event Photography &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">VIDEO</span> Event Videography</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Cinematic multi-camera 4K documentary video recording. Broadcast-grade audio capture, steady-cam movement, and sensitive visual composition documenting your event's full story and speaker keynotes.
+              <div><a href="contact.html" class="item-cta">Inquire About Event Videography &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">DRONE</span> Drone Photography &amp; Videography</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              Licensed and certified commercial drone pilots capturing spectacular aerial sweeping views of outdoor venues, beach resorts, corporate sports days, and golf tournaments with complete aviation clearance.
+              <div><a href="contact.html" class="item-cta">Inquire About Drone Filming &rarr;</a></div>
+            </div>
+          </div>
+
+          <div class="service-item-card">
+            <div class="item-top">
+              <div class="item-title"><span class="item-icon">REEL</span> Highlight Video Production</div>
+              <span class="item-toggle">+</span>
+            </div>
+            <div class="item-content">
+              High-impact same-day or post-event cinematic recap trailers. Expertly color-graded, sound-mixed, and edited for corporate internal celebrations, PR announcements, and social media viral sharing.
+              <div><a href="contact.html" class="item-cta">Inquire About Highlight Production &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mockup Right -->
+      <div class="pillar-visual theme-hospitality">
+        <div class="mockup-rings"><div class="ripple"></div><div class="ripple"></div><div class="ripple"></div></div>
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <div class="mockup-tag">Media &amp; Concierge // HC-05</div>
+          </div>
+          <div class="mockup-body">
+            <h3>Cinematic Visual Production</h3>
+            <p>State-of-the-art camera equipment, licensed aerial drone operations, and swift post-production recap reels that immortalize your milestones.</p>
+            <div class="mockup-list">
+              <div class="mockup-row"><span>4K Multi-Cam Cinema Production</span> <span class="badge">Cinema Grade</span></div>
+              <div class="mockup-row"><span>Licensed Aerial Drone Coverage</span> <span class="badge">CAAT Certified</span></div>
+              <div class="mockup-row"><span>Same-Day Highlight Recap Reels</span> <span class="badge-terra">Rapid Delivery</span></div>
+            </div>
+          </div>
+          <div class="visual-badge">
+            <div class="visual-badge-text"><h5>Cinematography &amp; VIP Media</h5><span>Visual Heritage</span></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════════════════════
+     SECTION: CO EVENT. (5-STAGE EVENT DELIVERY FRAMEWORK)
+     ═════════════════════════════════════════════════════════════ -->
+<section class="sec-event" id="co-event">
+    <div class="wrap">
+
+        <!-- Section Header with Craig & Co Arrow Mark -->
+        <div class="section-header-centered">
+            <div class="co-icon-wrapper">
+                <svg class="co-svg-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 14H50V50" stroke="#F2651D" stroke-width="5.5" stroke-linecap="square" />
+                    <line x1="14" y1="50" x2="48" y2="16" stroke="#F2651D" stroke-width="5.5" stroke-linecap="square" />
+                </svg>
+            </div>
+            <h2 class="section-main-title">
+                <span class="co-part">CO</span> <span class="keyword-part">EVENT.</span>
+            </h2>
+        </div>
+
+        <!-- 5 Event Framework Cards Grid -->
+        <div class="event-grid-5">
+
+            <!-- Step 1: Consult -->
+            <div class="event-step-card">
+                <div class="event-card-media">
+                    <span class="event-step-badge">Stage 01</span>
+                    <img src="event_step_1.png" alt="Consult" loading="lazy">
+                </div>
+                <div class="event-card-body">
+                    <h3 class="event-step-title">CONSULT</h3>
+                    <p class="event-step-desc">Understand your objectives, audience, and business challenges.</p>
+                </div>
+            </div>
+
+            <!-- Step 2: Design -->
+            <div class="event-step-card">
+                <div class="event-card-media">
+                    <span class="event-step-badge">Stage 02</span>
+                    <img src="event_step_2.png" alt="Design" loading="lazy">
+                </div>
+                <div class="event-card-body">
+                    <h3 class="event-step-title">DESIGN</h3>
+                    <p class="event-step-desc">Craft tailored experience strategies and creative concepts.</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Create -->
+            <div class="event-step-card">
+                <div class="event-card-media">
+                    <span class="event-step-badge">Stage 03</span>
+                    <img src="event_step_3.png" alt="Create" loading="lazy">
+                </div>
+                <div class="event-card-body">
+                    <h3 class="event-step-title">CREATE</h3>
+                    <p class="event-step-desc">Develop detailed plans with creativity and precision.</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Delivery -->
+            <div class="event-step-card">
+                <div class="event-card-media">
+                    <span class="event-step-badge">Stage 04</span>
+                    <img src="event_step_4.png" alt="Delivery" loading="lazy">
+                </div>
+                <div class="event-card-body">
+                    <h3 class="event-step-title">DELIVERY</h3>
+                    <p class="event-step-desc">Execute every experience with seamless coordination and excellence.</p>
+                </div>
+            </div>
+
+            <!-- Step 5: Measure -->
+            <div class="event-step-card">
+                <div class="event-card-media">
+                    <span class="event-step-badge">Stage 05</span>
+                    <img src="event_step_5.png" alt="Measure" loading="lazy">
+                </div>
+                <div class="event-card-body">
+                    <h3 class="event-step-title">MEASURE</h3>
+                    <p class="event-step-desc">Evaluate outcomes and identify opportunities for continuous improvement.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 <!-- PACKAGE BUILDER / PROPOSAL BANNER -->
 <section class="package-banner">
   <div class="wrap">
     <h2>Ready to combine our service pillars?</h2>
-    <p>Most corporate clients integrate 2 or more disciplines—such as Training with Travel, or Operations with Entertainment—to deliver seamless multi-day experiences.</p>
+    <p>Most corporate clients integrate 2 or more disciplines—such as Experience Design with Venue Sourcing, or Transportation with Travel Management—to deliver seamless multi-day experiences.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
       <a href="contact.html" class="btn btn-primary">Request a Custom Proposal</a>
       <a href="about.html" class="btn btn-outline">Explore Our About Page</a>
